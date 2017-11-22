@@ -1,0 +1,19 @@
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_rsa
+  UseKeychain yes
+  UseRoaming no
+
+#  _________.__                  .__  _____
+#  /   _____/|  |__   ____ ______ |__|/ ____\__.__.
+#  \_____  \ |  |  \ /  _ \\____ \|  \   __<   |  |
+#  /        \|   Y  (  <_> )  |_> >  ||  |  \___  |
+# /_______  /|___|  /\____/|   __/|__||__|  / ____|
+#         \/      \/       |__|             \/
+
+Host *.shopifydc.com *.shopify.com
+  User andre_medeiros
+
+Host *.ash *.chi2
+  Hostname %h.shopifydc.com
+  User andre_medeiros

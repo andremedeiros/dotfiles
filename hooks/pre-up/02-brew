@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -e
+
+# install formulae
+formulae=()
+formulae=("${formulae[@]}" "")
+formulae=("${formulae[@]}" "fzf")
+formulae=("${formulae[@]}" "git")
+formulae=("${formulae[@]}" "gnupg")
+formulae=("${formulae[@]}" "neovim")
+formulae=("${formulae[@]}" "zsh")
+
+for formula in "${formulae[@]}"; do
+  if brew ls --versions $formula > /dev/null; then continue; fi
+
+  echo "Installing $formula"
+  brew install $formula
+done

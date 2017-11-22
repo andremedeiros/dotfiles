@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+casks=()
+casks=("${taps[@]}" "caskroom/fonts/font-meslo-for-powerline")
+
+for cask in "${casks[@]}"; do
+  if brew cask ls --versions $cask > /dev/null; then continue; fi
+
+  echo "Installing cask $cask"
+  brew cask install $cask
+done

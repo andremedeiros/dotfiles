@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+
+# install homebrew if it's missing
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Installing homebrew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
+  echo "Installing rcm"
+  brew install thoughtbot/formulae/rcm
+fi
+
+rcup -d `pwd` -x "*:script" -x "*:README.md"
