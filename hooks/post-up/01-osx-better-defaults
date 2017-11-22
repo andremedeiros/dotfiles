@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -e
+
+# disable key hold popup
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# make repetitions super fast
+defaults write -g InitialKeyRepeat -int 10
+defaults write -g KeyRepeat -int 1
