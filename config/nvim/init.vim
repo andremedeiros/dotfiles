@@ -84,11 +84,12 @@ let g:lightline = {
 
 " FZF {{{
 set rtp+=/usr/local/opt/fzf
-
-nnoremap <leader>j :Buffers<cr>
-nnoremap <leader>p :Files<cr>
 " }}}
 
-" Tagbar {{{
+" Keyboard shortcuts {{{
+nnoremap <leader>j :Buffers<cr>
+nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :TagbarToggle<cr>
+noremap H ^
+noremap L $
 " }}}
