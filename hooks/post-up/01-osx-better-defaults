@@ -11,5 +11,12 @@ defaults write -g KeyRepeat -int 1
 # dock goes on the left
 defaults write com.apple.dock orientation -string left
 
+# disable automatic capitalization and smart quotes as they're annoying when writing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# enable subpixel font rendering on non-Apple LCDs
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
 # and we're done
 killall Dock

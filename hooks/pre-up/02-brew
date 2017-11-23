@@ -7,6 +7,8 @@ formulae=("${formulae[@]}" "")
 formulae=("${formulae[@]}" "fzf")
 formulae=("${formulae[@]}" "git")
 formulae=("${formulae[@]}" "gnupg")
+formulae=("${formulae[@]}" "hub")
+formulae=("${formulae[@]}" "mas")
 formulae=("${formulae[@]}" "neovim")
 formulae=("${formulae[@]}" "zsh")
 

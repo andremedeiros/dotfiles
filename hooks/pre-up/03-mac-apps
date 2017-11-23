@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -e
+
+# install apps
+apps=()
+apps=("${apps[@]}" "443987910;1Password")
+apps=("${apps[@]}" "1091189122;Bear")
+apps=("${apps[@]}" "871200983;Gifwit")
+apps=("${apps[@]}" "775737590;iA Writer")
+apps=("${apps[@]}" "409183694;Keynote")
+apps=("${apps[@]}" "540348655;Monosnap")
+apps=("${apps[@]}" "419330170;Moom")
+apps=("${apps[@]}" "497799835;Patterns")
+apps=("${apps[@]}" "407963104;Pixelmator")
+apps=("${apps[@]}" "984968384;Redacted")
+apps=("${apps[@]}" "1176895641;Spark")
+apps=("${apps[@]}" "904280696;Things3")
+apps=("${apps[@]}" "557168941;Tweetbot")
+apps=("${apps[@]}" "1284863847;Unsplash Wallpapers")
+apps=("${apps[@]}" "497799835;Xcode")
+
+for _app in "${apps[@]}"; do
+  IFS=';' read -ra app <<< "${_app}"
+
+  if [ -d "/Applications/${app[1]}.app" ]; then continue; fi
+
+  echo "Installing ${app[1]}"
+  mas install ${app[0]}
+done

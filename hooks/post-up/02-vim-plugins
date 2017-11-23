@@ -12,8 +12,16 @@ curl -LSso $autoload_root/pathogen.vim https://tpo.pe/pathogen.vim
 
 plugins=()
 
-# Language / Syntax
-plugins=("${plugins[@]}" "fatih/vim-go") # Go
+# language / syntax
+plugins=("${plugins[@]}" "fatih/vim-go")
+plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
+
+# colorschemes / ui
+plugins=("${plugins[@]}" "itchyny/lightline.vim")
+plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
+
+# file management / browsing
+plugins=("${plugins[@]}" "junegunn/fzf.vim")
 
 for plugin in "${plugins[@]}"; do
   repo="https://github.com/${plugin}.git"

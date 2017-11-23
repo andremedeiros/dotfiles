@@ -2,7 +2,13 @@
 set -e
 
 casks=()
-casks=("${taps[@]}" "caskroom/fonts/font-meslo-for-powerline")
+casks=("${casks[@]}" "alfred")
+casks=("${casks[@]}" "caskroom/fonts/font-meslo-for-powerline")
+casks=("${casks[@]}" "coderunner")
+casks=("${casks[@]}" "dash")
+casks=("${casks[@]}" "discord")
+casks=("${casks[@]}" "google-chrome")
+casks=("${casks[@]}" "vlc")
 
 for cask in "${casks[@]}"; do
   if brew cask ls --versions $cask > /dev/null; then continue; fi

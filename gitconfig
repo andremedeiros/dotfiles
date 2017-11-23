@@ -1,0 +1,17 @@
+[user]
+	name = Andre Medeiros
+	email = me@andremedeiros.info
+[alias]
+	up = pull --rebase --autostash
+	co = checkout
+	st = status
+	pr = pull-request
+[color]
+	ui = true
+	grep = auto
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
+[github]
+	user = andremedeiros
