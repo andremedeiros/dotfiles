@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+packages=()
+packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
+packages=("${packages[@]}" "github.com/golang/lint/golint")
+packages=("${packages[@]}" "github.com/google/pprof")
+packages=("${packages[@]}" "github.com/kisielk/errcheck")
+
+for package in "${packages[@]}"; do
+  go get -u $package
+done
