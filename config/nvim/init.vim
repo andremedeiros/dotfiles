@@ -68,7 +68,8 @@ augroup golang
   au Filetype go set makeprg=go\ build\ ./...
 augroup END
 
-" set rtp+=/Users/burke/src/github.com/golang/lint/misc/vim
+set rtp+=~/src/github.com/golang/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -86,4 +87,8 @@ set rtp+=/usr/local/opt/fzf
 
 nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
+" }}}
+
+" Tagbar {{{
+nnoremap <leader>t :TagbarToggle<cr>
 " }}}

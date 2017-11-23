@@ -4,6 +4,7 @@ set -e
 # install formulae
 formulae=()
 formulae=("${formulae[@]}" "cowsay")
+formulae=("${formulae[@]}" "ctags")
 formulae=("${formulae[@]}" "figlet")
 formulae=("${formulae[@]}" "fzf")
 formulae=("${formulae[@]}" "git")

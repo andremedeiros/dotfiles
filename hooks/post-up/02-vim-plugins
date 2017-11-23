@@ -23,6 +23,8 @@ plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
 
 # file management / browsing
 plugins=("${plugins[@]}" "junegunn/fzf.vim")
+plugins=("${plugins[@]}" "majutsushi/tagbar")
+plugins=("${plugins[@]}" "tpope/vim-fugitive")
 
 # helpers
 plugins=("${plugins[@]}" "tpope/vim-endwise")
@@ -32,8 +34,8 @@ for plugin in "${plugins[@]}"; do
   base=$(basename $plugin)
 
   if [ -d "$bundle_root/$base" ]; then
-    git -C $bundle_root/$base pull >/dev/null
+    git -C $bundle_root/$base pull &> /dev/null
   else
-    git -C $bundle_root clone $repo >/dev/null
+    git -qC $bundle_root clone $repo &> /dev/null
   fi
 done
