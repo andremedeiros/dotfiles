@@ -3,13 +3,16 @@ set -e
 
 # install formulae
 formulae=()
-formulae=("${formulae[@]}" "")
+formulae=("${formulae[@]}" "cowsay")
+formulae=("${formulae[@]}" "figlet")
 formulae=("${formulae[@]}" "fzf")
 formulae=("${formulae[@]}" "git")
 formulae=("${formulae[@]}" "gnupg")
 formulae=("${formulae[@]}" "hub")
+formulae=("${formulae[@]}" "lolcat")
 formulae=("${formulae[@]}" "mas")
 formulae=("${formulae[@]}" "neovim")
+formulae=("${formulae[@]}" "tmux")
 formulae=("${formulae[@]}" "zsh")
 
 for formula in "${formulae[@]}"; do

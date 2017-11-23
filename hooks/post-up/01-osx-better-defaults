@@ -5,7 +5,7 @@ set -e
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # make repetitions super fast
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 50
 defaults write -g KeyRepeat -int 1
 
 # dock goes on the left

@@ -2,6 +2,13 @@
 execute pathogen#infect()
 " }}}
 
+" TTY Performance {{{
+set nocompatible
+set synmaxcol=300
+set ttyfast
+set lazyredraw
+" }}}
+
 " map*leader {{{
 let mapleader=" "
 let maplocalleader="\\"
@@ -11,6 +18,25 @@ let maplocalleader="\\"
 syntax on
 colorscheme jellybeans
 filetype plugin indent on
+" }}}
+
+" UI {{{
+set number
+" }}}
+
+" Text editing {{{
+set autoindent
+" }}}
+
+" Whitespace handling {{{
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set list listchars=tab:»·,trail:·
+
+autocmd BufWritePre * %s/\s\+$//e
 " }}}
 
 " NeoVim {{{
@@ -26,6 +52,27 @@ if has('nvim')
     au VimEnter * doautoa Syntax,FileType
   augroup END
 endif
+" }}}
+
+" Makefile {{{
+augroup makefile
+  au!
+  au FileType make set noexpandtab
+augroup END
+" }}}
+
+" Go {{{
+augroup golang
+  au!
+  au BufNewFile,BufRead *.go set nolist
+  au Filetype go set makeprg=go\ build\ ./...
+augroup END
+
+" set rtp+=/Users/burke/src/github.com/golang/lint/misc/vim
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
 " }}}
 
 " Lightline {{{
