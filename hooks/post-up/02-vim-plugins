@@ -25,6 +25,7 @@ plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
 plugins=("${plugins[@]}" "junegunn/fzf.vim")
 plugins=("${plugins[@]}" "majutsushi/tagbar")
 plugins=("${plugins[@]}" "tpope/vim-fugitive")
+plugins=("${plugins[@]}" "tpope/vim-rhubarb")
 
 # helpers
 plugins=("${plugins[@]}" "tpope/vim-endwise")
