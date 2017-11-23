@@ -3,6 +3,7 @@ set -e
 
 casks=()
 casks=("${casks[@]}" "alfred")
+casks=("${casks[@]}" "caffeine")
 casks=("${casks[@]}" "caskroom/fonts/font-meslo-for-powerline")
 casks=("${casks[@]}" "coderunner")
 casks=("${casks[@]}" "dash")
@@ -11,7 +12,7 @@ casks=("${casks[@]}" "google-chrome")
 casks=("${casks[@]}" "vlc")
 
 for cask in "${casks[@]}"; do
-  if brew cask ls --versions $cask > /dev/null; then continue; fi
+  if brew cask ls --versions $cask >/dev/null; then continue; fi
 
   echo "Installing cask $cask"
   brew cask install $cask
