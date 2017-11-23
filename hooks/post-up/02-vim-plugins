@@ -37,6 +37,6 @@ for plugin in "${plugins[@]}"; do
   if [ -d "$bundle_root/$base" ]; then
     git -C $bundle_root/$base pull &> /dev/null
   else
-    git -qC $bundle_root clone $repo &> /dev/null
+    git -C $bundle_root clone $repo &> /dev/null
   fi
 done

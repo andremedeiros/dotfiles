@@ -15,3 +15,5 @@
 	autosetuprebase = always
 [github]
 	user = andremedeiros
+[web]
+	browser = open
