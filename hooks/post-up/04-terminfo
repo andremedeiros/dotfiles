@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+terminfo_temp=$(mktemp /tmp/terminfo.XXXXXX)
+curl -o $terminfo_temp -fsSL https://git.io/vFpJm
+tic $terminfo_temp
+rm $terminfo_temp
