@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
 set -e
 
-terminfo_temp=$(mktemp /tmp/terminfo.XXXXXX)
-curl -o $terminfo_temp -fsSL https://git.io/vFpJm
-tic $terminfo_temp
-rm $terminfo_temp
+terminfo=$(mktemp /tmp/terminfo.XXXXXX)
+cat << EOF > $terminfo
+# A xterm-256color based TERMINFO that adds the escape sequences for italic.
+#
+# Install:
+#
+#   tic $terminfo
+#
+# Usage:
+#
+#   export TERM=xterm-256color-italic
+#
+xterm-256color-italic|xterm with 256 colors and italic,
+  sitm=\E[3m, ritm=\E[23m,
+  use=xterm-256color,
+EOF
+
+tic $terminfo
+#rm $terminfo
