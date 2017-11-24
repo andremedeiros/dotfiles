@@ -19,4 +19,4 @@ xterm-256color-italic|xterm with 256 colors and italic,
 EOF
 
 tic $terminfo
-#rm $terminfo
+rm $terminfo
