@@ -2,8 +2,9 @@
 set -e
 
 # ensure directories exist
-autoload_root=$(realpath -m ~/.config/nvim/autoload)
-bundle_root=$(realpath -m ~/.config/nvim/bundle)
+nvim_root=${HOME}/.config/nvim
+autoload_root=${nvim_root}/autoload
+bundle_root=${nvim_root}/bundle
 
 mkdir -p $autoload_root $bundle_root
 
