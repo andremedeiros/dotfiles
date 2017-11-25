@@ -12,4 +12,4 @@ if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
   brew install thoughtbot/formulae/rcm
 fi
 
-rcup -d `pwd` -x "*:script" -x "*:README.md"
+env RCRC=`pwd`/rcrc rcup
