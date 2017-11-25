@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -e
+
+ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs ~/.icloud
+
