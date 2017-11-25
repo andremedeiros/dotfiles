@@ -19,11 +19,19 @@ script/bootstrap
 
 Leader is bound to <kbd>Space</kbd>
 
+#### Editing
+
 * <kbd>[leader]-j</kbd> List buffers
 * <kbd>[leader]-p</kbd> List files
 * <kbd>[leader]-t</kbd> Toggles tagbar
 * <kbd>H</kbd> Move to beginning of line
 * <kbd>L</kbd> Move to end of line
+
+#### Git status
+
+* <kbd>ctrl+n</kbd> / <kbd>ctrl+p</kbd> Navigates through the files in the status buffer
+* <kbd>-</kbd> Stages / unstages a file
+* <kbd>C</kbd> Commit
 
 ### Tmux
 
