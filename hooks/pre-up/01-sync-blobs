@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -e
+
+: ${RCRC:="${HOME}/.rcrc"}
+source $RCRC
+
+for dotfile_root in $DOTFILES_DIRS; do
+  if [ ! -d "$dotfile_root/blobs" ]; then continue; fi
+
+  rsync --recursive $dotfile_root/blobs/* ~/
+done
+
