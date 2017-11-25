@@ -1,14 +1,14 @@
 # go
-GOPATH=$HOME
+export GOPATH=$HOME
 
 # add custom bin directories to path
-PATH=$PATH:~/.bin
-PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:~/.bin
+export PATH=$PATH:$GOPATH/bin
 
 # shell history
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+export HISTFILE=~/.histfile
+export HISTSIZE=1000
+export SAVEHIST=1000
 
 # ui
-TERM=xterm-256color-italic
+export TERM=xterm-256color-italic
