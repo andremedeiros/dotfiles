@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -e
+
+# check if certificate exists
+if security find-certificate -Z -p -c "codesign-cert" /Library/Keychains/System.keychain > /dev/null; then
+  exit 0
+fi
+
+cert=$(mktemp /tmp/cert.XXXXXX)
+
+cat << EOF > $cert.tmpl
+[ req ]
+default_bits       = 2048        # RSA key size
+encrypt_key        = no          # Protect private key
+default_md         = sha512      # MD to use
+prompt             = no          # Prompt for DN
+distinguished_name = codesign_dn # DN template
+[ codesign_dn ]
+commonName         = "codesign-cert"
+[ codesign_reqext ]
+keyUsage           = critical,digitalSignature
+extendedKeyUsage   = critical,codeSigning
+EOF
+
+openssl req -new \
+  -newkey rsa:2048 \
+  -x509 \
+  -days 3650 \
+  -nodes \
+  -config $cert.tmpl \
+  -extensions codesign_reqext \
+  -batch \
+  -out $cert.cer \
+  -keyout $cert.key > /dev/null 2>&1
+
+sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain $cert.cer > /dev/null
+sudo security import $cert.key -A -k /Library/Keychains/System.keychain > /dev/null
+sudo pkill -f /usr/libexec/taskgated > /dev/null
+
+rm $cert.tmpl $cert.cer $cert.key
+exit 0
