@@ -1,13 +1,14 @@
-# Add ~/.bin to path
-PATH=$PATH:~/.bin
-
-# Go
+# go
 GOPATH=$HOME
 
-# Shell history
+# add custom bin directories to path
+PATH=$PATH:~/.bin
+PATH=$PATH:$GOPATH/bin
+
+# shell history
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# UI
+# ui
 TERM=xterm-256color-italic

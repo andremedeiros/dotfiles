@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 brew 'chruby'
+brew 'coreutils'
 brew 'cowsay'
 brew 'ctags'
 brew 'figlet'
