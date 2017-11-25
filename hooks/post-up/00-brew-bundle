@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -e
 
-brew bundle --global
+brew bundle check --global || brew bundle --global
