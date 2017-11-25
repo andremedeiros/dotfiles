@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+# blatantly stolen from https://github.com/derekparker/delve/blob/master/scripts/gencert.sh
 # check if certificate exists
 if security find-certificate -Z -p -c "codesign-cert" /Library/Keychains/System.keychain > /dev/null; then
   exit 0
