@@ -18,6 +18,8 @@ brew 'ruby-install'
 brew 'the_silver_searcher'
 brew 'tmux'
 brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'caffeine'

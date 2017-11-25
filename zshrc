@@ -1,3 +1,4 @@
+# magic loading
 for include in $HOME/.zshrc.d/*.zsh; do
   source $include
 done
@@ -9,3 +10,12 @@ else
   source /usr/local/opt/chruby/share/chruby/chruby.sh
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
+
+# syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# load modules
+autoload -Uz compinit; compinit
