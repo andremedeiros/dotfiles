@@ -9,4 +9,3 @@ for dotfile_root in $DOTFILES_DIRS; do
 
   rsync --recursive $dotfile_root/blobs/* ~/
 done
-
