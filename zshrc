@@ -1,7 +1,8 @@
 # magic loading
-for include in $HOME/.zshrc.d/*.zsh; do
-  source $include
-done
+for include ($HOME/.zshrc.d/*.zsh) source $include
+
+# load modules
+autoload -Uz compinit; compinit
 
 # load dev if present, otherwise load chruby
 if [[ -f /opt/dev/dev.sh ]]; then
@@ -17,5 +18,5 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-# load modules
-autoload -Uz compinit; compinit
+# colorize all the things
+. /usr/local/etc/grc.bashrc

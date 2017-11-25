@@ -13,7 +13,7 @@ cd ~/src/github.com/andremedeiros/dotfiles
 script/bootstrap
 ```
 
-You can also add secret dotfiles on your iCloud drive. Anything inside a "dotfiles" directory there will also be symlinked with the same rules as here.
+You can also add secret/proprietary dotfiles on your iCloud drive. Anything inside `iCloud Drive/dotfiles` will also be symlinked with the same rules as here.
 
 ## Keyboard bindings
 
