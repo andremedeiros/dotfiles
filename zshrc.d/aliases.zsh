@@ -1,6 +1,6 @@
 # humor
-alias dadjoke='echo $(curl -s https://icanhazdadjoke.com)'
-alias thisforthat='curl "http://itsthisforthat.com/api.php?text"'
+alias dadjoke='curl -s "https://icanhazdadjoke.com"'
+alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
 
 # serious
 alias git="hub"
