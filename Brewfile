@@ -12,6 +12,7 @@ brew 'hub'
 brew 'lolcat'
 brew 'mas'
 brew 'neovim'
+brew 'the_silver_searcher'
 brew 'tmux'
 brew 'zsh'
 
