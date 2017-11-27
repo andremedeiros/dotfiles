@@ -1,10 +1,15 @@
+: ${PROMPT_SYMBOL:="❯"}
+
 prompt_helper_path() {
   print -Pn '%~'
 }
 
-
 prompt_precmd() {
-  PROMPT="%F{"12"}`prompt_helper_path`%f > "
+  # Path
+  PROMPT="%F{"12"}`prompt_helper_path`%f"
+
+  # Prompt separator
+  PROMPT="${PROMPT} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
 }
 
 prompt_setup() {
@@ -17,4 +22,3 @@ prompt_setup() {
 }
 
 prompt_setup "$@"
-
