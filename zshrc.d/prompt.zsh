@@ -15,7 +15,7 @@ prompt_helper_git_behind() {
 }
 
 prompt_helper_git_modifications() {
-  (git diff --quiet || git diff --cached --quiet || git ls-files --other --exclude-standard) 2> /dev/null
+  (git diff --quiet || git diff --cached --quiet) 2> /dev/null
 }
 
 prompt_helper_path() {
