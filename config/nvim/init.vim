@@ -30,6 +30,9 @@ filetype plugin indent on
 " UI {{{
 set number
 set numberwidth=1
+set clipboard=unnamed
+
+autocmd VimResized * :wincmd =
 " }}}
 
 " Text editing {{{
