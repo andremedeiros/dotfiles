@@ -31,8 +31,7 @@ prompt_precmd() {
   if [ -n $git_branch ]; then
     PROMPT="${PROMPT} %F{"11"}%B${git_branch}%b%f"
 
-    git_modifications=$(prompt_helper_git_modifications)
-    if [ -n $git_modifications ]; then
+    if $(prompt_helper_git_modifications); then
       PROMPT="${PROMPT}*"
     fi
 
@@ -48,7 +47,7 @@ prompt_precmd() {
       GIT_STATE="${GIT_STATE}${git_behind}${PROMPT_GIT_BEHIND_SYMBOL}"
     fi
 
-    if [ -n $GIT_STATE ]; then
+    if [ ! -n $GIT_STATE ]; then
       PROMPT="${PROMPT} ${GIT_STATE}"
     fi
   fi
