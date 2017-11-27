@@ -11,4 +11,4 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 # ui
-export TERM=xterm-256color-italic
+export TERM=xterm-256color
