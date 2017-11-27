@@ -1,6 +1,7 @@
 : ${PROMPT_SYMBOL:="❯"}
 : ${PROMPT_GIT_AHEAD_SYMBOL:=""}
 : ${PROMPT_GIT_BEHIND_SYMBOL:=""}
+: ${PROMPT_GIT_IS_DIRTY_SYMBOL:="*"}
 
 prompt_helper_git_branch() {
   (git name-rev --name-only --no-undefined --always HEAD || git symbolic-ref -q HEAD) 2> /dev/null
@@ -14,8 +15,8 @@ prompt_helper_git_behind() {
   git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' '
 }
 
-prompt_helper_git_modifications() {
-  (git diff --quiet || git diff --cached --quiet) 2> /dev/null
+prompt_helper_git_dirty() {
+  git diff --shortstat 2> /dev/null | tail -n1
 }
 
 prompt_helper_path() {
@@ -31,7 +32,7 @@ prompt_precmd() {
   if [ -n $git_branch ]; then
     PROMPT="${PROMPT} %F{"11"}%B${git_branch}%b%f"
 
-    if $(prompt_helper_git_modifications); then
+    if [ -n "$(prompt_helper_git_dirty)" ]; then
       PROMPT="${PROMPT}*"
     fi
 
@@ -47,7 +48,7 @@ prompt_precmd() {
       GIT_STATE="${GIT_STATE}${git_behind}${PROMPT_GIT_BEHIND_SYMBOL}"
     fi
 
-    if [ ! -n $GIT_STATE ]; then
+    if [ -n $GIT_STATE ]; then
       PROMPT="${PROMPT} ${GIT_STATE}"
     fi
   fi
