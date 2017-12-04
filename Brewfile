@@ -27,6 +27,7 @@ cask 'coderunner'
 cask 'dash'
 cask 'discord'
 cask 'google-chrome'
+cask 'grammarly'
 cask 'vlc'
 
 mas '1Password', id: 443987910
