@@ -29,7 +29,7 @@ prompt_precmd() {
 
   # Git
   git_branch=$(prompt_helper_git_branch)
-  if [ -n $git_branch ]; then
+  if [[ -n $git_branch ]]; then
     PROMPT="${PROMPT} %F{"11"}%B${git_branch}%b%f"
 
     if [ -n "$(prompt_helper_git_dirty)" ]; then
