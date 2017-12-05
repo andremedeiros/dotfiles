@@ -5,7 +5,7 @@ set -e
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # make repetitions super fast
-defaults write -g InitialKeyRepeat -int 50
+defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 1
 
 # dock goes on the left
@@ -17,6 +17,19 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # enable subpixel font rendering on non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
+# use a dark menu bar and dock
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+
+# tap to click, please
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+# don't open photos.app every time I plug in a device
+defaults write com.apple.ImageCapture disableHotPlug -bool YES
+
+# automatically hide and show the dock
+defaults write com.apple.dock autohide -bool true
 
 # and we're done
 killall Dock
