@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+# install ruby version
+ruby-install --no-reinstall ruby-`cat ~/.ruby-version`
+
+# install gems
+gems=()
+gems=("${gems[@]}" "bundler")
+
+for gem in "${gems[@]}"; do
+  gem install $gem
+done
