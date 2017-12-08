@@ -7,3 +7,6 @@ alias git="hub"
 alias ia="open $1 -a /Applications/iA\ Writer.app"
 alias ls="gls --color=auto -F"
 alias servedir="ruby -run -ehttpd . -p8000"
+
+# misc
+alias weather="curl wttr.in"
