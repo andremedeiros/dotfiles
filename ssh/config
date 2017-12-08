@@ -1,8 +1,36 @@
 Host *
+  # Use my keyfile
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_rsa
   UseKeychain yes
   UseRoaming no
+
+  # Always use SSH2.
+  Protocol 2
+
+  # Use a shared channel for all sessions to the same host,
+  # instead of always opening a new one. This leads to much
+  # quicker connection times.
+  ControlMaster auto
+  ControlPath ~/.ssh/control/%r@%h:%p
+  ControlPersist 1800
+
+  # also this stuff
+  Compression yes
+  TCPKeepAlive yes
+  ServerAliveInterval 20
+  ServerAliveCountMax 10
+
+#   ________.__  __     ___ ___      ___.
+#  /  _____/|__|/  |_  /   |   \ __ _\_ |__
+# /   \  ___|  \   __\/    ~    \  |  \ __ \
+# \    \_\  \  ||  |  \    Y    /  |  / \_\ \
+#  \______  /__||__|   \___|_  /|____/|___  /
+#         \/                 \/           \/
+
+Host github.com
+  ControlMaster auto
+  ControlPersist 120
 
 #  _________.__                  .__  _____
 #  /   _____/|  |__   ____ ______ |__|/ ____\__.__.
