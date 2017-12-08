@@ -1,6 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
+#                       ________    _________
+#   _____ _____    ____ \_____  \  /   _____/
+#  /     \\__  \ _/ ___\ /   |   \ \_____  \
+# |  Y Y  \/ __ \\  \___/    |    \/        \
+# |__|_|  (____  /\___  >_______  /_______  /
+#       \/     \/     \/        \/        \/
+
 # disable key hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
 
@@ -31,5 +38,34 @@ defaults write com.apple.ImageCapture disableHotPlug -bool YES
 # automatically hide and show the dock
 defaults write com.apple.dock autohide -bool true
 
+# ._____________                   ________
+# |__\__    ___/__________  _____  \_____  \
+# |  | |    |_/ __ \_  __ \/     \  /  ____/
+# |  | |    |\  ___/|  | \/  Y Y  \/       \
+# |__| |____| \___  >__|  |__|_|  /\_______ \
+#                 \/            \/         \/
+
+# use dark ui
+defaults write com.googlecode.iterm2 TabStyle -int 1
+
+# add jellybeans theme
+open ~/Downloads/jellybeans.itermcolors
+
+#    _____
+#   /     \   ____   ____   _____
+#  /  \ /  \ /  _ \ /  _ \ /     \
+# /    Y    (  <_> |  <_> )  Y Y  \
+# \____|__  /\____/ \____/|__|_|  /
+#         \/                    \/
+
+# run moom as faceless
+defaults write com.manytricks.Moom "Application Mode" -int 2
+
 # and we're done
-killall Dock
+apps=()
+apps=("${apps[@]}" "Dock")
+apps=("${apps[@]}" "iTerm2")
+
+for app in "${apps[@]}"; do
+  killall "${app}" &> /dev/null
+done
