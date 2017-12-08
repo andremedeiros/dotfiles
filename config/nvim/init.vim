@@ -106,3 +106,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 " }}}
+
+" Override default behaviour {{{
+
+" Don't deselect when indenting
+vnoremap < <gv
+vnoremap > >gv
+" }}}
