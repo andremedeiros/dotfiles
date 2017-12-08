@@ -20,6 +20,7 @@ plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
 # colorschemes / ui
 plugins=("${plugins[@]}" "airblade/vim-gitgutter")
 plugins=("${plugins[@]}" "itchyny/lightline.vim")
+plugins=("${plugins[@]}" "mhinz/vim-startify")
 plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
 plugins=("${plugins[@]}" "romainl/vim-qf")
 
