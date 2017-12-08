@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# make sure we have our path set on a run previous to having a full environment
+export GOPATH=$HOME
+
 packages=()
 packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
 packages=("${packages[@]}" "github.com/golang/lint/golint")
