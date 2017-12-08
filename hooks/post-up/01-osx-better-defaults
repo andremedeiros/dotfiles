@@ -64,7 +64,6 @@ defaults write com.manytricks.Moom "Application Mode" -int 2
 # and we're done
 apps=()
 apps=("${apps[@]}" "Dock")
-apps=("${apps[@]}" "iTerm2")
 
 for app in "${apps[@]}"; do
   killall "${app}" &> /dev/null
