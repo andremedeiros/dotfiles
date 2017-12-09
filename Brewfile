@@ -23,6 +23,7 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
+cask 'aerial'
 cask 'alfred'
 cask 'caffeine'
 cask 'coderunner'
@@ -30,6 +31,7 @@ cask 'dash'
 cask 'discord'
 cask 'google-chrome'
 cask 'grammarly'
+cask 'signal'
 cask 'vlc'
 
 mas '1Password', id: 443987910
