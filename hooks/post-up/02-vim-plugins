@@ -16,7 +16,7 @@ plugins=()
 # language / syntax
 plugins=("${plugins[@]}" "fatih/vim-go")
 plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
-plugins=("${plugins[@]}" "vjneen/ragel.vim")
+plugins=("${plugins[@]}" "jneen/ragel.vim")
 
 # colorschemes / ui
 plugins=("${plugins[@]}" "airblade/vim-gitgutter")
