@@ -28,6 +28,7 @@ Leader is bound to <kbd>Space</kbd>
 * <kbd>[leader]-t</kbd> Toggles tagbar
 * <kbd>H</kbd> Move to beginning of line
 * <kbd>L</kbd> Move to end of line
+* <kbd>/</kbd> <kbd>/</kbd> Stop searching
 
 #### Git status
 
