@@ -10,3 +10,8 @@ alias servedir="ruby -run -ehttpd . -p8000"
 
 # misc
 alias weather="curl wttr.in"
+
+# dir hopping
+if [[ -f /opt/dev/dev.sh ]]; then
+  alias z="dev cd"
+fi
