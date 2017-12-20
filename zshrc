@@ -10,8 +10,10 @@ if [[ -f /opt/dev/dev.sh ]]; then
 else
   source /usr/local/opt/chruby/share/chruby/chruby.sh
   source /usr/local/opt/chruby/share/chruby/auto.sh
-  source /usr/local/etc/profile.d/z.sh
 fi
+
+# dir hopping
+source /usr/local/etc/profile.d/z.sh
 
 # syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
