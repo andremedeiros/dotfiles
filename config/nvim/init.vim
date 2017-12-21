@@ -59,6 +59,10 @@ augroup makefile
 augroup END
 " }}}
 
+" Homebrew {{{
+autocmd BufNewFile,BufRead Brewfile setf ruby
+" }}}
+
 " Go {{{
 augroup golang
   au!
