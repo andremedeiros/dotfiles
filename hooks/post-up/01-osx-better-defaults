@@ -38,6 +38,16 @@ defaults write com.apple.ImageCapture disableHotPlug -bool YES
 # automatically hide and show the dock
 defaults write com.apple.dock autohide -bool true
 
+# show the dock quickly
+defaults write com.apple.Dock autohide-delay -float 0
+
+# expand save dialog by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# always show scrollbar
+defaults write -g AppleShowScrollBars -string "Always"
+
 # ._____________                   ________
 # |__\__    ___/__________  _____  \_____  \
 # |  | |    |_/ __ \_  __ \/     \  /  ____/
