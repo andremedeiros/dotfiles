@@ -85,24 +85,25 @@ let g:qf_loclist_window_bottom=0
 
 " Lightline {{{
 let g:lightline = {
-  \ 'colorscheme': 'jellybeans'
+    \ 'colorscheme': 'jellybeans',
+    \ 'component_expand': {
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors',
+      \ 'linter_ok': 'lightline#ale#ok'
+    \ },
+    \ 'component_function': { 'gitbranch': 'fugitive#head' },
+    \ 'component_type': {
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error',
+    \ },
+    \ 'active': {
+      \ 'right': [
+        \ [ 'lineinfo' ],
+        \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+        \ [ 'gitbranch' ]
+      \ ]
+    \ }
   \ }
-
-let g:lightline.component_expand = {
-  \  'linter_warnings': 'lightline#ale#warnings',
-  \  'linter_errors': 'lightline#ale#errors',
-  \  'linter_ok': 'lightline#ale#ok',
-  \ }
-
-let g:lightline.component_type = {
-  \     'linter_warnings': 'warning',
-  \     'linter_errors': 'error',
-  \ }
-
-let g:lightline.active = { 'right': [
-  \ [ 'lineinfo' ],
-  \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-  \ ] }
 " }}}
 
 " FZF {{{
