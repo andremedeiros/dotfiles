@@ -39,6 +39,7 @@ mas '1Password', id: 443987910
 mas 'Bear', id: 1091189122
 mas 'Gifwit', id: 871200983
 mas 'Keynote', id: 409183694
+mas 'Monodraw', id: 920404675
 mas 'Monosnap', id: 540348655
 mas 'Moom', id: 419330170
 mas 'Patterns', id: 497799835
