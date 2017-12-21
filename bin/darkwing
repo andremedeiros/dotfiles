@@ -93,4 +93,4 @@ I am the upvote you withhold to be a petulant dick...
 I am Darkwing Duck!!!
 STR
 
-puts phrases.sample
+$stdout.write phrases.sample
