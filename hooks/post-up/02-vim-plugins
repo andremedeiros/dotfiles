@@ -26,6 +26,7 @@ plugins=("${plugins[@]}" "maximbaz/lightline-ale")
 plugins=("${plugins[@]}" "mhinz/vim-startify")
 plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
 plugins=("${plugins[@]}" "romainl/vim-qf")
+plugins=("${plugins[@]}" "troydm/zoomwintab.vim")
 
 # file management / browsing
 plugins=("${plugins[@]}" "junegunn/fzf.vim")

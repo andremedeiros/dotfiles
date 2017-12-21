@@ -2,7 +2,7 @@
 set -e
 
 terminfo=$(mktemp /tmp/terminfo.XXXXXX)
-cat << EOF > $terminfo
+cat << EOF > "$terminfo"
 # A xterm-256color based TERMINFO that adds the escape sequences for italic.
 #
 # Install:
@@ -18,5 +18,5 @@ xterm-256color|xterm with 256 colors and italic,
   use=xterm-256color,
 EOF
 
-tic $terminfo
-rm $terminfo
+tic "$terminfo"
+rm "$terminfo"

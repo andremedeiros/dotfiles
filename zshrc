@@ -23,3 +23,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # colorize all the things
 source /usr/local/etc/grc.bashrc
+
+# make history useful
+setopt inc_append_history
+setopt hist_ignore_dups
+setopt hist_ignore_space
