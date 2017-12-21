@@ -120,6 +120,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>z :ZoomWinTabToggle<cr>
 noremap H ^
 noremap L $
 nnoremap <C-j> <C-w>j
