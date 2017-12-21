@@ -83,6 +83,22 @@ let g:qf_loclist_window_bottom=0
 let g:lightline = {
   \ 'colorscheme': 'jellybeans'
   \ }
+
+let g:lightline.component_expand = {
+  \  'linter_warnings': 'lightline#ale#warnings',
+  \  'linter_errors': 'lightline#ale#errors',
+  \  'linter_ok': 'lightline#ale#ok',
+  \ }
+
+let g:lightline.component_type = {
+  \     'linter_warnings': 'warning',
+  \     'linter_errors': 'error',
+  \ }
+
+let g:lightline.active = { 'right': [
+  \ [ 'lineinfo' ],
+  \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
+  \ ] }
 " }}}
 
 " FZF {{{
@@ -106,6 +122,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap // :noh<cr>
+" }}}
+
+" ALE {{{
+" Disable highlighting
+let g:ale_set_highlights = 0
 " }}}
 
 " Override default behaviour {{{
