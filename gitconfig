@@ -21,4 +21,11 @@
   prune = true
 [rebase]
   autosquash = true
-
+[instaweb]
+  httpd = webrick
+[diff]
+  tool = opendiff
+  algorithm = patience
+  compactionheuristic = true
+[commit]
+  verbose = true
