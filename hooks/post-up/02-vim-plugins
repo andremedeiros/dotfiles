@@ -6,10 +6,10 @@ nvim_root=${HOME}/.config/nvim
 autoload_root=${nvim_root}/autoload
 bundle_root=${nvim_root}/bundle
 
-mkdir -p $autoload_root $bundle_root
+mkdir -p "$autoload_root" "$bundle_root"
 
 # ensure pathogen is installed
-curl -LSso $autoload_root/pathogen.vim https://tpo.pe/pathogen.vim
+curl -LSso "$autoload_root/pathogen.vim" https://tpo.pe/pathogen.vim
 
 plugins=()
 
@@ -34,14 +34,15 @@ plugins=("${plugins[@]}" "tpope/vim-rhubarb")
 
 # helpers
 plugins=("${plugins[@]}" "tpope/vim-endwise")
+plugins=("${plugins[@]}" "tpope/vim-surround")
 
 for plugin in "${plugins[@]}"; do
   repo="https://github.com/${plugin}.git"
-  base=$(basename $plugin)
+  base=$(basename "$plugin")
 
   if [ -d "$bundle_root/$base" ]; then
-    git -C $bundle_root/$base pull &> /dev/null
+    git -C "$bundle_root/$base" pull &> /dev/null
   else
-    git -C $bundle_root clone $repo &> /dev/null
+    git -C "$bundle_root" clone "$repo" &> /dev/null
   fi
 done
