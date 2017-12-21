@@ -9,7 +9,6 @@ prompt_helper_path() {
 prompt_precmd() {
   vcs_info
 
-  setopt prompt_subst
   PROMPT="%F{"12"}`prompt_helper_path`%f${vcs_info_msg_0_} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
 }
 
@@ -23,8 +22,9 @@ prompt_setup() {
   zstyle ':vcs_info:*' unstagedstr $PROMPT_UNSTAGED_SYMBOL
   zstyle ':vcs_info:*' stagedstr $PROMPT_STAGED_SYMBOL
 
-  add-zsh-hook precmd prompt_precmd
+  setopt prompt_subst
 
+  add-zsh-hook precmd prompt_precmd
 }
 
 prompt_setup "$@"
