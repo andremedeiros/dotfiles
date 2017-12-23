@@ -80,7 +80,7 @@ let g:go_highlight_structs = 1
 " }}}
 
 " Quickfix {{{
-let g:qf_loclist_window_bottom=0
+let g:qf_loclist_window_bottom = 1
 " }}}
 
 " Lightline {{{
@@ -133,6 +133,13 @@ nnoremap // :noh<cr>
 " ALE {{{
 " Disable highlighting
 let g:ale_set_highlights = 0
+
+" Use quickfix
+let g:ale_set_quickfix = 1
+let g:ale_set_loclist = 0
+
+" Increase lint delay
+let g:ale_lint_delay = 2000
 " }}}
 
 " Override default behaviour {{{
