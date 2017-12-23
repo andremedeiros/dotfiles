@@ -37,6 +37,12 @@ Leader is bound to <kbd>Space</kbd>
 * <kbd>-</kbd> Stages / unstages a file
 * <kbd>C</kbd> Commit
 
+#### Go
+
+* <kbd>[leader]-gor</kbd> Run the current file
+* <kbd>[leader]-got</kbd> Run tests
+* <kbd>[leader]-gotf</kbd> Run tests (current function)
+
 ### Tmux
 
 TBD

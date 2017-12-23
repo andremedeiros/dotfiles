@@ -121,6 +121,9 @@ nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>z :ZoomWinTabToggle<cr>
+nnoremap <leader>got :GoTest<cr>
+nnoremap <leader>gotf :GoTestFunc<cr>
+nnoremap <leader>gor :GoRun<cr>
 noremap H ^
 noremap L $
 nnoremap <C-j> <C-w>j
