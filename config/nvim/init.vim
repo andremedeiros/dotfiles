@@ -63,10 +63,6 @@ augroup END
 autocmd BufNewFile,BufRead Brewfile setf ruby
 " }}}
 
-" Ragel {{{
-autocmd BufNewFile,BufRead *.rl setf ragel
-" }}}
-
 " Go {{{
 augroup golang
   au!
