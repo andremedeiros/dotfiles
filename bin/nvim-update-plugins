@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+Dir["#{ENV['HOME']}/.config/nvim/bundle/*"].each do |plugin|
+  `git -C #{plugin} pull`
+end
