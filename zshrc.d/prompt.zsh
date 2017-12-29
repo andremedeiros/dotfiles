@@ -5,7 +5,7 @@
 prompt_precmd() {
   vcs_info
 
-  PROMPT="%F{"12"}`shrink_path -f`%f${vcs_info_msg_0_} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
+  PROMPT="%F{"12"}$(shrink_path -f)%f${vcs_info_msg_0_} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
 }
 
 prompt_setup() {
