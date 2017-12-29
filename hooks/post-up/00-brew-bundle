@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
+brew update
 brew bundle check --global || brew bundle --global
+brew cleanup
