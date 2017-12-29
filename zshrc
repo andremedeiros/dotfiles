@@ -1,4 +1,5 @@
 # magic loading
+for plugin ($HOME/.zshrc.d/plugins/*.plugin.zsh) source $plugin
 for include ($HOME/.zshrc.d/*.zsh) source $include
 
 # load modules

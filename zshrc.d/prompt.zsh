@@ -2,14 +2,10 @@
 : ${PROMPT_UNSTAGED_SYMBOL:="*"}
 : ${PROMPT_STAGED_SYMBOL:="!"}
 
-prompt_helper_path() {
-  print -Pn '%~'
-}
-
 prompt_precmd() {
   vcs_info
 
-  PROMPT="%F{"12"}`prompt_helper_path`%f${vcs_info_msg_0_} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
+  PROMPT="%F{"12"}`shrink_path -f`%f${vcs_info_msg_0_} %F{"1"}%B${PROMPT_SYMBOL}%b%f "
 }
 
 prompt_setup() {
