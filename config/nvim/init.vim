@@ -93,13 +93,18 @@ let g:lightline = {
     \ },
     \ 'component_function': {
       \ 'gitbranch': 'fugitive#head',
-      \ 'gitgutter_added': 'MyGetGitAddedCount',
-      \ 'gitgutter_modified': 'MyGetGitModifiedCount',
-      \ 'gitgutter_removed': 'MyGetGitRemovedCount',
+    \ },
+    \ 'component': {
+      \ 'gitgutter_added': '%#HunksElementColor0#%{LightlineGitAddedCount()}',
+      \ 'gitgutter_modified': '%#HunksElementColor1#%{LightlineGitModifiedCount()}',
+      \ 'gitgutter_removed': '%#HunksElementColor2#%{LightlineGitRemovedCount()}',
     \},
     \ 'component_type': {
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error',
+      \ 'gitgutter_added': 'raw',
+      \ 'gitgutter_modified': 'raw',
+      \ 'gitgutter_removed': 'raw',
     \ },
     \ 'active': {
       \ 'right': [
@@ -113,38 +118,28 @@ let g:lightline = {
     \ }
   \ }
 
-function! MyGetHunks()
-  if get(b:, 'lightline_changedtick', 0) == b:changedtick
-    return b:lightline_hunks
-  endif
-
-  let b:lightline_changedtick = b:changedtick
-  let b:lightline_hunks = GitGutterGetHunkSummary()
-
-  return b:lightline_hunks
-endfunction
-
-function! MyGetGitCount(symbol, idx)
-  let hunks = MyGetHunks()
+function! LightlineFormatGitCount(symbol, idx, color)
+  let hunks = GitGutterGetHunkSummary()
   let string = ''
 
   if hunks[a:idx] > 0
-    let string .= printf('%s%s', a:symbol, hunks[a:idx])
+    let string .= printf('%s%s ', a:symbol, hunks[a:idx])
   endif
 
+  exe printf('hi HunksElementColor%d ctermbg=236 guibg=#30302c ctermfg=%d guifg=%s term=bold cterm=bold', a:idx, a:color[1], a:color[0])
   return string
 endfunction
 
-function! MyGetGitAddedCount()
-  return MyGetGitCount('+', 0)
+function! LightlineGitAddedCount()
+  return LightlineFormatGitCount('+', 0, ['#8bc34a', 148])
 endfunction
 
-function! MyGetGitModifiedCount()
-  return MyGetGitCount('~', 1)
+function! LightlineGitModifiedCount()
+  return LightlineFormatGitCount('~', 1, ['#ff9800', 208])
 endfunction
 
-function! MyGetGitRemovedCount()
-  return MyGetGitCount('-', 2)
+function! LightlineGitRemovedCount()
+  return LightlineFormatGitCount('-', 2, ['#f44336', 196])
 endfunction
 " }}}
 
