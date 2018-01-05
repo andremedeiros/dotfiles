@@ -2,12 +2,6 @@
 execute pathogen#infect()
 " }}}
 
-
-
-
-
-
-
 " Backup / Swap {{{
 set nobackup
 set nowritebackup
