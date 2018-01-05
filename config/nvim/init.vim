@@ -89,9 +89,14 @@ let g:lightline = {
     \ 'component_expand': {
       \ 'linter_warnings': 'lightline#ale#warnings',
       \ 'linter_errors': 'lightline#ale#errors',
-      \ 'linter_ok': 'lightline#ale#ok'
+      \ 'linter_ok': 'lightline#ale#ok',
+      \ 'gitgutter_added': 'MyGetGitAddedCount',
+      \ 'gitgutter_modified': 'MyGetGitModifiedCount',
+      \ 'gitgutter_removed': 'MyGetGitRemovedCount'
     \ },
-    \ 'component_function': { 'gitbranch': 'fugitive#head' },
+    \ 'component_function': {
+      \ 'gitbranch': 'fugitive#head'
+    \},
     \ 'component_type': {
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error',
@@ -100,10 +105,47 @@ let g:lightline = {
       \ 'right': [
         \ [ 'lineinfo' ],
         \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-        \ [ 'gitbranch' ]
+        \ [ 'gitbranch', 'gitgutter_added', 'gitgutter_modified', 'gitgutter_removed' ]
       \ ]
+    \ },
+    \ 'subseparator': {
+      \ 'right': ''
     \ }
   \ }
+
+function! MyGetHunks()
+  if get(b:, 'lightline_changedtick', 0) == b:changedtick
+    return b:lightline_hunks
+  endif
+
+  let b:lightline_changedtick = b:changedtick
+  let b:lightline_hunks = GitGutterGetHunkSummary()
+
+  return b:lightline_hunks
+endfunction
+
+function! MyGetGitCount(symbol, idx)
+  let hunks = MyGetHunks()
+  let string = ''
+
+  if hunks[a:idx] > 0
+    let string .= printf('%s%s', a:symbol, hunks[a:idx])
+  endif
+
+  return string
+endfunction
+
+function! MyGetGitAddedCount()
+  return MyGetGitCount('+', 0)
+endfunction
+
+function! MyGetGitModifiedCount()
+  return MyGetGitCount('~', 1)
+endfunction
+
+function! MyGetGitRemovedCount()
+  return MyGetGitCount('-', 2)
+endfunction
 " }}}
 
 " FZF {{{
@@ -114,6 +156,10 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 " Netrw {{{
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" }}}
+
+" GitGutter {{{
+let g:gitgutter_map_keys = 0
 " }}}
 
 " Keyboard shortcuts {{{
