@@ -90,12 +90,12 @@ let g:lightline = {
       \ 'linter_warnings': 'lightline#ale#warnings',
       \ 'linter_errors': 'lightline#ale#errors',
       \ 'linter_ok': 'lightline#ale#ok',
-      \ 'gitgutter_added': 'MyGetGitAddedCount',
-      \ 'gitgutter_modified': 'MyGetGitModifiedCount',
-      \ 'gitgutter_removed': 'MyGetGitRemovedCount'
     \ },
     \ 'component_function': {
-      \ 'gitbranch': 'fugitive#head'
+      \ 'gitbranch': 'fugitive#head',
+      \ 'gitgutter_added': 'MyGetGitAddedCount',
+      \ 'gitgutter_modified': 'MyGetGitModifiedCount',
+      \ 'gitgutter_removed': 'MyGetGitRemovedCount',
     \},
     \ 'component_type': {
       \ 'linter_warnings': 'warning',
