@@ -90,12 +90,14 @@ let g:lightline = {
       \ 'linter_warnings': 'lightline#ale#warnings',
       \ 'linter_errors': 'lightline#ale#errors',
       \ 'linter_ok': 'lightline#ale#ok',
-      \ 'gitgutter_added': 'MyGetGitAddedCount',
-      \ 'gitgutter_modified': 'MyGetGitModifiedCount',
-      \ 'gitgutter_removed': 'MyGetGitRemovedCount'
     \ },
     \ 'component_function': {
-      \ 'gitbranch': 'fugitive#head'
+      \ 'gitbranch': 'fugitive#head',
+    \ },
+    \ 'component': {
+      \ 'gitgutter_added': '%#HunksElementColor0#%{MyGetGitAddedCount()}',
+      \ 'gitgutter_modified': '%#HunksElementColor1#%{MyGetGitModifiedCount()}',
+      \ 'gitgutter_removed': '%#HunksElementColor2#%{MyGetGitRemovedCount()}',
     \},
     \ 'component_type': {
       \ 'linter_warnings': 'warning',
@@ -124,7 +126,7 @@ function! MyGetHunks()
   return b:lightline_hunks
 endfunction
 
-function! MyGetGitCount(symbol, idx)
+function! MyGetGitCount(symbol, idx, color)
   let hunks = MyGetHunks()
   let string = ''
 
@@ -132,19 +134,20 @@ function! MyGetGitCount(symbol, idx)
     let string .= printf('%s%s', a:symbol, hunks[a:idx])
   endif
 
+  exe printf('hi HunksElementColor%d ctermfg=%d guifg=%s term=bold cterm=bold', a:idx, a:color[0], a:color[1])
   return string
 endfunction
 
 function! MyGetGitAddedCount()
-  return MyGetGitCount('+', 0)
+  return MyGetGitCount('+', 0, [148, '#8bc34a'])
 endfunction
 
 function! MyGetGitModifiedCount()
-  return MyGetGitCount('~', 1)
+  return MyGetGitCount('~', 1, [208, '#ff9800'])
 endfunction
 
 function! MyGetGitRemovedCount()
-  return MyGetGitCount('-', 2)
+  return MyGetGitCount('-', 2, [196, '#f44336'])
 endfunction
 " }}}
 
