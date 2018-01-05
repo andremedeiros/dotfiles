@@ -12,7 +12,7 @@ Host *
   # instead of always opening a new one. This leads to much
   # quicker connection times.
   ControlMaster auto
-  ControlPath ~/.ssh/control/%r@%h:%p
+  ControlPath ~/.ssh/control/%h
   ControlPersist 1800
 
   # also this stuff
