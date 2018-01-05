@@ -2,6 +2,12 @@
 execute pathogen#infect()
 " }}}
 
+
+
+
+
+
+
 " Backup / Swap {{{
 set nobackup
 set nowritebackup
@@ -118,19 +124,8 @@ let g:lightline = {
     \ }
   \ }
 
-function! LightlineGetHunks()
-  if get(b:, 'lightline_changedtick', 0) == b:changedtick
-    return b:lightline_hunks
-  endif
-
-  let b:lightline_changedtick = b:changedtick
-  let b:lightline_hunks = GitGutterGetHunkSummary()
-
-  return b:lightline_hunks
-endfunction
-
 function! LightlineFormatGitCount(symbol, idx, color)
-  let hunks = LightlineGetHunks()
+  let hunks = GitGutterGetHunkSummary()
   let string = ''
 
   if hunks[a:idx] > 0
