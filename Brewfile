@@ -34,6 +34,7 @@ cask 'discord'
 cask 'google-chrome'
 cask 'grammarly'
 cask 'signal'
+cask 'transmit'
 cask 'vlc'
 
 mas '1Password', id: 443987910
