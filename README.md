@@ -39,6 +39,7 @@ Leader is bound to <kbd>Space</kbd>
 
 #### Go
 
+* <kbd>[leader]-god</kbd> Go to definition
 * <kbd>[leader]-gor</kbd> Run the current file
 * <kbd>[leader]-got</kbd> Run tests
 * <kbd>[leader]-gotf</kbd> Run tests (current function)
