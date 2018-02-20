@@ -31,6 +31,7 @@ filetype plugin indent on
 set number
 set numberwidth=1
 set clipboard=unnamed
+set maxmempattern=10000 " Highlight large files
 
 autocmd VimResized * :wincmd =
 " }}}
