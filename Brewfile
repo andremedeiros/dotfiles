@@ -1,3 +1,9 @@
+def custom_cask(name)
+  root = File.expand_path('~/.brew')
+  path = File.join(root, 'cask', "#{name}.rb")
+  cask path
+end
+
 cask_args appdir: '/Applications'
 
 brew 'chruby'
@@ -39,8 +45,11 @@ cask 'grammarly'
 cask 'kobo'
 cask 'mactex'
 cask 'signal'
+cask 'texpad'
 cask 'transmit'
 cask 'vlc'
+
+custom_cask 'orion'
 
 mas '1Password', id: 443987910
 mas 'Bear', id: 1091189122
