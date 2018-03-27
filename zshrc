@@ -13,6 +13,11 @@ else
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
+# fzf
+if [[ -f ~/.fzf.zsh ]]; then
+  source ~/.fzf.zsh
+fi
+
 # dir hopping
 source /usr/local/etc/profile.d/z.sh
 
