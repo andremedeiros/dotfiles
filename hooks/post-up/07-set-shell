@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 set -e
 
-sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+if [ "$SHELL" != "/usr/local/bin/zsh" ]; then
+  sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+fi
