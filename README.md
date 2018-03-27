@@ -51,3 +51,7 @@ TBD
 ## Shortcuts
 
 TBD
+
+## Guides
+
+- [fd](https://github.com/sharkdp/fd)
