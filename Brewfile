@@ -68,6 +68,7 @@ mas 'Patterns', id: 497799835
 mas 'Pixelmator', id: 407963104
 mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
+mas 'Slack', id: 803453959
 mas 'Spark', id: 1176895641
 mas 'Things3', id: 904280696
 mas 'Tweetbot', id: 557168941
