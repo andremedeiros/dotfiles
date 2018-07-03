@@ -21,6 +21,9 @@ Host *
   ServerAliveInterval 20
   ServerAliveCountMax 10
 
+Host knowhere
+  Hostname 192.168.2.254
+
 #   ________.__  __     ___ ___      ___.
 #  /  _____/|__|/  |_  /   |   \ __ _\_ |__
 # /   \  ___|  \   __\/    ~    \  |  \ __ \
