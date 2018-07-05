@@ -1,6 +1,9 @@
 # go
 export GOPATH=$HOME
 
+# nodejs
+export NVM_DIR=$HOME/.nvm
+
 # editor
 export VISUAL=nvim
 export EDITOR=nvim
