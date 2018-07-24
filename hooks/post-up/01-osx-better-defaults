@@ -64,6 +64,9 @@ defaults write com.googlecode.iterm2 TabStyle -int 1
 # add jellybeans theme
 open ~/Downloads/jellybeans.itermcolors
 
+# don't confirm whether I want to quit
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+
 #    _____
 #   /     \   ____   ____   _____
 #  /  \ /  \ /  _ \ /  _ \ /     \
@@ -74,9 +77,62 @@ open ~/Downloads/jellybeans.itermcolors
 # run moom as faceless
 defaults write com.manytricks.Moom "Application Mode" -int 2
 
+#    _____                    _________ __
+#   /  _  \ ______ ______    /   _____//  |_  ___________   ____
+#  /  /_\  \\____ \\____ \   \_____  \\   __\/  _ \_  __ \_/ __ \
+# /    |    \  |_> >  |_> >  /        \|  | (  <_> )  | \/\  ___/
+# \____|__  /   __/|   __/  /_______  /|__|  \____/|__|    \___  >
+#         \/|__|   |__|             \/                         \/
+
+# check for updates daily
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# download updates on the background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# turn on auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
+#   _________              __  .__  .__       .__     __
+#  /   _____/_____   _____/  |_|  | |__| ____ |  |___/  |_
+#  \_____  \\____ \ /  _ \   __\  | |  |/ ___\|  |  \   __\
+#  /        \  |_> >  <_> )  | |  |_|  / /_/  >   Y  \  |
+# /_______  /   __/ \____/|__| |____/__\___  /|___|  /__|
+#         \/|__|                      /_____/      \/
+
+# disable indexing on mounted volumes
+sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+
+# be selective on things we do index
+defaults write com.apple.spotlight orderedItems -array \
+  '{"enabled" = 1;"name" = "APPLICATIONS";}' \
+  '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
+  '{"enabled" = 1;"name" = "DIRECTORIES";}' \
+  '{"enabled" = 0;"name" = "PDF";}' \
+  '{"enabled" = 0;"name" = "FONTS";}' \
+  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
+  '{"enabled" = 0;"name" = "MESSAGES";}' \
+  '{"enabled" = 0;"name" = "CONTACT";}' \
+  '{"enabled" = 0;"name" = "EVENT_TODO";}' \
+  '{"enabled" = 0;"name" = "IMAGES";}' \
+  '{"enabled" = 0;"name" = "BOOKMARKS";}' \
+  '{"enabled" = 0;"name" = "MUSIC";}' \
+  '{"enabled" = 0;"name" = "MOVIES";}' \
+  '{"enabled" = 0;"name" = "PRESENTATIONS";}' \
+  '{"enabled" = 0;"name" = "SPREADSHEETS";}' \
+  '{"enabled" = 0;"name" = "SOURCE";}' \
+  '{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
+  '{"enabled" = 0;"name" = "MENU_OTHER";}' \
+  '{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
+  '{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
+  '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
+  '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
+
 # and we're done
 apps=()
 apps=("${apps[@]}" "Dock")
+apps=("${apps[@]}" "mds")
 
 for app in "${apps[@]}"; do
   killall "${app}" &> /dev/null
