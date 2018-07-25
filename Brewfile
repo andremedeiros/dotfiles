@@ -64,6 +64,7 @@ custom_cask 'orion'
 
 mas '1Password', id: 443987910
 mas 'Bear', id: 1091189122
+mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
 mas 'Monodraw', id: 920404675
 mas 'Monosnap', id: 540348655
