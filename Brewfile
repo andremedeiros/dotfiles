@@ -70,7 +70,7 @@ mas 'Monodraw', id: 920404675
 mas 'Monosnap', id: 540348655
 mas 'Moom', id: 419330170
 mas 'Pages', id: 409201541
-mas 'Patterns', id: 497799835
+mas 'Patterns', id: 429449079
 mas 'Pixelmator', id: 407963104
 mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
