@@ -10,6 +10,7 @@ packages=("${packages[@]}" "github.com/golang/lint/golint")
 packages=("${packages[@]}" "github.com/google/pprof")
 packages=("${packages[@]}" "github.com/jstemmer/gotags")
 packages=("${packages[@]}" "github.com/kisielk/errcheck")
+packages=("${packages[@]}" "github.com/mdempsky/gocode")
 packages=("${packages[@]}" "honnef.co/go/tools/cmd/gosimple")
 
 for package in "${packages[@]}"; do
