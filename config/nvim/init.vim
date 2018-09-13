@@ -158,13 +158,8 @@ let g:gitgutter_map_keys = 0
 let g:startify_change_to_dir = 0
 " }}}
 
-" netrw {{{
-let g:netrw_altv=1
-let g:netrw_banner = 0
-let g:netrw_browse_split = 2
-let g:netrw_liststyle = 3
-let g:netrw_sort_sequence = '[\/]$,*'
-let g:netrw_winsize = -28
+" NERDTree {{{
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " }}}
 
 " Keyboard shortcuts {{{
@@ -172,7 +167,7 @@ nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>z :ZoomWinTabToggle<cr>
-nnoremap <leader>\ :Lexplore<cr>
+nnoremap <leader>\ :NERDTreeToggle<cr>
 nnoremap <leader>got :GoTest<cr>
 nnoremap <leader>gotf :GoTestFunc<cr>
 nnoremap <leader>gor :GoRun<cr>

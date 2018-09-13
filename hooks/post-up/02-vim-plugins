@@ -22,12 +22,14 @@ plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
 plugins=("${plugins[@]}" "w0rp/ale")
 
 # colorschemes / ui
+plugins=("${plugins[@]}" "Xuyuanp/nerdtree-git-plugin")
 plugins=("${plugins[@]}" "airblade/vim-gitgutter")
 plugins=("${plugins[@]}" "itchyny/lightline.vim")
 plugins=("${plugins[@]}" "maximbaz/lightline-ale")
 plugins=("${plugins[@]}" "mhinz/vim-startify")
 plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
 plugins=("${plugins[@]}" "romainl/vim-qf")
+plugins=("${plugins[@]}" "scrooloose/nerdtree")
 plugins=("${plugins[@]}" "troydm/zoomwintab.vim")
 
 # file management / browsing

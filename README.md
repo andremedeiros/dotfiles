@@ -27,6 +27,7 @@ Leader is bound to <kbd>Space</kbd>
 * <kbd>[leader]-p</kbd> List files
 * <kbd>[leader]-t</kbd> Toggles tagbar
 * <kbd>[leader]-z</kbd> Toggles zoom on active pane
+* <kbd>[leader]-\\</kbd> Toggles project navigation
 * <kbd>H</kbd> Move to beginning of line
 * <kbd>L</kbd> Move to end of line
 * <kbd>/</kbd> <kbd>/</kbd> Stop searching
