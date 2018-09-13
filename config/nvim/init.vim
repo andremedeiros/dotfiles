@@ -150,12 +150,21 @@ set rtp+=/usr/local/opt/fzf
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 " }}}
 
-" Netrw {{{
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-" }}}
-
 " GitGutter {{{
 let g:gitgutter_map_keys = 0
+" }}}
+
+" Startify {{{
+let g:startify_change_to_dir = 0
+" }}}
+
+" netrw {{{
+let g:netrw_altv=1
+let g:netrw_banner = 0
+let g:netrw_browse_split = 2
+let g:netrw_liststyle = 3
+let g:netrw_sort_sequence = '[\/]$,*'
+let g:netrw_winsize = -28
 " }}}
 
 " Keyboard shortcuts {{{
@@ -163,6 +172,7 @@ nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
 nnoremap <leader>t :TagbarToggle<cr>
 nnoremap <leader>z :ZoomWinTabToggle<cr>
+nnoremap <leader>\ :Lexplore<cr>
 nnoremap <leader>got :GoTest<cr>
 nnoremap <leader>gotf :GoTestFunc<cr>
 nnoremap <leader>gor :GoRun<cr>
