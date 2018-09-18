@@ -14,5 +14,9 @@ alias ia="open $1 -a /Applications/iA\ Writer.app"
 alias ls="gls --color=auto -F"
 alias servedir='__servedir'
 
+# projects
+alias dbundle="ruby -I $HOME/src/github.com/bundler/bundler $HOME/src/github.com/bundler/bundler/exe/bundle"
+alias dembark="$HOME/src/github.com/embark-framework/embark/bin/embark"
+
 # misc
 alias weather="curl wttr.in"
