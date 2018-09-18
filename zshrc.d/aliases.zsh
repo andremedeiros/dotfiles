@@ -1,3 +1,4 @@
+# functions to alias below
 function __servedir {
   ruby -run -ehttpd ${1-${PWD}} -p8000
 }
