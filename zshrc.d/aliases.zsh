@@ -1,10 +1,5 @@
 function __servedir {
-  local served_dir=$PWD
-  if [[ ! -z "$@" ]]; then
-    served_dir=$@
-  fi
-
-  ruby -run -ehttpd $served_dir -p8000
+  ruby -run -ehttpd ${1-${PWD}} -p8000
 }
 
 # humor
