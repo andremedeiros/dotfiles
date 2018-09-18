@@ -62,10 +62,11 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 defaults write com.googlecode.iterm2 TabStyle -int 1
 
 # add jellybeans theme
-open ~/Downloads/jellybeans.itermcolors
+defaults read com.googlecode.iterm2 "Custom Color Presets" | (grep -q jellybeans || open ~/Downloads/jellybeans.itermcolors)
 
 # don't confirm whether I want to quit
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
+defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 
 #    _____
 #   /     \   ____   ____   _____

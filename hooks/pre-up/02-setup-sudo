@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -e
+
+banner="%wheel ALL=(ALL) NOPASSWD: ALL #andremedeiros/dotfiles"
+
+if sudo grep -q "${banner}" /etc/sudoers; then
+  exit 0
+fi
+
+echo $banner | sudo tee -a /etc/sudoers > /dev/null
+sudo dscl . append /Groups/wheel GroupMembership $(whoami)
