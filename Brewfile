@@ -71,7 +71,7 @@ mas 'Monosnap', id: 540348655
 mas 'Moom', id: 419330170
 mas 'Pages', id: 409201541
 mas 'Patterns', id: 429449079
-mas 'Pixelmator', id: 407963104
+mas 'Pixelmator Pro', id: 1289583905
 mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
