@@ -48,7 +48,6 @@ cask 'docker'
 cask 'google-chrome'
 cask 'grammarly'
 cask 'iterm2'
-cask 'keybase'
 cask 'kobo'
 cask 'mactex'
 cask 'signal'
@@ -70,7 +69,6 @@ mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
-mas 'Monosnap', id: 540348655
 mas 'Moom', id: 419330170
 mas 'Pages', id: 409201541
 mas 'Patterns', id: 429449079
