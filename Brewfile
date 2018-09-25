@@ -77,6 +77,7 @@ mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
 mas 'Spark', id: 1176895641
+mas 'Studies', id: 1071676469
 mas 'Things3', id: 904280696
 mas 'Tweetbot', id: 557168941
 mas 'Unsplash Wallpapers', id: 1284863847
