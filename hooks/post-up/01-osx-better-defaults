@@ -36,10 +36,13 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults write com.apple.ImageCapture disableHotPlug -bool YES
 
 # automatically hide and show the dock
-defaults write com.apple.dock autohide -bool true
+defaults write com.apple.Dock autohide -bool true
 
 # show the dock quickly
 defaults write com.apple.Dock autohide-delay -float 0
+
+# hide recent applications
+defaults write com.apple.Dock show-recents -bool false
 
 # expand save dialog by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -50,6 +53,15 @@ defaults write -g AppleShowScrollBars -string "Always"
 
 # don't write .DS_Store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+
+#   _________       _____             .__
+#  /   _____/____ _/ ____\____ _______|__|
+#  \_____  \\__  \\   __\\__  \\_  __ \  |
+#  /        \/ __ \|  |   / __ \|  | \/  |
+# /_______  (____  /__|  (____  /__|  |__|
+#         \/     \/           \/
+defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool false
 
 # ._____________                   ________
 # |__\__    ___/__________  _____  \_____  \
@@ -101,9 +113,6 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # /_______  /   __/ \____/|__| |____/__\___  /|___|  /__|
 #         \/|__|                      /_____/      \/
 
-# disable indexing on mounted volumes
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-
 # be selective on things we do index
 defaults write com.apple.spotlight orderedItems -array \
   '{"enabled" = 1;"name" = "APPLICATIONS";}' \
@@ -133,6 +142,7 @@ defaults write com.apple.spotlight orderedItems -array \
 # and we're done
 apps=()
 apps=("${apps[@]}" "Dock")
+apps=("${apps[@]}" "Safari")
 apps=("${apps[@]}" "mds")
 
 for app in "${apps[@]}"; do
