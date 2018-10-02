@@ -29,3 +29,5 @@
   compactionheuristic = true
 [commit]
   verbose = true
+[remote "origin"]
+  fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
