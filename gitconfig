@@ -2,7 +2,7 @@
   name = Andre Medeiros
   email = me@andremedeiros.info
 [alias]
-  up = pull --rebase --autostash
+  up = fetch --all --prune --tags
   co = checkout
   st = status
   pr = pull-request
