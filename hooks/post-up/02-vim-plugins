@@ -14,6 +14,7 @@ curl -LSso "$autoload_root/pathogen.vim" https://tpo.pe/pathogen.vim
 plugins=()
 
 # language / syntax
+plugins=("${plugins[@]}" "ElmCast/elm-vim")
 plugins=("${plugins[@]}" "andremedeiros/ragel.vim")
 plugins=("${plugins[@]}" "fatih/vim-go")
 plugins=("${plugins[@]}" "isRuslan/vim-es6")
