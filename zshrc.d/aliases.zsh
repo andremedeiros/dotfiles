@@ -12,6 +12,7 @@ alias git="hub"
 alias hl="highlight -O ansi -n"
 alias ia="open $1 -a /Applications/iA\ Writer.app"
 alias ls="gls --color=auto -F"
+alias npm-unfuck="sed -i '' 's/http:/https:/g' package-lock.json"
 alias servedir='__servedir'
 
 # projects
