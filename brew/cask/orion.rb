@@ -1,8 +1,8 @@
 cask 'orion' do
-  version '1.6.5'
-  sha256 '55cd8c14d7c5f3dc913444c1f8f1b5fdc2f1d361fefbe4317b9a5c4b5a9485a6'
+  version '1.6.6'
+  sha256 'a0a25573ec54233da4f34e543d351b121eadea945034f81cef5df28eaa45d0eb'
 
-  url 'https://github.com/alamminsalo/orion/releases/download/1.6.5/orion-1.6.5.dmg'
+  url 'https://github.com/alamminsalo/orion/releases/download/1.6.6/orion-1.6.6.dmg'
   name 'Orion'
   homepage 'https://alamminsalo.github.io/orion/'
 
