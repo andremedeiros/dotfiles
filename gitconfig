@@ -2,7 +2,7 @@
   name = Andre Medeiros
   email = me@andremedeiros.info
 [alias]
-  up = fetch --all --prune --tags
+  up = pull --rebase --autostash
   co = checkout
   st = status
   pr = pull-request
@@ -21,6 +21,7 @@
   prune = true
 [rebase]
   autosquash = true
+  autoStash = true
 [instaweb]
   httpd = webrick
 [diff]
@@ -31,3 +32,5 @@
   verbose = true
 [remote "origin"]
   fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
+[pull]
+  rebase = true
