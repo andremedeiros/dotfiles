@@ -6,7 +6,7 @@
   co = checkout
   st = status
   pr = pull-request
-  vomit = commit -m "$(curl -s "https://whatthecommit.com/index.txt")"
+  vomit = !"git commit -m '$(curl -s https://whatthecommit.com/index.txt)'"
 [color]
   ui = true
   grep = auto
