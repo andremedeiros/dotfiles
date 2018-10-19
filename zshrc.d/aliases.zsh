@@ -4,8 +4,10 @@ function __servedir {
 }
 
 # humor
+alias commitmsg='curl -s "https://whatthecommit.com/index.txt"'
 alias dadjoke='curl -s "https://icanhazdadjoke.com"'
 alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
+alias git-vomit='git add -A; git commit -m `commitmsg`'
 
 # serious
 alias git="hub"
