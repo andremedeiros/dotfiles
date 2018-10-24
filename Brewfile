@@ -25,7 +25,7 @@ brew 'highlight'
 brew 'hub'
 brew 'jq'
 brew 'lolcat'
-brew 'mas', head: true
+brew 'mas'
 brew 'neovim'
 brew 'nvm'
 brew 'pandoc'
