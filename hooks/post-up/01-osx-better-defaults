@@ -138,6 +138,13 @@ defaults write com.apple.spotlight orderedItems -array \
   '{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
   '{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
 
+# ________                 __                .__
+# \______ \   _______  ___/  |_  ____   ____ |  |   ______
+#  |    |  \_/ __ \  \/ /\   __\/  _ \ /  _ \|  |  /  ___/
+#  |    `   \  ___/\   /  |  | (  <_> |  <_> )  |__\___ \
+# /_______  /\___  >\_/   |__|  \____/ \____/|____/____  >
+#         \/     \/                                    \/
+sudo /usr/sbin/DevToolsSecurity --enable
 
 # and we're done
 apps=()
