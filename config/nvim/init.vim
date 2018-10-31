@@ -157,7 +157,7 @@ let g:gitgutter_map_keys = 0
 " Startify {{{
 let g:startify_change_to_dir = 0
 let g:startify_custom_header =
-  \ map(split(system('fortune -o | cowthink -f vader'), '\n'), '"   ". v:val') + ['','']
+  \ map(split(system('darkwing | cowthink -f vader'), '\n'), '"   ". v:val') + ['','']
 " }}}
 
 " NERDTree {{{
