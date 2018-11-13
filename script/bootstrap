@@ -15,6 +15,9 @@ if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
   brew install thoughtbot/formulae/rcm
 fi
 
+# accept license and trigger xcode developer tool download
+sudo xcodebuild -license accept
+
 env RCRC=`pwd`/rcrc rcup
 
 # setup the git origin so that I can actually push stuff
