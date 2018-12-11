@@ -3,11 +3,12 @@
     "editor.fontSize": 12,
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
-    "git.autofetch": true,
-    "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "workbench.statusBar.feedback.visible": false,
     "files.associations": {
         "Brewfile": "ruby"
     },
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.statusBar.feedback.visible": false,
 }
