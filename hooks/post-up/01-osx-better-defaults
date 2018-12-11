@@ -54,6 +54,8 @@ defaults write -g AppleShowScrollBars -string "Always"
 # don't write .DS_Store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
+# don't screw up fonts
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 #   _________       _____             .__
 #  /   _____/____ _/ ____\____ _______|__|

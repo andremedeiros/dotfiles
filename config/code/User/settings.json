@@ -1,0 +1,10 @@
+{
+    "editor.fontFamily": "OperatorMono-Book",
+    "editor.fontSize": 12,
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2,
+    "git.autofetch": true,
+    "telemetry.enableTelemetry": false,
+    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.statusBar.feedback.visible": false,
+}
