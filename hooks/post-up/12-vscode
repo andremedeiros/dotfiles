@@ -4,6 +4,7 @@ set -e
 plugins=()
 
 # language / syntax
+plugins=("${plugins[@]}" "ms-vscode.cpptools")
 plugins=("${plugins[@]}" "ms-vscode.go")
 plugins=("${plugins[@]}" "sbrink.elm")
 

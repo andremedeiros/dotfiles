@@ -1,5 +1,7 @@
 {
+    // Editor
     "editor.fontFamily": "OperatorMono-Book",
+    "editor.fontLigatures": true,
     "editor.fontSize": 12,
     "editor.minimap.enabled": false,
     "editor.tabSize": 2,
@@ -11,4 +13,7 @@
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.statusBar.feedback.visible": false,
+
+    // Theme
+    "materialTheme.autoApplyIcons": false,
 }
