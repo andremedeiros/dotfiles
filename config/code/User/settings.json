@@ -5,6 +5,9 @@
     "editor.tabSize": 2,
     "git.autofetch": true,
     "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.statusBar.feedback.visible": false,
+    "files.associations": {
+        "Brewfile": "ruby"
+    },
 }

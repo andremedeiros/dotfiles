@@ -9,6 +9,7 @@ plugins=("${plugins[@]}" "sbrink.elm")
 
 # colorschemes / ui
 plugins=("${plugins[@]}" "andrsdc.base16-themes")
+plugins=("${plugins[@]}" "vangware.dark-plus-material")
 
 for plugin in "${plugins[@]}"; do
   code --install-extension "$plugin"
