@@ -9,6 +9,7 @@ alias dadjoke='curl -s "https://icanhazdadjoke.com"'
 alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
 
 # serious
+alias code="code --user-data-dir=$HOME/.config/code"
 alias git="hub"
 alias hl="highlight -O ansi -n"
 alias ia="open $1 -a /Applications/iA\ Writer.app"

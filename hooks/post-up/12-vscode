@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+plugins=()
+
+# language / syntax
+plugins=("${plugins[@]}" "ms-vscode.cpptools")
+plugins=("${plugins[@]}" "ms-vscode.go")
+plugins=("${plugins[@]}" "sbrink.elm")
+
+# colorschemes / ui
+plugins=("${plugins[@]}" "andrsdc.base16-themes")
+plugins=("${plugins[@]}" "equinusocio.vsc-material-theme")
+
+# helpers
+plugins=("${plugins[@]}" "editorconfig.editorconfig")
+
+for plugin in "${plugins[@]}"; do
+  code --install-extension "$plugin"
+done
