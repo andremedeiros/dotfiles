@@ -6,6 +6,7 @@
   co = checkout
   st = status
   pr = pull-request
+  rb = rewrite-branch
   vomit = !git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
 [color]
   ui = true
