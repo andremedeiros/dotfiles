@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
+# This tool is designed to reset your branche's history, so that you
+# can wipe the "wip" away and come out of it with a nice, clean
+# history.
+#
+# Thank you @PascalPrecht for the OCD.
 set -e
 
 git reset $(git merge-base master $(git rev-parse --abbrev-ref HEAD))
 git add -A
 git commit
+git push origin +$(git rev-parse --abbrev-ref HEAD)
