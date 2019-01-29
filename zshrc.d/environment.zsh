@@ -1,5 +1,6 @@
 # go
 export GOPATH=$HOME
+export GO111MODULE=on
 
 # nodejs
 export NVM_DIR=$HOME/.nvm
