@@ -4,7 +4,7 @@ export GO111MODULE=on
 
 # nodejs
 export NVM_DIR=$HOME/.nvm
-export NODE_OPTIONS="--stack-trace-limit=10000"
+export NODE_OPTIONS="--stack-trace-limit=10000 --trace-warnings"
 
 # editor
 export VISUAL=nvim
