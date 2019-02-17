@@ -66,6 +66,7 @@ Leader is bound to <kbd>Ctrl+Space</kbd>
 #### Session
 
 * <kbd>[leader]-c</kbd> New window
+* <kbd>[leader]-z</kbd> Zoom on current pane
 
 ## Shortcuts
 
