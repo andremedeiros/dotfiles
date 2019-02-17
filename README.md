@@ -47,7 +47,25 @@ Leader is bound to <kbd>Space</kbd>
 
 ### Tmux
 
-TBD
+Leader is bound to <kbd>Ctrl+Space</kbd>
+
+#### Splitting
+
+* <kbd>[leader]-|</kbd> Split vertically
+* <kbd>[leader]--</kbd> Split horizontally
+
+#### Navigation
+
+* <kbd>[leader]-h</kbd> Navigate to left pane
+* <kbd>[leader]-l</kbd> Navigate to right pane
+* <kbd>[leader]-k</kbd> Navigate to pane above
+* <kbd>[leader]-j</kbd> Navigate to pane below
+* <kbd>[leader]-w</kbd> Navigate windows
+* <kbd>[leader]-s</kbd> Navigate sessions
+
+#### Session
+
+* <kbd>[leader]-c</kbd> New window
 
 ## Shortcuts
 
