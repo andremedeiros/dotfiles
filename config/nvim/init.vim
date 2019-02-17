@@ -196,6 +196,8 @@ let g:ale_lint_delay = 2000
 " }}}
 
 " Override default behaviour {{{
+" Autoread files
+set autoread
 
 " Don't deselect when indenting
 vnoremap < <gv
