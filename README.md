@@ -62,6 +62,7 @@ Leader is bound to <kbd>Ctrl+Space</kbd>
 * <kbd>[leader]-j</kbd> Navigate to pane below
 * <kbd>[leader]-w</kbd> Navigate windows
 * <kbd>[leader]-s</kbd> Navigate sessions
+* <kbd>[leader]-[</kbd> Enter scroll mode (<kbd>q</kbd> quits)
 
 #### Session
 
