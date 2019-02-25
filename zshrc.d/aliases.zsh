@@ -24,3 +24,4 @@ alias dembark="$HOME/src/github.com/embark-framework/embark/packages/embark/bin/
 
 # misc
 alias weather="curl wttr.in"
+alias moon="curl wttr.in/moon"
