@@ -48,8 +48,8 @@ defaults write com.apple.Dock show-recents -bool false
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
-# always show scrollbar
-defaults write -g AppleShowScrollBars -string "Always"
+# only show scrollbar when scrolling
+defaults write -g AppleShowScrollBars -string "WhenScrolling"
 
 # don't write .DS_Store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
