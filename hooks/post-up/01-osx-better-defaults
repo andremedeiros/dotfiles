@@ -74,6 +74,8 @@ defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool false
 
 # add jellybeans theme
 defaults read com.apple.Terminal "Window Settings" | (grep -q Jellybeans || open ~/Downloads/Jellybeans.terminal)
+defaults write com.apple.Terminal "Default Window Settings" -string "Jellybeans"
+defaults write com.apple.Terminal "Startup Window Settings" -string "Jellybeans"
 
 #    _____
 #   /     \   ____   ____   _____
