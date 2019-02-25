@@ -1,0 +1,17 @@
+name: embark
+root: ~/src/github.com/embark-framework/embark/
+startup_pane: 3
+windows:
+  - babel:
+      layout: main-vertical
+      panes:
+        - yarn run watch
+        - cd packages/embark-ui; yarn start
+  - demo:
+      root: ~/src/_sandbox/embark_demo
+      panes:
+  - editor:
+      panes:
+        - nvim
+  - tests:
+      panes:
