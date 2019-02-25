@@ -65,22 +65,15 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 #         \/     \/           \/
 defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool false
 
-# ._____________                   ________
-# |__\__    ___/__________  _____  \_____  \
-# |  | |    |_/ __ \_  __ \/     \  /  ____/
-# |  | |    |\  ___/|  | \/  Y Y  \/       \
-# |__| |____| \___  >__|  |__|_|  /\_______ \
-#                 \/            \/         \/
-
-# use dark ui
-defaults write com.googlecode.iterm2 TabStyle -int 1
+# ___________                  .__              .__
+# \__    ___/__________  _____ |__| ____ _____  |  |
+#   |    |_/ __ \_  __ \/     \|  |/    \\__  \ |  |
+#   |    |\  ___/|  | \/  Y Y  \  |   |  \/ __ \|  |__
+#   |____| \___  >__|  |__|_|  /__|___|  (____  /____/
+#              \/            \/        \/     \/
 
 # add jellybeans theme
-defaults read com.googlecode.iterm2 "Custom Color Presets" | (grep -q jellybeans || open ~/Downloads/jellybeans.itermcolors)
-
-# don't confirm whether I want to quit
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
+defaults read com.apple.Terminal "Window Settings" | (grep -q Jellybeans || open ~/Downloads/Jellybeans.terminal)
 
 #    _____
 #   /     \   ____   ____   _____
