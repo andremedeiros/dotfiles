@@ -8,5 +8,5 @@ end_of_line = lf
 charset = utf-8
 insert_final_newline = true
 
-[Makefile]
+[{Makefile,*.go,*.go.rl}]
 indent_style = tab
