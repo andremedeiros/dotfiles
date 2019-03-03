@@ -49,15 +49,6 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 set list listchars=tab:»·,trail:·
-
-autocmd BufWritePre * %s/\s\+$//e
-" }}}
-
-" Makefile {{{
-augroup makefile
-  au!
-  au FileType make set noexpandtab
-augroup END
 " }}}
 
 " Homebrew {{{
