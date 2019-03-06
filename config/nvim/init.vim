@@ -165,6 +165,7 @@ nnoremap <leader>got :GoTest<cr>
 nnoremap <leader>gotf :GoTestFunc<cr>
 nnoremap <leader>gor :GoRun<cr>
 nnoremap <leader>god :GoDef<cr>
+nnoremap <leader>doc :Dash<cr>
 noremap H ^
 noremap L $
 nnoremap <C-j> <C-w>j

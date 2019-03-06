@@ -43,9 +43,10 @@ plugins=("${plugins[@]}" "tpope/vim-fugitive")
 plugins=("${plugins[@]}" "tpope/vim-rhubarb")
 
 # helpers
+plugins=("${plugins[@]}" "editorconfig/editorconfig-vim")
+plugins=("${plugins[@]}" "rizzatti/dash.vim")
 plugins=("${plugins[@]}" "tpope/vim-endwise")
 plugins=("${plugins[@]}" "tpope/vim-surround")
-plugins=("${plugins[@]}" "editorconfig/editorconfig-vim")
 
 for plugin in "${plugins[@]}"; do
   repo="https://github.com/${plugin}.git"
