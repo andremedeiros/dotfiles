@@ -8,3 +8,5 @@ function colours() {
     printf "\n"
   done
 }
+
+alias colors=colours
