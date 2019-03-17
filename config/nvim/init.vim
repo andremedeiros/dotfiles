@@ -1,3 +1,5 @@
+" Thanks @fatih for a lot of these.
+
 " Preamble {{{
 execute pathogen#infect()
 " }}}
@@ -13,6 +15,13 @@ set nocompatible
 set synmaxcol=300
 set ttyfast
 set lazyredraw
+" }}}
+
+" Highlighting {{{
+set maxmempattern=20000
+set nocursorcolumn
+set nocursorline
+set updatetime=300
 " }}}
 
 " map*leader {{{
@@ -173,6 +182,15 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap // :noh<cr>
+
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+augroup FastEscape
+  autocmd!
+  au InsertEnter * set timeoutlen=0
+  au InsertLeave * set timeoutlen=1000
+augroup END
 " }}}
 
 " ALE {{{
@@ -185,6 +203,14 @@ let g:ale_set_loclist = 0
 
 " Increase lint delay
 let g:ale_lint_delay = 2000
+" }}}
+
+" Quickfix {{{
+augroup quickfix
+  autocmd!
+  autocmd FileType qf wincmd J
+  autocmd FileType qf setlocal wrap
+augroup END
 " }}}
 
 " Override default behaviour {{{
