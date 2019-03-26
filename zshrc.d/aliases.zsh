@@ -24,5 +24,6 @@ alias dbundle="ruby -I $HOME/src/github.com/bundler/bundler $HOME/src/github.com
 alias dembark="$HOME/src/github.com/embark-framework/embark/packages/embark/bin/embark"
 
 # misc
-alias weather="curl wttr.in"
+alias fucking="sudo"
 alias moon="curl wttr.in/moon"
+alias weather="curl wttr.in"
