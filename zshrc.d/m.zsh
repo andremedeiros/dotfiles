@@ -35,7 +35,7 @@ function __mk {
     return
   fi
 
-  (grep -e "^$1$" <<< "$sessions" && tmux kill-session -t $1) || echo 'session not found'
+  (grep -e "^$1$" <<< "$sessions" > /dev/null && tmux kill-session -t $1) || echo 'session not found'
 }
 
 alias m='__m'
