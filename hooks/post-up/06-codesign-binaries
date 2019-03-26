@@ -5,5 +5,5 @@ binaries=()
 binaries=("${binaries[@]}" "gdb")
 
 for binary in "${binaries[@]}"; do
-  codesign -s "codesign-cert" `which ${binary}` > /dev/null 2>&1
+  codesign -s "codesign-cert" "$(command -v "$binary")" > /dev/null 2>&1
 done

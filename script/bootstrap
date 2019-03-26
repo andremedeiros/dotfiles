@@ -18,7 +18,7 @@ fi
 # accept license and trigger xcode developer tool download
 sudo xcodebuild -license accept
 
-env RCRC=`pwd`/rcrc rcup
+env RCRC="$(pwd)"/rcrc rcup
 
 # setup the git origin so that I can actually push stuff
 git remote set-url origin git@github.com:andremedeiros/dotfiles.git

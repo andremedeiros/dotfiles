@@ -1,6 +1,6 @@
-: ${PROMPT_SYMBOL:=">"}
-: ${PROMPT_UNSTAGED_SYMBOL:="*"}
-: ${PROMPT_STAGED_SYMBOL:="!"}
+: "${PROMPT_SYMBOL:=>}"
+: "${PROMPT_UNSTAGED_SYMBOL:=*}"
+: "${PROMPT_STAGED_SYMBOL:=!}"
 
 prompt_precmd() {
   vcs_info
@@ -15,8 +15,8 @@ prompt_setup() {
   zstyle ':vcs_info:*' enable git
   zstyle ':vcs_info:*' formats "%F{11} %b%f%F{1}%u%c%f"
   zstyle ':vcs_info:*' check-for-changes true
-  zstyle ':vcs_info:*' unstagedstr $PROMPT_UNSTAGED_SYMBOL
-  zstyle ':vcs_info:*' stagedstr $PROMPT_STAGED_SYMBOL
+  zstyle ':vcs_info:*' unstagedstr "$PROMPT_UNSTAGED_SYMBOL"
+  zstyle ':vcs_info:*' stagedstr "$PROMPT_STAGED_SYMBOL"
 
   setopt prompt_subst
 

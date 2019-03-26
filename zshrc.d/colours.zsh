@@ -9,4 +9,4 @@ function colours() {
   done
 }
 
-alias colors=colours
+alias colors="colours"

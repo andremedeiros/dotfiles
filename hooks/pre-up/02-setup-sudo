@@ -7,5 +7,5 @@ if sudo grep -q "${banner}" /etc/sudoers; then
   exit 0
 fi
 
-echo $banner | sudo tee -a /etc/sudoers > /dev/null
-sudo dscl . append /Groups/wheel GroupMembership $(whoami)
+echo "$banner" | sudo tee -a /etc/sudoers > /dev/null
+sudo dscl . append /Groups/wheel GroupMembership "$(whoami)"
