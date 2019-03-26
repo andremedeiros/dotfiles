@@ -1,7 +1,7 @@
 function __m {
   # check whether we're passing an argument
   if [ $# -eq 0 ]; then
-    echo 'project name required'
+    echo 'session name required'
     return
   fi
 
@@ -22,6 +22,22 @@ function __m {
   fi
 }
 
+function __mk {
+  sessions=$(tmux ls -F "#S" 2>/dev/null)
+
+  if [ $# -eq 0 ]; then
+    if [ -z $sessions ]; then
+      echo 'no active sessions'
+    else
+      echo $sessions
+    fi
+
+    return
+  fi
+
+  (grep -e "^$1$" <<< "$sessions" && tmux kill-session -t $1) || echo 'session not found'
+}
+
 alias m='__m'
-alias mk='tmux kill-session -t'
+alias mk='__mk'
 
