@@ -70,10 +70,10 @@ cask 'zoomus'
 
 custom_cask 'orion'
 
-mas '1Blocker', id: 1107421413
 mas '1Password 7 - Password Manager', id: 1333542190
 mas 'Bear', id: 1091189122
 mas 'Fantastical', id: 975937182
+mas 'Ghostery Lite', id: 1436953057
 mas 'Keynote', id: 409183694
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
