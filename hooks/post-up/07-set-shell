@@ -2,5 +2,5 @@
 set -e
 
 if [ "$SHELL" != "/usr/local/bin/zsh" ]; then
-  sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+  sudo dscl . -create /Users/"$USER" UserShell /usr/local/bin/zsh
 fi

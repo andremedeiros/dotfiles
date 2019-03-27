@@ -7,10 +7,10 @@
 set -e
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-git reset $(git merge-base master $branch)
+git reset "$(git merge-base master "$branch")"
 git add -A
 git commit
 
 if [ "$1" == "--force-push" ]; then
-  git push origin +$branch
+  git push origin +"$branch"
 fi

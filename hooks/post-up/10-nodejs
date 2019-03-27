@@ -7,5 +7,5 @@ mkdir -p ~/.nvm
 source /usr/local/opt/nvm/nvm.sh
 
 # install node version specified in ~/.nvm
-nvm install $(cat ~/.nvmrc)
+nvm install "$(cat ~/.nvmrc)"
 npm i -g npm@latest

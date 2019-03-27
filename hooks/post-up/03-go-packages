@@ -15,5 +15,5 @@ packages=("${packages[@]}" "github.com/mdempsky/gocode")
 packages=("${packages[@]}" "honnef.co/go/tools/cmd/gosimple")
 
 for package in "${packages[@]}"; do
-  go get -u $package
+  go get -u "$package"
 done
