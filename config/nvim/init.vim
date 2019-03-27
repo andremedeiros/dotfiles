@@ -183,6 +183,13 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap // :noh<cr>
 
+" Use <Tab> and <S-Tab> for navigate completion list:
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" snippets jump
+let g:coc_snippet_next = '<tab>'
+
 set notimeout
 set ttimeout
 set ttimeoutlen=10

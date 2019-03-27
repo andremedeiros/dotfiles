@@ -1,4 +1,5 @@
 {
+  "suggest.minTriggerInputLength": 3,
   "languageserver": {
     "golang": {
       "command": "bingo",
