@@ -7,6 +7,7 @@ ruby-install --no-reinstall ruby-"$(cat ~/.ruby-version)"
 # install gems
 gems=()
 gems=("${gems[@]}" "bundler")
+gems=("${gems[@]}" "solargraph")
 gems=("${gems[@]}" "tmuxinator")
 
 for gem in "${gems[@]}"; do

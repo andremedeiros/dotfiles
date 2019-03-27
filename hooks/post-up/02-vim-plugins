@@ -23,6 +23,7 @@ plugins=("${plugins[@]}" "tmux-plugins/vim-tmux")
 plugins=("${plugins[@]}" "tomlion/vim-solidity")
 plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
 plugins=("${plugins[@]}" "w0rp/ale")
+plugins=("${plugins[@]}" "neoclide/coc.nvim")
 
 # colorschemes / ui
 plugins=("${plugins[@]}" "Xuyuanp/nerdtree-git-plugin")
@@ -57,4 +58,21 @@ for plugin in "${plugins[@]}"; do
   else
     git -C "$bundle_root" clone "$repo" &> /dev/null
   fi
+done
+
+# coc
+nvim "+:call coc#util#build()" +:q
+
+# coc extensions
+extensions=()
+
+# language / syntax
+extensions=("${extensions[@]}" "coc-css")
+extensions=("${extensions[@]}" "coc-json")
+extensions=("${extensions[@]}" "coc-solargraph") # ruby
+extensions=("${extensions[@]}" "coc-tsserver")
+extensions=("${extensions[@]}" "coc-yaml")
+
+for extension in "${extensions[@]}"; do
+  nvim "+:call CocInstall $extension" +:q
 done
