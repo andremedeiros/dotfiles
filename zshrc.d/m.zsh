@@ -12,7 +12,7 @@ function __m {
   fi
 
   # check tmux sessions
-  if tmux ls -F "#S" | grep "^$1$" > /dev/null; then
+  if tmux ls -F "#S" 2>/dev/null | grep "^$1$" > /dev/null; then
     # session exists, lets attach
     tmux attach -t "$1"
   else
