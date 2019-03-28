@@ -58,3 +58,6 @@ for plugin in "${plugins[@]}"; do
     git -C "$bundle_root" clone "$repo" &> /dev/null
   fi
 done
+
+# go
+nvim +:GoInstallBinaries +:q
