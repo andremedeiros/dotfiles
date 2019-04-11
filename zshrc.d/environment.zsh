@@ -1,5 +1,5 @@
 # go
-export GOPATH=$HOME
+export GOPATH=$HOME/.go
 
 # nodejs
 export NVM_DIR=$HOME/.nvm

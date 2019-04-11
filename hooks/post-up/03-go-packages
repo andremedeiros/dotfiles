@@ -2,12 +2,12 @@
 set -e
 
 # make sure we have our path set on a run previous to having a full environment
-export GOPATH=$HOME
+export GOPATH=$HOME/.go
 
 packages=()
 packages=("${packages[@]}" "github.com/derekparker/delve/cmd/dlv")
 packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
-packages=("${packages[@]}" "github.com/golang/lint/golint")
+packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "github.com/google/pprof")
 packages=("${packages[@]}" "github.com/jstemmer/gotags")
 packages=("${packages[@]}" "github.com/kisielk/errcheck")
