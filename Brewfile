@@ -71,6 +71,7 @@ cask 'zoomus'
 custom_cask 'orion'
 
 mas '1Password 7 - Password Manager', id: 1333542190
+mas 'Bear', id: 1091189122
 mas 'Fantastical', id: 975937182
 mas 'Ghostery Lite', id: 1436953057
 mas 'Keynote', id: 409183694
@@ -83,7 +84,6 @@ mas 'Patterns', id: 429449079
 mas 'Pixelmator Pro', id: 1289583905
 mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
-mas 'Simplenote', id: 692867256
 mas 'Slack', id: 803453959
 mas 'Spark', id: 1176895641
 mas 'Studies', id: 1071676469
