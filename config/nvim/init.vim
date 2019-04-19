@@ -69,8 +69,6 @@ augroup golang
   au!
   au BufNewFile,BufRead *.go set nolist
   au Filetype go set makeprg=go\ build\ ./...
-
-  autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 augroup END
 
 set rtp+=~/src/github.com/golang/lint/misc/vim
