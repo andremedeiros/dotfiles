@@ -1,6 +1,7 @@
 name: embark
 root: ~/src/github.com/embark-framework/embark/
-startup_pane: 3
+startup_window: editor
+pre_window: export EMBARK_NO_SHIM=true; clear
 windows:
   - babel:
       layout: main-vertical
