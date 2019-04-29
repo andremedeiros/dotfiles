@@ -7,7 +7,7 @@ function __m {
 
   # check tmuxinator
   if [ -e "$HOME/.config/tmuxinator/$1.yml" ]; then
-    tmuxinator start "$1"
+    tmuxinator start "$1" --suppress-tmux-version-warning
     return
   fi
 
