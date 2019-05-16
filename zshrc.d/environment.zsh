@@ -21,3 +21,6 @@ export SAVEHIST=1000
 
 # ui
 export TERM=xterm-256color
+
+# nnn
+export NNN_TMPFILE="/tmp/nnn"
