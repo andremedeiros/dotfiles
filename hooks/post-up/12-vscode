@@ -17,6 +17,7 @@ plugins=("${plugins[@]}" "andrsdc.base16-themes")
 plugins=("${plugins[@]}" "equinusocio.vsc-material-theme")
 
 # helpers
+plugins=("${plugins[@]}" "deerawan.vscode-dash")
 plugins=("${plugins[@]}" "editorconfig.editorconfig")
 
 for plugin in "${plugins[@]}"; do

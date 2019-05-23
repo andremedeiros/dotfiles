@@ -31,12 +31,21 @@
       {"before": ["C-l"], "commands": ["workbench.action.navigateRight"]},
 
       // Window management
-      {"before": ["C-w", "C-v"], "commands": ["workbench.action.splitEditorRight"]},
-      {"before": ["C-w", "C-s"], "commands": ["workbench.action.splitEditorDown"]},
+      {"before": ["C-w", "C-v"],     "commands": ["workbench.action.splitEditorRight"]},
+      {"before": ["C-w", "C-s"],     "commands": ["workbench.action.splitEditorDown"]},
       {"before": ["<leader>", "\\"], "commands": ["workbench.action.toggleSidebarVisibility"]},
 
       // File navigation
       {"before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"]},
+
+      // Documentation
+      {"before": ["<leader>", "d", "o", "c"], "commands": ["extension.dash.specific"]},
+
+      // Go
+      {"before": ["<leader>", "g", "o", "t"],      "commands": ["go.test.file"],                   "when": "editorLangId == 'go'"},
+      {"before": ["<leader>", "g", "o", "t", "f"], "commands": ["go.test.cursor"],                 "when": "editorLangId == 'go'"},
+      {"before": ["<leader>", "g", "o", "r"],      "commands": ["go.playground"],                  "when": "editorLangId == 'go'"},
+      {"before": ["<leader>", "g", "o", "d"],      "commands": ["editor.action.revealDefinition"], "when": "editorLangId == 'go'"},
     ],
 
     "vim.visualModeKeyBindingsNonRecursive": [
@@ -44,4 +53,7 @@
       {"before": ["<"], "commands": ["editor.action.outdentLines"]},
       {"before": [">"], "commands": ["editor.action.indentLines"]},
     ],
+
+    // Go
+    "go.useLanguageServer": true,
 }
