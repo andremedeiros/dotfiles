@@ -2,6 +2,7 @@
 set -e
 
 binaries=()
+binaries=("${binaries[@]}" "dlv")
 binaries=("${binaries[@]}" "gdb")
 
 for binary in "${binaries[@]}"; do
