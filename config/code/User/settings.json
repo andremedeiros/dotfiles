@@ -12,6 +12,7 @@
     "git.confirmSync": false,
     "telemetry.enableTelemetry": false,
     "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.activityBar.visible": false,
     "workbench.statusBar.feedback.visible": false,
 
     // Terminal
@@ -34,6 +35,7 @@
       {"before": ["C-w", "C-v"],     "commands": ["workbench.action.splitEditorRight"]},
       {"before": ["C-w", "C-s"],     "commands": ["workbench.action.splitEditorDown"]},
       {"before": ["<leader>", "\\"], "commands": ["workbench.action.toggleSidebarVisibility"]},
+      {"before": ["<leader>", "z"],  "commands": ["workbench.action.toggleZenMode"]},
 
       // File navigation
       {"before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"]},
@@ -56,4 +58,12 @@
 
     // Go
     "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+      "diagnostics": true
+    },
+
+    // Zen
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.centerLayout": false
 }
