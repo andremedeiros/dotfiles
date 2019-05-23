@@ -3,6 +3,7 @@ set -e
 
 plugins=()
 # utils
+plugins=("${plugins[@]}" "ms-vsliveshare.vsliveshare")
 plugins=("${plugins[@]}" "vscodevim.vim")
 
 # language / syntax

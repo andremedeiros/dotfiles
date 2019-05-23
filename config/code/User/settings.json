@@ -14,6 +14,34 @@
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.statusBar.feedback.visible": false,
 
+    // Terminal
+    "terminal.integrated.fontSize": 14,
+
     // Vim
     "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+      // Line navigation
+      {"before": ["H"], "after": ["^"]},
+      {"before": ["L"], "after": ["$"]},
+
+      // Window navigation
+      {"before": ["C-h"], "commands": ["workbench.action.navigateLeft"]},
+      {"before": ["C-j"], "commands": ["workbench.action.navigateDown"]},
+      {"before": ["C-k"], "commands": ["workbench.action.navigateUp"]},
+      {"before": ["C-l"], "commands": ["workbench.action.navigateRight"]},
+
+      // Window management
+      {"before": ["C-w", "C-v"], "commands": ["workbench.action.splitEditorRight"]},
+      {"before": ["C-w", "C-s"], "commands": ["workbench.action.splitEditorDown"]},
+      {"before": ["<leader>", "\\"], "commands": ["workbench.action.toggleSidebarVisibility"]},
+
+      // File navigation
+      {"before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"]},
+    ],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+      // File manipulation
+      {"before": ["<"], "commands": ["editor.action.outdentLines"]},
+      {"before": [">"], "commands": ["editor.action.indentLines"]},
+    ],
 }
