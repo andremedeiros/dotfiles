@@ -1,69 +1,85 @@
 {
-    // Editor
-    "editor.fontFamily": "OperatorMono-Book",
-    "editor.fontLigatures": true,
-    "editor.fontSize": 14,
-    "editor.minimap.enabled": false,
-    "editor.tabSize": 2,
-    "files.associations": {
-        "Brewfile": "ruby"
-    },
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "telemetry.enableTelemetry": false,
-    "workbench.colorTheme": "Material Theme Darker High Contrast",
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.feedback.visible": false,
+  // Editor
+  "editor.fontFamily": "OperatorMono-Book",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "files.associations": {
+      "Brewfile": "ruby"
+  },
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "telemetry.enableTelemetry": false,
+  "workbench.colorTheme": "Material Theme Darker High Contrast",
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.feedback.visible": false,
 
-    // Terminal
-    "terminal.integrated.fontSize": 14,
+  // Terminal
+  "terminal.integrated.fontSize": 14,
 
-    // Vim
-    "vim.leader": "<space>",
-    "vim.normalModeKeyBindingsNonRecursive": [
-      // Line navigation
-      {"before": ["H"], "after": ["^"]},
-      {"before": ["L"], "after": ["$"]},
+  // Vim
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Line navigation
+    {"before": ["H"], "after": ["^"]},
+    {"before": ["L"], "after": ["$"]},
 
-      // Window navigation
-      {"before": ["C-h"], "commands": ["workbench.action.navigateLeft"]},
-      {"before": ["C-j"], "commands": ["workbench.action.navigateDown"]},
-      {"before": ["C-k"], "commands": ["workbench.action.navigateUp"]},
-      {"before": ["C-l"], "commands": ["workbench.action.navigateRight"]},
+    // Window navigation
+    {"before": ["C-h"], "commands": ["workbench.action.navigateLeft"]},
+    {"before": ["C-j"], "commands": ["workbench.action.navigateDown"]},
+    {"before": ["C-k"], "commands": ["workbench.action.navigateUp"]},
+    {"before": ["C-l"], "commands": ["workbench.action.navigateRight"]},
 
-      // Window management
-      {"before": ["C-w", "C-v"],     "commands": ["workbench.action.splitEditorRight"]},
-      {"before": ["C-w", "C-s"],     "commands": ["workbench.action.splitEditorDown"]},
-      {"before": ["<leader>", "\\"], "commands": ["workbench.action.toggleSidebarVisibility"]},
-      {"before": ["<leader>", "z"],  "commands": ["workbench.action.toggleZenMode"]},
+    // Window management
+    {"before": ["C-w", "C-v"],     "commands": ["workbench.action.splitEditorRight"]},
+    {"before": ["C-w", "C-s"],     "commands": ["workbench.action.splitEditorDown"]},
+    {"before": ["<leader>", "\\"], "commands": ["workbench.action.toggleSidebarVisibility"]},
+    {"before": ["<leader>", "z"],  "commands": ["workbench.action.toggleZenMode"]},
 
-      // File navigation
-      {"before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"]},
+    // File navigation
+    {"before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"]},
 
-      // Documentation
-      {"before": ["<leader>", "d", "o", "c"], "commands": ["extension.dash.specific"]},
-
-      // Go
-      {"before": ["<leader>", "g", "o", "t"],      "commands": ["go.test.file"],                   "when": "editorLangId == 'go'"},
-      {"before": ["<leader>", "g", "o", "t", "f"], "commands": ["go.test.cursor"],                 "when": "editorLangId == 'go'"},
-      {"before": ["<leader>", "g", "o", "r"],      "commands": ["go.playground"],                  "when": "editorLangId == 'go'"},
-      {"before": ["<leader>", "g", "o", "d"],      "commands": ["editor.action.revealDefinition"], "when": "editorLangId == 'go'"},
-    ],
-
-    "vim.visualModeKeyBindingsNonRecursive": [
-      // File manipulation
-      {"before": ["<"], "commands": ["editor.action.outdentLines"]},
-      {"before": [">"], "commands": ["editor.action.indentLines"]},
-    ],
+    // Documentation
+    {"before": ["<leader>", "d", "o", "c"], "commands": ["extension.dash.specific"]},
 
     // Go
-    "go.useLanguageServer": true,
-    "go.languageServerExperimentalFeatures": {
-      "diagnostics": true
-    },
+    {"before": ["<leader>", "g", "o", "t"],      "commands": ["go.test.file"],                   "when": "editorLangId == 'go'"},
+    {"before": ["<leader>", "g", "o", "t", "f"], "commands": ["go.test.cursor"],                 "when": "editorLangId == 'go'"},
+    {"before": ["<leader>", "g", "o", "r"],      "commands": ["go.playground"],                  "when": "editorLangId == 'go'"},
+    {"before": ["<leader>", "g", "o", "d"],      "commands": ["editor.action.revealDefinition"], "when": "editorLangId == 'go'"},
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Line navigation
+    {"before": ["H"], "after": ["^"]},
+    {"before": ["L"], "after": ["$"]},
 
-    // Zen
-    "zenMode.fullScreen": false,
-    "zenMode.hideLineNumbers": false,
-    "zenMode.centerLayout": false
+    // File manipulation
+    {"before": ["<"], "commands": ["editor.action.outdentLines"]},
+    {"before": [">"], "commands": ["editor.action.indentLines"]},
+  ],
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": ["#8197bf", "#30302c"],
+  "vim.statusBarColors.insert": ["#e8e8d3", "#30302c"],
+  "vim.statusBarColors.visual": ["#f0a0c0", "#30302c"],
+
+  // Go
+  "go.useLanguageServer": true,
+  "go.languageServerExperimentalFeatures": {
+    "diagnostics": true
+  },
+
+  // Zen
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.centerLayout": false,
+
+  // Workbench colors (changed by vim)
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#8197bf",
+    "statusBar.noFolderBackground": "#8197bf",
+    "statusBar.debuggingBackground": "#8197bf",
+    "statusBar.foreground": "#30302c"
+  }
 }
