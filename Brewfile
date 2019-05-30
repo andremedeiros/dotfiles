@@ -6,6 +6,7 @@ end
 
 cask_args appdir: '/Applications'
 
+brew 'asciinema'
 brew 'chruby'
 brew 'coreutils'
 brew 'cowsay'
