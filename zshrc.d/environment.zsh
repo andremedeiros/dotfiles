@@ -10,6 +10,7 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # add custom bin directories to path
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=$PATH:$GOPATH/bin
