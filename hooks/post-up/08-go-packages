@@ -14,7 +14,6 @@ packages=("${packages[@]}" "github.com/kisielk/errcheck")
 packages=("${packages[@]}" "github.com/mdempsky/gocode")
 packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
-packages=("${packages[@]}" "honnef.co/go/tools/cmd/gosimple")
 
 for package in "${packages[@]}"; do
   go get -u "$package"
