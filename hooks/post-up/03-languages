@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -e
 
 # make sure we have our path set on a run previous to having a full environment
 export GOPATH=$HOME/.go
