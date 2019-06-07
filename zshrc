@@ -5,12 +5,8 @@ for include ($HOME/.zshrc.d/*.zsh) source $include
 # load modules
 autoload -Uz compinit; compinit
 
-# chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
-# nvm
-source /usr/local/opt/nvm/nvm.sh
+# asdf
+source /usr/local/opt/asdf/asdf.sh
 
 # dir hopping
 source /usr/local/etc/profile.d/z.sh

@@ -2,6 +2,7 @@
 set -e
 
 # make sure we have our path set on a run previous to having a full environment
+export PATH=$HOME/.asdf/shims:$PATH
 export GOPATH=$HOME/.go
 
 packages=()
@@ -13,7 +14,6 @@ packages=("${packages[@]}" "github.com/kisielk/errcheck")
 packages=("${packages[@]}" "github.com/mdempsky/gocode")
 packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
-packages=("${packages[@]}" "honnef.co/go/tools/cmd/gosimple")
 
 for package in "${packages[@]}"; do
   go get -u "$package"
