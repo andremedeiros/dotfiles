@@ -12,7 +12,6 @@ export EDITOR=nvim
 export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=$PATH:$GOPATH/bin
-export PATH=~/.asdf/shims:$PATH
 
 # shell history
 export HISTFILE=~/.histfile

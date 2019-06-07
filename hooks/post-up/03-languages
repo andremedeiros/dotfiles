@@ -4,6 +4,10 @@ set -e
 # make sure we have our path set on a run previous to having a full environment
 export GOPATH=$HOME/.go
 
+# so compilers can find zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
 plugins=()
 plugins=("${plugins[@]}" "elixir")
 plugins=("${plugins[@]}" "elm")
@@ -25,10 +29,5 @@ done
 # some plugin requirements
 ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-# so compilers can find zlib
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
-
 # let's go
 asdf install
-
