@@ -18,7 +18,6 @@ plugins=("${plugins[@]}" "nodejs")
 plugins=("${plugins[@]}" "ruby")
 plugins=("${plugins[@]}" "python")
 plugins=("${plugins[@]}" "rust")
-plugins=("${plugins[@]}" "solidity")
 plugins=("${plugins[@]}" "yarn")
 
 for plugin in "${plugins[@]}"; do
@@ -28,5 +27,6 @@ done
 # some plugin requirements
 ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-# let's go
-asdf install
+for plugin in "${plugins[@]}"; do
+  asdf install "$plugin" $(cat ~/.tool-versions | grep "$plugin" | awk '{print $2}')
+done
