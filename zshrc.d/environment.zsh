@@ -2,7 +2,6 @@
 export GOPATH=$HOME/.go
 
 # nodejs
-export NVM_DIR=$HOME/.nvm
 export NODE_OPTIONS="--stack-trace-limit=10000 --trace-warnings"
 
 # editor
@@ -11,9 +10,9 @@ export EDITOR=nvim
 
 # add custom bin directories to path
 export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=$PATH:$GOPATH/bin
+export PATH=~/.asdf/shims:$PATH
 
 # shell history
 export HISTFILE=~/.histfile

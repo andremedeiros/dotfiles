@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+
+# make sure we have our path set on a run previous to having a full environment
+export GOPATH=$HOME/.go
+
+plugins=()
+plugins=("${plugins[@]}" "elixir")
+plugins=("${plugins[@]}" "elm")
+plugins=("${plugins[@]}" "erlang")
+plugins=("${plugins[@]}" "gohugo")
+plugins=("${plugins[@]}" "golang")
+plugins=("${plugins[@]}" "nim")
+plugins=("${plugins[@]}" "nodejs")
+plugins=("${plugins[@]}" "ruby")
+plugins=("${plugins[@]}" "python")
+plugins=("${plugins[@]}" "rust")
+plugins=("${plugins[@]}" "solidity")
+plugins=("${plugins[@]}" "yarn")
+
+for plugin in "${plugins[@]}"; do
+  (asdf plugin-list | grep "$plugin") || asdf plugin-add "$plugin"
+done
+
+# some plugin requirements
+~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+# so compilers can find zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
+
+# let's go
+asdf install
+

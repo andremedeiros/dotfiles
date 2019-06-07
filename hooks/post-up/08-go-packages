@@ -2,6 +2,7 @@
 set -e
 
 # make sure we have our path set on a run previous to having a full environment
+export PATH=$HOME/.asdf/shims:$PATH
 export GOPATH=$HOME/.go
 
 packages=()
