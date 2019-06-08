@@ -7,6 +7,7 @@ autoload -Uz compinit; compinit
 
 # asdf
 source /usr/local/opt/asdf/asdf.sh
+source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # dir hopping
 source /usr/local/etc/profile.d/z.sh
