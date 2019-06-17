@@ -4,7 +4,9 @@ for include ($HOME/.zshrc.d/*.zsh) source $include
 
 # load home environment
 if [ -f ~/.env ]; then
-  export $(grep -v '^#' ~/.env | xargs)
+  set -o allexport
+  source ~/.env
+  set +o allexport
 fi
 
 # load modules
