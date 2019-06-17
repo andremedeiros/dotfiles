@@ -66,8 +66,9 @@ set expandtab
 set list listchars=tab:»·,trail:·
 " }}}
 
-" Homebrew {{{
+" Formats {{{
 autocmd BufNewFile,BufRead Brewfile setf ruby
+autocmd BufNewFile,BufRead *.gyp setf json
 " }}}
 
 " Go {{{

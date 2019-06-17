@@ -2,6 +2,11 @@
 for plugin ($HOME/.zshrc.d/plugins/*.plugin.zsh) source $plugin
 for include ($HOME/.zshrc.d/*.zsh) source $include
 
+# load home environment
+if [ -f ~/.env ]; then
+  export $(grep -v '^#' ~/.env | xargs)
+fi
+
 # load modules
 autoload -Uz compinit; compinit
 
