@@ -18,6 +18,10 @@ fi
 # accept license and trigger xcode developer tool download
 sudo xcodebuild -license accept
 
+# ensure brew environment
+eval $(brew shellenv)
+
+# and liftoff!
 env RCRC="$(pwd)"/rcrc rcup
 
 # setup the git origin so that I can actually push stuff

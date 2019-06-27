@@ -1,3 +1,10 @@
+# requirements
+if [ ! -f ~/.brew.env ]; then
+  brew shellenv > ~/.brew.env
+fi
+
+source ~/.brew.env
+
 # magic loading
 for plugin ($HOME/.zshrc.d/plugins/*.plugin.zsh) source $plugin
 for include ($HOME/.zshrc.d/*.zsh) source $include
@@ -13,20 +20,20 @@ fi
 autoload -Uz compinit; compinit
 
 # asdf
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/opt/asdf/etc/bash_completion.d/asdf.bash
+source $HOMEBREW_PREFIX/opt/asdf/asdf.sh
+source $HOMEBREW_PREFIX/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # dir hopping
-source /usr/local/etc/profile.d/z.sh
+source $HOMEBREW_PREFIX/etc/profile.d/z.sh
 
 # syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
 
 # colorize all the things
-source /usr/local/etc/grc.bashrc
+source $HOMEBREW_PREFIX/etc/grc.bashrc
 
 # make history useful
 setopt inc_append_history

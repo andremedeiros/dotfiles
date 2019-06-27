@@ -9,7 +9,6 @@ export VISUAL=nvim
 export EDITOR=nvim
 
 # add custom bin directories to path
-export PATH=/usr/local/sbin:$PATH
 export PATH=$PATH:~/.bin
 export PATH=$PATH:$GOPATH/bin
 
