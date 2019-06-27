@@ -1,9 +1,9 @@
 # requirements
-if [ ! -f ~/.brew.env ]; then
-  brew shellenv > ~/.brew.env
+if [ ! -f ~/.brew.zsh ]; then
+  brew shellenv > ~/.brew.zsh
 fi
 
-source ~/.brew.env
+source ~/.brew.zsh
 
 # magic loading
 for plugin ($HOME/.zshrc.d/plugins/*.plugin.zsh) source $plugin
