@@ -1,9 +1,3 @@
-def custom_cask(name)
-  root = File.expand_path('~/.brew')
-  path = File.join(root, 'cask', "#{name}.rb")
-  cask path
-end
-
 cask_args appdir: '/Applications'
 
 brew 'asciinema'
@@ -72,12 +66,10 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoomus'
 
-custom_cask 'orion'
-
 mas '1Password 7 - Password Manager', id: 1333542190
+mas 'Adblock Plus', id: 1432731683
 mas 'Bear', id: 1091189122
 mas 'Fantastical', id: 975937182
-mas 'Ghostery Lite', id: 1436953057
 mas 'Keynote', id: 409183694
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
