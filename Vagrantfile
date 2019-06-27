@@ -3,7 +3,10 @@ Vagrant.configure("2") do |config|
 
   config.vm.synced_folder "#{ENV['HOME']}/src/", "/home/ubuntu/src"
 
-  config.vm.provider "virtualbox" do |vb|
-    vb.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+  config.vm.provider "virtualbox" do |vm|
+    vm.customize [ "modifyvm", :id, "--uartmode1", "disconnected" ]
+
+    vm.memory = 4096
+    vm.cpus = 2
   end
 end
