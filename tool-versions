@@ -1,8 +1,8 @@
-elixir 1.8.0
+elixir 1.9.0
 elm 0.19.0
 erlang 22.0.2
 gohugo 0.55.6
-golang 1.12.5
+golang 1.12.6
 nim v0.19.6
 nodejs 10.16.0
 python 3.7.3
