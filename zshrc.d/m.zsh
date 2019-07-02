@@ -1,40 +1,32 @@
 function __m {
-  # check whether we're passing an argument
-  if [ $# -eq 0 ]; then
-    echo 'session name required'
-    return
-  fi
+  local sessname="${1:-$(basename $PWD)}"
 
   # check tmuxinator
-  if [ -e "$HOME/.config/tmuxinator/$1.yml" ]; then
-    tmuxinator start "$1" --suppress-tmux-version-warning
+  if [ -e "$HOME/.config/tmuxinator/$sessname.yml" ]; then
+    tmuxinator start "$sessname" --suppress-tmux-version-warning
     return
   fi
 
   # check tmux sessions
-  if tmux has-session -t "$1" 2>/dev/null; then
+  if tmux has-session -t "$sessname" 2>/dev/null; then
     # session exists, lets attach
-    tmux attach -t "$1"
+    tmux attach -t "$sessname"
   else
     # session does not exist, start new one
-    tmux new -s "$1"
+    tmux new -s "$sessname"
   fi
 }
 
 function __mk {
+  local sessname="${1:-$(basename $PWD)}"
   sessions=$(tmux ls -F "#S" 2>/dev/null)
 
-  if [ $# -eq 0 ]; then
-    if [ -z "$sessions" ]; then
-      echo 'no active sessions'
-    else
-      echo "$sessions"
-    fi
-
+  if [ -z "$sessions" ]; then
+    echo 'no active sessions'
     return
   fi
 
-  (grep -e "^$1$" <<< "$sessions" > /dev/null && tmux kill-session -t "$1") || echo 'session not found'
+  (grep -e "^$sessname$" <<< "$sessions" > /dev/null && tmux kill-session -t "$sessname") || echo 'session not found'
 }
 
 alias m='__m'
