@@ -30,4 +30,5 @@ alias dembark="\$HOME/src/github.com/embark-framework/embark/packages/embark/bin
 # misc
 alias fucking="sudo"
 alias moon="curl wttr.in/moon"
+alias ts=" date '+%Y%m%d%H%M%S'"
 alias weather="curl wttr.in"
