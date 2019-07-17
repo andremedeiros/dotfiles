@@ -94,15 +94,16 @@ defaults read com.googlecode.iterm2 "Custom Color Presets" | (grep -q jellybeans
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
 
-#    _____
-#   /     \   ____   ____   _____
-#  /  \ /  \ /  _ \ /  _ \ /     \
-# /    Y    (  <_> |  <_> )  Y Y  \
-# \____|__  /\____/ \____/|__|_|  /
-#         \/                    \/
+#   ___ ___
+#  /   |   \_____    _____   _____   ___________  ____________   ____   ____   ____
+# /    ~    \__  \  /     \ /     \_/ __ \_  __ \/  ___/\____ \ /  _ \ /  _ \ /    \
+# \    Y    // __ \|  Y Y  \  Y Y  \  ___/|  | \/\___ \ |  |_> >  <_> |  <_> )   |  \
+#  \___|_  /(____  /__|_|  /__|_|  /\___  >__|  /____  >|   __/ \____/ \____/|___|  /
+#        \/      \/      \/      \/     \/           \/ |__|                      \/
 
-# run moom as faceless
-defaults write com.manytricks.Moom "Application Mode" -int 2
+defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool false
+defaults write org.hammerspoon.Hammerspoon MJShowMenuIconKey -bool false
+defaults write org.hammerspoon.Hammerspoon MJKeepConsoleOnTopKey -bool true
 
 #    _____                    _________ __
 #   /  _  \ ______ ______    /   _____//  |_  ___________   ____
