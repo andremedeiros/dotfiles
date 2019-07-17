@@ -23,6 +23,7 @@ plugins=("${plugins[@]}" "tmux-plugins/vim-tmux")
 plugins=("${plugins[@]}" "tomlion/vim-solidity")
 plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
 plugins=("${plugins[@]}" "w0rp/ale")
+plugins=("${plugins[@]}" "xolox/vim-lua-ftplugin")
 
 # colorschemes / ui
 plugins=("${plugins[@]}" "Xuyuanp/nerdtree-git-plugin")
@@ -47,6 +48,7 @@ plugins=("${plugins[@]}" "editorconfig/editorconfig-vim")
 plugins=("${plugins[@]}" "rizzatti/dash.vim")
 plugins=("${plugins[@]}" "tpope/vim-endwise")
 plugins=("${plugins[@]}" "tpope/vim-surround")
+plugins=("${plugins[@]}" "xolox/vim-misc")
 
 for plugin in "${plugins[@]}"; do
   repo="https://github.com/${plugin}.git"
