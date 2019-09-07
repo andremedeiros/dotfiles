@@ -1,65 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-# ensure directories exist
 nvim_root=${HOME}/.config/nvim
-autoload_root=${nvim_root}/autoload
-bundle_root=${nvim_root}/bundle
+minpac_root=${nvim_root}/pack/minpac/opt/minpac
 
-mkdir -p "$autoload_root" "$bundle_root"
+if [ ! -d "${minpac_root}" ]; then
+  # ensure directories exist
+  mkdir -p "$minpac_root"
 
-# ensure pathogen is installed
-curl -LSso "$autoload_root/pathogen.vim" https://tpo.pe/pathogen.vim
-
-plugins=()
-
-# language / syntax
-plugins=("${plugins[@]}" "ElmCast/elm-vim")
-plugins=("${plugins[@]}" "andremedeiros/ragel.vim")
-plugins=("${plugins[@]}" "fatih/vim-go")
-plugins=("${plugins[@]}" "isRuslan/vim-es6")
-plugins=("${plugins[@]}" "leafgarland/typescript-vim")
-plugins=("${plugins[@]}" "tmux-plugins/vim-tmux")
-plugins=("${plugins[@]}" "tomlion/vim-solidity")
-plugins=("${plugins[@]}" "vim-ruby/vim-ruby")
-plugins=("${plugins[@]}" "w0rp/ale")
-plugins=("${plugins[@]}" "xolox/vim-lua-ftplugin")
-
-# colorschemes / ui
-plugins=("${plugins[@]}" "Xuyuanp/nerdtree-git-plugin")
-plugins=("${plugins[@]}" "airblade/vim-gitgutter")
-plugins=("${plugins[@]}" "itchyny/lightline.vim")
-plugins=("${plugins[@]}" "maximbaz/lightline-ale")
-plugins=("${plugins[@]}" "mhinz/vim-startify")
-plugins=("${plugins[@]}" "nanotech/jellybeans.vim")
-plugins=("${plugins[@]}" "romainl/vim-qf")
-plugins=("${plugins[@]}" "scrooloose/nerdtree")
-plugins=("${plugins[@]}" "troydm/zoomwintab.vim")
-
-# file management / browsing
-plugins=("${plugins[@]}" "junegunn/fzf.vim")
-plugins=("${plugins[@]}" "majutsushi/tagbar")
-plugins=("${plugins[@]}" "tmux-plugins/vim-tmux-focus-events")
-plugins=("${plugins[@]}" "tpope/vim-fugitive")
-plugins=("${plugins[@]}" "tpope/vim-rhubarb")
-
-# helpers
-plugins=("${plugins[@]}" "editorconfig/editorconfig-vim")
-plugins=("${plugins[@]}" "rizzatti/dash.vim")
-plugins=("${plugins[@]}" "tpope/vim-endwise")
-plugins=("${plugins[@]}" "tpope/vim-surround")
-plugins=("${plugins[@]}" "xolox/vim-misc")
-
-for plugin in "${plugins[@]}"; do
-  repo="https://github.com/${plugin}.git"
-  base=$(basename "$plugin")
-
-  if [ -d "$bundle_root/$base" ]; then
-    git -C "$bundle_root/$base" pull &> /dev/null
-  else
-    git -C "$bundle_root" clone "$repo" &> /dev/null
-  fi
-done
-
-# go
-nvim +:GoInstallBinaries +:q
+  # ensure minpac is installed
+  git clone https://github.com/k-takata/minpac.git ${minpac_root}
+fi

@@ -5,16 +5,36 @@ set -e
 export PATH=$HOME/.asdf/shims:$PATH
 export GOPATH=$HOME/.go
 
+# golang
 packages=()
-packages=("${packages[@]}" "github.com/derekparker/delve/cmd/dlv")
+packages=("${packages[@]}" "github.com/go-delve/delve/cmd/dlv")
 packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
 packages=("${packages[@]}" "github.com/google/pprof")
 packages=("${packages[@]}" "github.com/jstemmer/gotags")
 packages=("${packages[@]}" "github.com/kisielk/errcheck")
 packages=("${packages[@]}" "github.com/mdempsky/gocode")
+packages=("${packages[@]}" "github.com/sourcegraph/go-langserver")
 packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
 
 for package in "${packages[@]}"; do
   go get -u "$package"
+done
+
+# nodejs
+packages=()
+packages=("${packages[@]}" "dockerfile-language-server-nodejs")
+packages=("${packages[@]}" "typescript")
+packages=("${packages[@]}" "typescript-language-server")
+
+for package in "${packages[@]}"; do
+  npm install -g "$package"
+done
+
+# ruby
+packages=()
+packages=("${packages[@]}" "solargraph")
+
+for package in "${packages[@]}"; do
+  gem install "$package"
 done

@@ -1,7 +1,51 @@
 " Thanks @fatih for a lot of these.
 
 " Preamble {{{
-execute pathogen#infect()
+packadd minpac
+
+call minpac#init()
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+" language/syntax
+call minpac#add('ElmCast/elm-vim')
+call minpac#add('andremedeiros/ragel.vim')
+call minpac#add('fatih/vim-go', {'do': ':GoUpdateBinaries'})
+call minpac#add('isRuslan/vim-es6')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('tmux-plugins/vim-tmux')
+call minpac#add('tomlion/vim-solidity')
+call minpac#add('vim-ruby/vim-ruby')
+
+" colorschemes / ui
+call minpac#add('Xuyuanp/nerdtree-git-plugin')
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('itchyny/lightline.vim')
+call minpac#add('mhinz/vim-startify')
+call minpac#add('nanotech/jellybeans.vim')
+call minpac#add('romainl/vim-qf')
+call minpac#add('scrooloose/nerdtree')
+call minpac#add('troydm/zoomwintab.vim')
+
+" file management / browsing
+call minpac#add('junegunn/fzf.vim')
+call minpac#add('majutsushi/tagbar')
+call minpac#add('tmux-plugins/vim-tmux-focus-events')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-rhubarb')
+
+" helpers
+call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('liuchengxu/vista.vim')
+call minpac#add('prabirshrestha/async.vim')
+call minpac#add('prabirshrestha/vim-lsp')
+call minpac#add('rizzatti/dash.vim')
+call minpac#add('tpope/vim-endwise')
+call minpac#add('tpope/vim-surround')
+call minpac#add('xolox/vim-misc')
+
+command! PackUpdate call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call minpac#clean()
+command! PackStatus call minpac#status()
 " }}}
 
 " Backup / Swap {{{
@@ -84,6 +128,8 @@ let g:go_def_mode = 'gopls'
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
 " }}}
 
 " Quickfix {{{
@@ -93,13 +139,9 @@ let g:qf_loclist_window_bottom = 1
 " Lightline {{{
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
-    \ 'component_expand': {
-      \ 'linter_warnings': 'lightline#ale#warnings',
-      \ 'linter_errors': 'lightline#ale#errors',
-      \ 'linter_ok': 'lightline#ale#ok',
-    \ },
     \ 'component_function': {
       \ 'gitbranch': 'fugitive#head',
+      \ 'method': 'NearestMethodOrFunction',
     \ },
     \ 'component': {
       \ 'gitgutter_added': '%#HunksElementColor0#%{LightlineGitAddedCount()}',
@@ -107,17 +149,19 @@ let g:lightline = {
       \ 'gitgutter_removed': '%#HunksElementColor2#%{LightlineGitRemovedCount()}',
     \},
     \ 'component_type': {
-      \ 'linter_warnings': 'warning',
-      \ 'linter_errors': 'error',
       \ 'gitgutter_added': 'raw',
       \ 'gitgutter_modified': 'raw',
       \ 'gitgutter_removed': 'raw',
     \ },
     \ 'active': {
+      \ 'left': [
+        \ ['mode', 'paste'],
+        \ ['readonly', 'filename', 'modified', 'method']
+      \ ],
       \ 'right': [
         \ [ 'lineinfo' ],
-        \ [ 'linter_errors', 'linter_warnings', 'linter_ok' ],
-        \ [ 'gitbranch', 'gitgutter_added', 'gitgutter_modified', 'gitgutter_removed' ]
+        \ [ 'gitbranch' ],
+        \ [ 'gitgutter_added', 'gitgutter_modified', 'gitgutter_removed' ]
       \ ]
     \ },
     \ 'subseparator': {
@@ -173,7 +217,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Keyboard shortcuts {{{
 nnoremap <leader>j :Buffers<cr>
 nnoremap <leader>p :Files<cr>
-nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>t :Vista!!<cr>
 nnoremap <leader>z :ZoomWinTabToggle<cr>
 nnoremap <leader>\ :NERDTreeToggle<cr>
 nnoremap <leader>got :GoTest<cr>
@@ -199,24 +243,65 @@ augroup FastEscape
 augroup END
 " }}}
 
-" ALE {{{
-" Disable highlighting
-let g:ale_set_highlights = 0
-
-" Use quickfix
-let g:ale_set_quickfix = 1
-let g:ale_set_loclist = 0
-
-" Increase lint delay
-let g:ale_lint_delay = 2000
-" }}}
-
 " Quickfix {{{
 augroup quickfix
   autocmd!
   autocmd FileType qf wincmd J
   autocmd FileType qf setlocal wrap
 augroup END
+" }}}
+
+" Vista {{{
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+let g:vista#renderer#enable_icon = 0
+let g:vista_close_on_jump = 1
+let g:vista_default_executive = 'vim_lsp'
+" }}}
+
+" LSP {{{
+" I kinda wish I could use gopls but for some reason its output ins't
+" making LSP happy.
+au User lsp_setup call lsp#register_server({
+  \ 'name': 'go-langserver',
+  \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+  \ 'whitelist': ['go'],
+  \ })
+
+au User lsp_setup call lsp#register_server({
+  \ 'name': 'javascript support using typescript-language-server',
+  \ 'cmd': { server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+  \ 'root_uri': { server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_directory(lsp#utils#get_buffer_path(), '.git/..'))},
+  \ 'whitelist': ['javascript', 'javascript.jsx', 'typescript', 'typescript.tsx']
+  \ })
+
+au User lsp_setup call lsp#register_server({
+  \ 'name': 'ccls',
+  \ 'cmd': {server_info->['ccls']},
+  \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+  \ 'initialization_options': {},
+  \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+  \ })
+
+au User lsp_setup call lsp#register_server({
+  \ 'name': 'docker-langserver',
+  \ 'cmd': {server_info->[&shell, &shellcmdflag, 'docker-langserver --stdio']},
+  \ 'whitelist': ['dockerfile'],
+  \ })
+
+highlight link LspErrorText Error
+highlight link LspHintText Comment
+highlight link LspWarningText Warning
+
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_hint = {'text': 'ℹ︎'}
 " }}}
 
 " Override default behaviour {{{
