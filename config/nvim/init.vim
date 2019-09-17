@@ -45,9 +45,10 @@ function! PackInit() abort
   call minpac#add('xolox/vim-misc')
 endfunction
 
-command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
-command! PackClean  call PackInit() | call minpac#clean()
-command! PackStatus call PackInit() | call minpac#status()
+command! PackInstall call PackInit() | call minpac#update('', {'do': 'quit'})
+command! PackUpdate  call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean   call PackInit() | call minpac#clean()
+command! PackStatus  call PackInit() | call minpac#status()
 " }}}
 
 " Backup / Swap {{{
