@@ -12,4 +12,4 @@ if [ ! -d "${minpac_root}" ]; then
   git clone https://github.com/k-takata/minpac.git ${minpac_root}
 fi
 
-nvim --headless -c PackInstall
+nvim -c PackInstall
