@@ -8,9 +8,7 @@ export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include"
 
 plugins=()
-plugins=("${plugins[@]}" "elixir")
 plugins=("${plugins[@]}" "elm")
-plugins=("${plugins[@]}" "erlang")
 plugins=("${plugins[@]}" "gohugo")
 plugins=("${plugins[@]}" "golang")
 plugins=("${plugins[@]}" "nim")
