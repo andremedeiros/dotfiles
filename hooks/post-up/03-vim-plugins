@@ -13,3 +13,4 @@ if [ ! -d "${minpac_root}" ]; then
 fi
 
 nvim -c PackInstall
+nvim +GoUpdateBinaries +qall

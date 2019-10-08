@@ -10,7 +10,7 @@ function! PackInit() abort
   " language/syntax
   call minpac#add('ElmCast/elm-vim')
   call minpac#add('andremedeiros/ragel.vim')
-  call minpac#add('fatih/vim-go', {'do': ':GoUpdateBinaries'})
+  call minpac#add('fatih/vim-go')
   call minpac#add('isRuslan/vim-es6')
   call minpac#add('leafgarland/typescript-vim')
   call minpac#add('tmux-plugins/vim-tmux')
