@@ -36,3 +36,5 @@
   fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
 [pull]
   rebase = true
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

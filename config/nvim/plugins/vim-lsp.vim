@@ -1,9 +1,7 @@
 " LSP {{{
-" I kinda wish I could use gopls but for some reason its output ins't
-" making LSP happy.
 au User lsp_setup call lsp#register_server({
-  \ 'name': 'go-langserver',
-  \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+  \ 'name': 'gopls',
+  \ 'cmd': {server_info->['gopls', '-mode', 'stdio']},
   \ 'whitelist': ['go'],
   \ })
 
