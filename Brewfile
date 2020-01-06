@@ -12,7 +12,6 @@ brew 'fzf'
 brew 'gdb'
 brew 'git'
 brew 'gnupg'
-brew 'graphviz'
 brew 'grc'
 brew 'highlight'
 brew 'hub'
@@ -62,6 +61,7 @@ cask 'zoomus'
 mas '1Password 7 - Password Manager', id: 1333542190
 mas 'Adblock Plus', id: 1432731683
 mas 'Bear', id: 1091189122
+mas 'Clocker', id: 1056643111
 mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
 mas 'Mindnode', id: 1289197285
