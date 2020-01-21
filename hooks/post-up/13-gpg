@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+keys=()
+keys=("${keys[@]}" "8D89954324E8A88B")
+
+for key in "${keys[@]}"; do
+  gpg --recv-keys $key
+done
