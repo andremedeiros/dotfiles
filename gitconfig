@@ -1,6 +1,7 @@
 [user]
   name = Andre Medeiros
   email = me@andremedeiros.info
+	signingkey = 8D89954324E8A88B
 [alias]
   up = pull --rebase --autostash
   co = checkout
@@ -32,9 +33,12 @@
   compactionheuristic = true
 [commit]
   verbose = true
+	gpgsign = true
 [remote "origin"]
   fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
 [pull]
   rebase = true
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
+[gpg]
+	program = gpg

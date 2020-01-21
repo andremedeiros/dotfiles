@@ -1,0 +1,28 @@
+name: status
+root: ~/src/github.com/status-im/status-react
+startup_window: build
+pre_window:
+  - export STATUS_GO_SRC_OVERRIDE=~/src/github.com/status-im/status-go
+  - export TARGET=ios
+  - make shell TARGET=ios
+  - clear
+windows:
+  - build:
+      layout: 2cfc,298x122,0,0{149x122,0,0,0,148x122,150,0[148x61,150,0,1,148x60,150,62,2]}
+      panes:
+        - make startdev-ios-simulator
+        - make react-native-ios
+        - make run-ios
+  - react:
+      layout: main-vertical
+      panes:
+        - nvim
+  - go:
+      layout: main-vertical
+      root: ~/src/github.com/status-im/status-go
+      panes:
+        - nvim
+  - tests:
+      layout: main-vertical
+      root: ~/src/github.com/status-im/status-go
+      panes:
