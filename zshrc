@@ -18,6 +18,7 @@ fi
 
 # load modules
 autoload -Uz compinit; compinit
+autoload -Uz bashcompinit; bashcompinit
 
 # asdf
 source $HOMEBREW_PREFIX/opt/asdf/asdf.sh
