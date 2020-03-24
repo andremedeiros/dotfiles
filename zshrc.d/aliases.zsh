@@ -32,3 +32,6 @@ alias fucking="sudo"
 alias moon="curl wttr.in/moon"
 alias ts=" date '+%Y%m%d%H%M%S'"
 alias weather="curl wttr.in"
+
+# ruby
+alias be="bundle exec"
