@@ -4,6 +4,9 @@ set -e
 # ensure we're in the correct path
 cd "$(dirname "$0")/.."
 
+# ensure xcode things
+xcode-select --install || true
+
 # install homebrew if it's missing
 if ! command -v brew >/dev/null 2>&1; then
   echo "Installing homebrew"
