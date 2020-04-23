@@ -1,7 +1,7 @@
 [user]
   name = Andre Medeiros
   email = me@andremedeiros.info
-	signingkey = 8D89954324E8A88B
+	signingkey = 38F11905BF87C320
 [alias]
   up = pull --rebase --autostash
   co = checkout
