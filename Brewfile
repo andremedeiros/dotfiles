@@ -52,7 +52,6 @@ cask 'google-chrome'
 cask 'grammarly'
 cask 'hammerspoon'
 cask 'iterm2'
-cask 'kobo'
 cask 'omnigraffle'
 cask 'steam'
 cask 'transmit'
@@ -68,6 +67,7 @@ mas 'Bitwarden', id: 1352778147
 mas 'Clocker', id: 1056643111
 mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
+mas 'Kindle', id: 405399194
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
 mas 'Numbers', id: 409203825
