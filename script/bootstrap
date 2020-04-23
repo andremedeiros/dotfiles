@@ -4,9 +4,6 @@ set -e
 # ensure we're in the correct path
 cd "$(dirname "$0")/.."
 
-# ensure xcode things
-xcode-select --install || true
-
 # install homebrew if it's missing
 if ! command -v brew >/dev/null 2>&1; then
   echo "Installing homebrew"
@@ -17,9 +14,6 @@ if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
   echo "Installing rcm"
   brew install thoughtbot/formulae/rcm
 fi
-
-# accept license and trigger xcode developer tool download
-sudo xcodebuild -license accept
 
 # ensure brew environment
 eval $(brew shellenv)

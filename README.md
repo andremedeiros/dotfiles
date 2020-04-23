@@ -7,6 +7,7 @@ The dotfiles here are managed with [Thoughtbot's rcm](https://github.com/thought
 ## Installation
 
 ```
+xcode-select --install
 mkdir -p ~/src/github.com/andremedeiros
 git -C ~/src/github.com/andremedeiros clone https://github.com/andremedeiros/dotfiles.git
 cd ~/src/github.com/andremedeiros/dotfiles

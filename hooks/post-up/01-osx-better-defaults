@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 set -e
 
+# ____  ___               .___
+# \   \/  /____  ____   __| _/____
+#  \     // ___\/  _ \ / __ |/ __ \
+#  /     \  \__(  <_> ) /_/ \  ___/
+# /___/\  \___  >____/\____ |\___  >
+#       \_/   \/           \/    \/
+
+# accept license and trigger xcode developer tool download
+sudo xcodebuild -license accept
+
 #                       ________    _________
 #   _____ _____    ____ \_____  \  /   _____/
 #  /     \\__  \ _/ ___\ /   |   \ \_____  \
