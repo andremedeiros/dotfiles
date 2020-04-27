@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+symlinks=()
+symlinks=("${symlinks[@]}" "libssl.dylib")
+symlinks=("${symlinks[@]}" "libcrypto.dylib")
+
+pushd /usr/local/lib
+for symlink in "${symlinks[@]}"; do
+  if [ ! -f "$symlink" ]; then
+    ln -s /usr/local/opt/openssl/lib/$symlink $symlink
+  fi
+done
+popd
