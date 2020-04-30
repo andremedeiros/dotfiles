@@ -2,6 +2,7 @@ cask_args appdir: '/Applications'
 
 brew 'asciinema'
 brew 'asdf'
+brew 'bitwarden-cli'
 brew 'ccls'
 brew 'coreutils'
 brew 'cowsay'

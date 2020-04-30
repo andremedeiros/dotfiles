@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-set -e
-
-# set proper permissions on ~/.ssh/*
-chmod 600 ~/.ssh/id_*
-chmod 700 ~/.ssh
-
