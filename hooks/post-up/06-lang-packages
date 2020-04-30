@@ -18,7 +18,7 @@ packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
 
 for package in "${packages[@]}"; do
-  go get -u "$package"
+  brew gomod "$package"
 done
 
 # nodejs
