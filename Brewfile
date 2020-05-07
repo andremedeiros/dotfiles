@@ -60,10 +60,9 @@ cask 'omnigraffle'
 cask 'steam'
 cask 'transmit'
 cask 'vagrant'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'vmware-fusion'
 cask 'zoomus'
 
 mas '1Password 7 - Password Manager', id: 1333542190
