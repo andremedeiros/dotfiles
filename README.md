@@ -12,6 +12,7 @@ mkdir -p ~/src/github.com/andremedeiros
 git -C ~/src/github.com/andremedeiros clone https://github.com/andremedeiros/dotfiles.git
 cd ~/src/github.com/andremedeiros/dotfiles
 script/bootstrap
+git remote set-url origin git@github.com:andremedeiros/dotfiles.git
 ```
 
 You can also add secret/proprietary dotfiles on your iCloud drive. Anything inside `iCloud Drive/dotfiles` will also be symlinked with the same rules as here.
