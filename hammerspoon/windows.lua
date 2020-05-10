@@ -60,15 +60,17 @@ function _M.setup(leader, key, sizes)
     win = hs.window.focusedWindow()
   end
 
-  wm:bind("cmd", "h",      function() _M.moveScreenLeft(win);           wm:exit() end)
-  wm:bind("cmd", "l",      function() _M.moveScreenRight(win);          wm:exit() end)
-  wm:bind("",    "space",  function() _M.maximize(win);                 wm:exit() end)
-  wm:bind("",    "h",      function() _M.moveLeft(win, sizes.left);     wm:exit() end)
-  wm:bind("",    "j",      function() _M.moveDown(win, sizes.down);     wm:exit() end)
-  wm:bind("",    "k",      function() _M.moveUp(win, sizes.up);         wm:exit() end)
-  wm:bind("",    "l",      function() _M.moveRight(win, sizes.right);   wm:exit() end)
-  wm:bind("",    "tab",    function() _M.moveCenter(win, sizes.center); wm:exit() end)
-  wm:bind("",    "escape", function()                                   wm:exit() end)
+  wm:bind("cmd",   "h",      function() _M.moveScreenLeft(win);           wm:exit() end)
+  wm:bind("cmd",   "l",      function() _M.moveScreenRight(win);          wm:exit() end)
+  wm:bind("",      "space",  function() _M.maximize(win);                 wm:exit() end)
+  wm:bind("shift", "h",      function() _M.moveLeft(win, 1/2);            wm:exit() end)
+  wm:bind("shift", "l",      function() _M.moveRight(win, 1/2);           wm:exit() end)
+  wm:bind("",      "h",      function() _M.moveLeft(win, sizes.left);     wm:exit() end)
+  wm:bind("",      "j",      function() _M.moveDown(win, sizes.down);     wm:exit() end)
+  wm:bind("",      "k",      function() _M.moveUp(win, sizes.up);         wm:exit() end)
+  wm:bind("",      "l",      function() _M.moveRight(win, sizes.right);   wm:exit() end)
+  wm:bind("",      "tab",    function() _M.moveCenter(win, sizes.center); wm:exit() end)
+  wm:bind("",      "escape", function()                                   wm:exit() end)
 end
 
 return _M
