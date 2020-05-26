@@ -178,6 +178,7 @@ command! Reload source $MYVIMRC
 " }}}
 
 " Load files {{{
+source ~/.config/nvim/languages/elm.vim
 source ~/.config/nvim/languages/golang.vim
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/gitgutter.vim

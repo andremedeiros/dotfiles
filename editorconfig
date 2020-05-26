@@ -10,3 +10,6 @@ insert_final_newline = true
 
 [{Makefile,*.go,*.go.rl}]
 indent_style = tab
+
+[*.elm]
+indent_size=4
