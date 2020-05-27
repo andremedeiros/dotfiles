@@ -7,7 +7,7 @@ function __ia {
 }
 
 # humor
-alias commitmsg='curl -s "https://whatthecommit.com/index.txt"'
+alias commitmsg='curl -s "http://whatthecommit.com/index.txt"'
 alias dadjoke='curl -s "https://icanhazdadjoke.com"'
 alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
 
