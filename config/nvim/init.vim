@@ -9,6 +9,7 @@ function! PackInit() abort
 
   " language/syntax
   call minpac#add('ElmCast/elm-vim')
+  call minpac#add('LnL7/vim-nix')
   call minpac#add('andremedeiros/ragel.vim')
   call minpac#add('fatih/vim-go')
   call minpac#add('isRuslan/vim-es6')
