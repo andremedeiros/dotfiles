@@ -12,6 +12,7 @@ alias dadjoke='curl -s "https://icanhazdadjoke.com"'
 alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
 
 # serious
+alias l="_l"
 alias code="code --user-data-dir=\$HOME/.config/code"
 alias git="hub"
 alias hl="highlight -O ansi -n"

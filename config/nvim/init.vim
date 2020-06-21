@@ -16,6 +16,7 @@ function! PackInit() abort
   call minpac#add('leafgarland/typescript-vim')
   call minpac#add('tmux-plugins/vim-tmux')
   call minpac#add('tomlion/vim-solidity')
+  call minpac#add('vim-crystal/vim-crystal')
   call minpac#add('vim-ruby/vim-ruby')
 
   " colorschemes / ui
