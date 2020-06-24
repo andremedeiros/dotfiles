@@ -1,0 +1,3 @@
+#!/bin/sh
+sudo nix upgrade-nix
+sudo HOME=/var/root nix-channel --update nixpkgs
