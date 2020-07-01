@@ -18,12 +18,15 @@ packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
 
 for package in "${packages[@]}"; do
-  brew gomod "$package"
+  brew gomod "$package" || true
 done
 
 # nodejs
 packages=()
 packages=("${packages[@]}" "dockerfile-language-server-nodejs")
+packages=("${packages[@]}" "elm-format")
+packages=("${packages[@]}" "elm-oracle")
+packages=("${packages[@]}" "elm-test")
 packages=("${packages[@]}" "typescript")
 packages=("${packages[@]}" "typescript-language-server")
 

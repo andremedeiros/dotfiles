@@ -41,3 +41,6 @@ setopt inc_append_history
 setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/Users/andremedeiros/.netlify/helper/path.zsh.inc' ]; then source '/Users/andremedeiros/.netlify/helper/path.zsh.inc'; fi
