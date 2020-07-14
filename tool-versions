@@ -4,7 +4,7 @@ elm 0.19.1
 erlang 22.3
 gohugo 0.67.1
 golang 1.14.3
-nim v1.2.0
+nim v1.2.4
 nodejs 10.19.0
 python 3.8.2
 ruby 2.7.0
