@@ -1,15 +1,36 @@
+#compdef _l
 
-__loon_path="/Users/andremedeiros/src/github.com/andremedeiros/loon/loon"
+_loon_autocomplete() {
+	local -a opts
+	local cur
+	cur=${words[-1]}
+	if [[ "$cur" == "-"* ]]; then
+		opts=("${(@f)$(_CLI_ZSH_AUTOCOMPLETE_HACK=1 ${words[@]:0:#words[@]-1} ${cur} --generate-bash-completion)}")
+	else
+		opts=("${(@f)$(_CLI_ZSH_AUTOCOMPLETE_HACK=1 ${words[@]:0:#words[@]-1} --generate-bash-completion)}")
+	fi
+
+	if [[ "${opts[1]}" != "" ]]; then
+		_describe 'values' opts
+	else
+		_files
+	fi
+
+	return
+}
+
+compdef _loon_autocomplete _l
 
 _l() {
-	local tmp ret finalizer
+	local finalizer loon ret tmp
+	loon="/Users/andremedeiros/src/github.com/andremedeiros/loon/loon"
 
 	tmp="$(mktemp -u)"
 	exec 9>"${tmp}"
 	exec 8<"${tmp}"
 	rm ${tmp}
 
-	"${__loon_path}" "$@"
+	"${loon}" "$@"
 	ret=$?
 
 	while read -r finalizer; do
@@ -24,4 +45,6 @@ _l() {
 
 	return ${ret}
 }
-		
+
+alias loon="_l"
+

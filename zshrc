@@ -5,6 +5,10 @@ fi
 
 source ~/.brew.zsh
 
+# load modules
+autoload -Uz compinit; compinit
+autoload -Uz bashcompinit; bashcompinit
+
 # magic loading
 for plugin ($HOME/.zshrc.d/plugins/*.plugin.zsh) source $plugin
 for include ($HOME/.zshrc.d/*.zsh) source $include
@@ -15,10 +19,6 @@ if [ -f ~/.env ]; then
   source ~/.env
   set +o allexport
 fi
-
-# load modules
-autoload -Uz compinit; compinit
-autoload -Uz bashcompinit; bashcompinit
 
 # asdf
 source $HOMEBREW_PREFIX/opt/asdf/asdf.sh
