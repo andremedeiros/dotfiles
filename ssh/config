@@ -38,16 +38,12 @@ Host github.com
   ControlMaster auto
   ControlPersist 120
 
-#  _________.__                  .__  _____
-#  /   _____/|  |__   ____ ______ |__|/ ____\__.__.
-#  \_____  \ |  |  \ /  _ \\____ \|  \   __<   |  |
-#  /        \|   Y  (  <_> )  |_> >  ||  |  \___  |
-# /_______  /|___|  /\____/|   __/|__||__|  / ____|
-#         \/      \/       |__|             \/
+#   _________ __          __
+#  /   _____//  |______ _/  |_ __ __  ______
+#  \_____  \\   __\__  \\   __\  |  \/  ___/
+#  /        \|  |  / __ \|  | |  |  /\___ \
+# /_______  /|__| (____  /__| |____//____  >
+#         \/           \/                \/
 
-Host *.shopifydc.com *.shopify.com
-  User andre_medeiros
-
-Host *.ash *.chi2
-  Hostname %h.shopifydc.com
-  User andre_medeiros
+Host *.statusim.net
+  IdentityAgent ~/.gnupg/S.gpg-agent.ssh
