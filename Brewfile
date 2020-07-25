@@ -61,18 +61,13 @@ cask 'obs'
 cask 'omnigraffle'
 cask 'steam'
 cask 'transmit'
-cask 'vagrant'
-cask 'vagrant-vmware-utility'
 cask 'visual-studio-code'
 cask 'vlc'
-cask 'vmware-fusion'
 cask 'zoomus'
 
-mas '1Password 7 - Password Manager', id: 1333542190
 mas 'Adblock Plus', id: 1432731683
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
-mas 'Clocker', id: 1056643111
 mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
 mas 'Kindle', id: 405399194
