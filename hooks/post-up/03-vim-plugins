@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
+# export so that installing go binaries does that
+# in the right place
+export GOPATH=$HOME/.go
+
 nvim_root=${HOME}/.config/nvim
 minpac_root=${nvim_root}/pack/minpac/opt/minpac
 
