@@ -68,9 +68,9 @@ cask 'zoomus'
 mas 'Adblock Plus', id: 1432731683
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
-mas 'Fantastical', id: 975937182
 mas 'Keynote', id: 409183694
 mas 'Kindle', id: 405399194
+mas 'Microsoft Remote Desktop', id: 1295203466
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
 mas 'Numbers', id: 409203825
