@@ -47,3 +47,5 @@
   smudge = git-lfs smudge -- %f
 [include]
   path = /Users/andremedeiros/.netlify/helper/git-config
+[core]
+  attributesfile = /Users/andremedeiros/.gitattributes
