@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+set -ex
+
+NAME=Nix
+MOUNTPOINT=/nix
+
+# Check for synthetic mount
+if [ ! -f "/etc/synthetic.conf" ] || [ "" = "$(grep $(basename $MOUNTPOINT) /etc/synthetic.conf)" ]; then
+  sudo echo $(basename $MOUNTPOINT) >> /etc/synthetic.conf
+fi
+
+# Ensure mount point exists
+if [ ! -d "/nix" ]; then
+  /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util -B
+fi
+
+# Check for volume
+if [ "" = "$(diskutil list | grep $NAME)" ]; then
+  # Figure out which disk is root
+  root=$(mount | grep " on / " | grep -o "disk\d")
+
+  # Create volume
+  sudo diskutil apfs addVolume "$root" APFSX $NAME -mountpoint $MOUNTPOINT
+fi
+
+# Check if volume is mounted
+if ! /bin/df $MOUNTPOINT; then
+  sudo diskutil mount $MOUNTPOINT
+fi
+
+# Grab disk ID
+disk_id=$(diskutil list | grep $NAME | grep -o "disk\ds\d")
+disk_uuid=$(diskutil info $disk_id | grep "Volume UUID" | grep -o -Ei "[A-Z0-9-]{36}")
+
+# Ownership
+sudo diskutil enableOwnership $MOUNTPOINT
+sudo chown $(whoami) $MOUNTPOINT
+
+# Filevault
+if ! diskutil info $disk_id | grep FileVault | grep Yes; then
+  password=$(openssl rand -hex 16)
+
+  sudo diskutil apfs enableFileVault /dev/$disk_id -user disk -passphrase $password
+
+  sudo security add-generic-password \
+    -l $NAME \
+    -a $disk_uuid \
+    -s $disk_uuid \
+    -D "Encrypted Volume Password" \
+    -w $password \
+    -T /System/Library/CoreServices/APFSUserAgent \
+    -T /System/Library/CoreServices/CSUserAgent \
+    /Library/Keychains/System.keychain
+
+
+fi
+
+# Check for fstab
+if ! grep "LABEL=$NAME" /etc/fstab; then
+  sudo echo "LABEL=$NAME $MOUNTPOINT apfs rw,nobrowse" >> /etc/fstab
+fi
+
+# Disable Spotlight
+mdutil -d $MOUNTPOINT
+
+# Install nix
+if ! which nix-shell; then
+  sh <(curl -L https://nixos.org/nix/install)
+fi

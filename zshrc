@@ -42,5 +42,10 @@ setopt share_history
 setopt hist_ignore_dups
 setopt hist_ignore_space
 
-# The next line updates PATH for Netlify's Git Credential Helper.
-if [ -f '/Users/andremedeiros/.netlify/helper/path.zsh.inc' ]; then source '/Users/andremedeiros/.netlify/helper/path.zsh.inc'; fi
+helpers=()
+helpers=("${helpers[@]}" ".netlify/helper/path.zsh.inc")
+helpers=("${helpers[@]}" ".nix-profile/etc/profile.d/nix.sh")
+
+for helper in "${helpers[@]}"; do
+  [ -f $HOME/$helper ] && source $HOME/$helper
+done
