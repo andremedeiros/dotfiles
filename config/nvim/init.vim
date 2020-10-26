@@ -30,6 +30,7 @@ function! PackInit() abort
   call minpac#add('troydm/zoomwintab.vim')
 
   " file management / browsing
+  call minpac#add('junegunn/fzf')
   call minpac#add('junegunn/fzf.vim')
   call minpac#add('majutsushi/tagbar')
   call minpac#add('tmux-plugins/vim-tmux-focus-events')

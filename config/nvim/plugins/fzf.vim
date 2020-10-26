@@ -1,6 +1,4 @@
 " FZF {{{
-set rtp+=/usr/local/opt/fzf
-
 let g:fzf_files_options = '--ansi --preview "highlight -O ansi --force {}" --preview-window right:100'
 
 command! -bang -nargs=* Ag
