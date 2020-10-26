@@ -18,6 +18,7 @@ function! PackInit() abort
   call minpac#add('tomlion/vim-solidity')
   call minpac#add('vim-crystal/vim-crystal')
   call minpac#add('vim-ruby/vim-ruby')
+  call minpac#add('ruby-formatter/rufo-vim')
 
   " colorschemes / ui
   call minpac#add('Xuyuanp/nerdtree-git-plugin')

@@ -37,6 +37,7 @@ done
 # ruby
 packages=()
 packages=("${packages[@]}" "solargraph")
+packages=("${packages[@]}" "rufo")
 
 for package in "${packages[@]}"; do
   gem install "$package"
