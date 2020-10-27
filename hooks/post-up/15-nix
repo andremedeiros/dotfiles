@@ -6,7 +6,7 @@ MOUNTPOINT=/nix
 
 # Check for synthetic mount
 if [ ! -f "/etc/synthetic.conf" ] || [ "" = "$(grep $(basename $MOUNTPOINT) /etc/synthetic.conf)" ]; then
-  sudo echo $(basename $MOUNTPOINT) >> /etc/synthetic.conf
+  echo $(basename $MOUNTPOINT) | sudo tee -a /etc/synthetic.conf
 fi
 
 # Ensure mount point exists
@@ -57,7 +57,7 @@ fi
 
 # Check for fstab
 if ! grep "LABEL=$NAME" /etc/fstab; then
-  sudo echo "LABEL=$NAME $MOUNTPOINT apfs rw,nobrowse" >> /etc/fstab
+  echo "LABEL=$NAME $MOUNTPOINT apfs rw,nobrowse" | sudo tee -a /etc/fstab
 fi
 
 # Disable Spotlight
