@@ -11,7 +11,7 @@ fi
 
 # Ensure mount point exists
 if [ ! -d "/nix" ]; then
-  /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util -B
+  /System/Library/Filesystems/apfs.fs/Contents/Resources/apfs.util -t
 fi
 
 # Check for volume

@@ -1,4 +1,4 @@
-tap 'FiloSottile/gomod'
+tap 'homebrew/cask'
 cask_args appdir: '/Applications'
 
 brew 'asciinema'
@@ -65,7 +65,6 @@ cask 'visual-studio-code'
 cask 'vlc'
 cask 'zoomus'
 
-mas 'Adblock Plus', id: 1432731683
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
 mas 'Keynote', id: 409183694

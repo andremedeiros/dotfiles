@@ -15,6 +15,3 @@ if [ ! -d "${minpac_root}" ]; then
   # ensure minpac is installed
   git clone https://github.com/k-takata/minpac.git ${minpac_root}
 fi
-
-nvim -c PackInstall
-nvim +GoUpdateBinaries +qall
