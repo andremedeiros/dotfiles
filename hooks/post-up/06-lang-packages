@@ -15,10 +15,10 @@ packages=("${packages[@]}" "github.com/kisielk/errcheck")
 packages=("${packages[@]}" "github.com/mdempsky/gocode")
 packages=("${packages[@]}" "github.com/sourcegraph/go-langserver")
 packages=("${packages[@]}" "golang.org/x/lint/golint")
-packages=("${packages[@]}" "golang.org/x/tools/cmd/gopls")
+packages=("${packages[@]}" "golang.org/x/tools/gopls")
 
 for package in "${packages[@]}"; do
-  brew gomod "$package" || true
+  go get -u "$package"
 done
 
 # nodejs
