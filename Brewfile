@@ -63,10 +63,10 @@ cask 'steam'
 cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
-cask 'zoomus'
 
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
+mas 'Goodnotes 5', id: 1444383602
 mas 'Keynote', id: 409183694
 mas 'Kindle', id: 405399194
 mas 'Microsoft Remote Desktop', id: 1295203466
@@ -80,8 +80,8 @@ mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
 mas 'Spark', id: 1176895641
+mas 'StopTheMadness', id: 1376402589
 mas 'Studies', id: 1071676469
-mas 'Tailscale', id: 1475387142
 mas 'The Unarchiver', id: 425424353
 mas 'Things3', id: 904280696
 mas 'Unsplash Wallpapers', id: 1284863847
