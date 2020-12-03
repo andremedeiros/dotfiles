@@ -3,6 +3,7 @@ Host *
 
   # Use my keyfile
   AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ecdsa
   IdentityFile ~/.ssh/id_rsa
   UseKeychain yes
   UseRoaming no
