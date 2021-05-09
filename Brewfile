@@ -1,4 +1,5 @@
 tap 'homebrew/cask'
+tap 'homebrew/cask-drivers'
 cask_args appdir: '/Applications'
 
 brew 'asciinema'
@@ -47,6 +48,7 @@ cask 'alfred'
 cask 'appcleaner'
 cask 'blender'
 cask 'caffeine'
+cask 'canon-eos-webcam-utility'
 cask 'coderunner'
 cask 'dash'
 cask 'discord'
