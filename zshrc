@@ -34,7 +34,7 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
 
 # colorize all the things
-source $HOMEBREW_PREFIX/etc/grc.bashrc
+source $HOMEBREW_PREFIX/etc/grc.zsh
 
 # make history useful
 setopt inc_append_history

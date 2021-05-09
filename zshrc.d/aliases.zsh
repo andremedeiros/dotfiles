@@ -6,6 +6,9 @@ function __ia {
   open "$1" -a /Applications/iA\ Writer.app
 }
 
+# zsh
+alias zshfixperms='compaudit | xargs chmod g-w'
+
 # humor
 alias commitmsg='curl -s "http://whatthecommit.com/index.txt"'
 alias dadjoke='curl -s "https://icanhazdadjoke.com"'

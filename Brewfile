@@ -4,7 +4,6 @@ cask_args appdir: '/Applications'
 brew 'asciinema'
 brew 'asdf'
 brew 'bitwarden-cli'
-brew 'brew-gomod'
 brew 'ccls'
 brew 'coreutils'
 brew 'cowsay'
@@ -51,10 +50,10 @@ cask 'caffeine'
 cask 'coderunner'
 cask 'dash'
 cask 'discord'
-cask 'eagle'
 cask 'google-chrome'
 cask 'grammarly'
 cask 'hammerspoon'
+cask 'insomnia'
 cask 'iterm2'
 cask 'loopback'
 cask 'obs'
@@ -66,6 +65,7 @@ cask 'vlc'
 
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
+mas 'Fantastical - Calendar & Tasks', id: 975937182
 mas 'Goodnotes 5', id: 1444383602
 mas 'Keynote', id: 409183694
 mas 'Kindle', id: 405399194
@@ -79,8 +79,6 @@ mas 'Pixelmator', id: 407963104
 mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
-mas 'Spark', id: 1176895641
-mas 'StopTheMadness', id: 1376402589
 mas 'Studies', id: 1071676469
 mas 'The Unarchiver', id: 425424353
 mas 'Things3', id: 904280696

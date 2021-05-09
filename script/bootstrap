@@ -10,9 +10,9 @@ if ! command -v brew >/dev/null 2>&1; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-if ! brew ls --versions thoughtbot/formulae/rcm > /dev/null; then
+if ! brew ls --versions rcm > /dev/null; then
   echo "Installing rcm"
-  brew install thoughtbot/formulae/rcm
+  brew install rcm
 fi
 
 # ensure brew environment

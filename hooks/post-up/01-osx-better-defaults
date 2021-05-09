@@ -75,18 +75,6 @@ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 #         \/     \/           \/
 defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool false
 
-# ___________                  .__              .__
-# \__    ___/__________  _____ |__| ____ _____  |  |
-#   |    |_/ __ \_  __ \/     \|  |/    \\__  \ |  |
-#   |    |\  ___/|  | \/  Y Y  \  |   |  \/ __ \|  |__
-#   |____| \___  >__|  |__|_|  /__|___|  (____  /____/
-#              \/            \/        \/     \/
-
-# add jellybeans theme
-defaults read com.apple.Terminal "Window Settings" | (grep -q Jellybeans || open ~/Downloads/Jellybeans.terminal)
-defaults write com.apple.Terminal "Default Window Settings" -string "Jellybeans"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Jellybeans"
-
 # ._____________                   ________
 # |__\__    ___/__________  _____  \_____  \
 # |  | |    |_/ __ \_  __ \/     \  /  ____/
