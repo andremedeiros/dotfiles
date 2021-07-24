@@ -15,9 +15,7 @@ for include ($HOME/.zshrc.d/*.zsh) source $include
 
 # load home environment
 if [ -f ~/.env ]; then
-  set -o allexport
-  source ~/.env
-  set +o allexport
+  __evalenv ~/.env
 fi
 
 # asdf

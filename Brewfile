@@ -58,6 +58,7 @@ cask 'hammerspoon'
 cask 'insomnia'
 cask 'iterm2'
 cask 'loopback'
+cask 'ngrok'
 cask 'obs'
 cask 'omnigraffle'
 cask 'steam'
@@ -65,6 +66,7 @@ cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
 
+mas '1Password', id: 1333542190
 mas 'Bear', id: 1091189122
 mas 'Bitwarden', id: 1352778147
 mas 'Fantastical - Calendar & Tasks', id: 975937182

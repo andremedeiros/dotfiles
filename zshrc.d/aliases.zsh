@@ -6,8 +6,16 @@ function __ia {
   open "$1" -a /Applications/iA\ Writer.app
 }
 
+function __evalenv {
+  set -o allexport
+  source "$1"
+  set +o allexport
+}
+
+
 # zsh
 alias zshfixperms='compaudit | xargs chmod g-w'
+alias ee='__evalenv'
 
 # humor
 alias commitmsg='curl -s "http://whatthecommit.com/index.txt"'
