@@ -68,7 +68,6 @@ cask 'vlc'
 
 mas '1Password', id: 1333542190
 mas 'Bear', id: 1091189122
-mas 'Bitwarden', id: 1352778147
 mas 'Fantastical - Calendar & Tasks', id: 975937182
 mas 'Goodnotes 5', id: 1444383602
 mas 'Keynote', id: 409183694
