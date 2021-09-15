@@ -7,11 +7,11 @@ style = "bright-blue"
 format = "[$path]($style)"
 
 [git_branch]
-format = "[ $branch]($style)"
+format = "[( $branch)]($style)"
 style = "bright-yellow"
 
 [git_status]
-format = "[$staged$modified](red)"
+format = "[($staged$modified)](red)"
 modified = "*"
 staged = "!"
 
@@ -19,5 +19,5 @@ staged = "!"
 format = "[($state)](red)"
 
 [cmd_duration]
-format = "[ ($duration)]($style)"
+format = "[( $duration)]($style)"
 style = "fg:196"
