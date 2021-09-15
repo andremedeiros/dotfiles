@@ -1,14 +1,14 @@
 add_newline = false
-format = "$directory$git_branch$git_status [>](bold red) "
+format = "$directory$git_branch$git_status$cmd_duration [>](bold red) "
 
 [directory]
 fish_style_pwd_dir_length = 1
-style = "bold blue"
+style = "bright-blue"
 format = "[$path]($style)"
 
 [git_branch]
 format = "[ $branch]($style)"
-style = "bold yellow"
+style = "bright-yellow"
 
 [git_status]
 format = "[$staged$modified](red)"
@@ -17,3 +17,7 @@ staged = "!"
 
 [git_state]
 format = "[($state)](red)"
+
+[cmd_duration]
+format = "[ ($duration)]($style)"
+style = "fg:196"
