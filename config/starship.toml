@@ -4,9 +4,10 @@ format = "$directory$git_branch$git_status [>](bold red) "
 [directory]
 fish_style_pwd_dir_length = 1
 style = "bold blue"
+format = "[$path]($style)"
 
 [git_branch]
-format = "[$branch]($style)"
+format = "[ $branch]($style)"
 style = "bold yellow"
 
 [git_status]
