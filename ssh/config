@@ -25,7 +25,7 @@ Host *
   ServerAliveCountMax 10
 
 Host knowhere
-  Hostname 192.168.2.254
+  Hostname 10.0.0.3
   Port 2222
 
 #   ________.__  __     ___ ___      ___.
