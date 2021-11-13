@@ -5,18 +5,19 @@ set -e
 cd "$(dirname "$0")/.."
 
 # install homebrew if it's missing
-if ! command -v brew >/dev/null 2>&1; then
+if [ ! -f "/opt/homebrew/bin/brew" ]; then
   echo "Installing homebrew"
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
+
+# ensure brew environment
+eval $(/opt/homebrew/bin/brew shellenv)
 
 if ! brew ls --versions rcm > /dev/null; then
   echo "Installing rcm"
   brew install rcm
 fi
 
-# ensure brew environment
-eval $(brew shellenv)
 
 # and liftoff!
 env RCRC="$(pwd)"/rcrc rcup

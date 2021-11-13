@@ -10,11 +10,9 @@ brew 'ccls'
 brew 'coreutils'
 brew 'cowsay'
 brew 'ctags'
-brew 'elm-format'
 brew 'fd'
 brew 'figlet'
 brew 'fzf'
-brew 'gdb'
 brew 'git'
 brew 'gnupg'
 brew 'grc'
@@ -57,7 +55,6 @@ cask 'discord'
 cask 'google-chrome'
 cask 'grammarly'
 cask 'hammerspoon'
-cask 'hocus-focus'
 cask 'insomnia'
 cask 'iterm2'
 cask 'loopback'
@@ -82,7 +79,6 @@ mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Patterns', id: 429449079
 mas 'Pixelmator', id: 407963104
-mas 'RESTed', id: 421879749
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
 mas 'Studies', id: 1071676469

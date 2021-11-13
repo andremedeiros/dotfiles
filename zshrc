@@ -1,6 +1,6 @@
 # requirements
 if [ ! -f ~/.brew.zsh ]; then
-  brew shellenv > ~/.brew.zsh
+  /opt/homebrew/bin/brew shellenv > ~/.brew.zsh
 fi
 
 source ~/.brew.zsh
