@@ -25,7 +25,7 @@ Host *
   ServerAliveCountMax 10
 
 Host knowhere
-  Hostname 10.0.0.3
+  HostName 10.0.0.3
   Port 2222
 
 #   ________.__  __     ___ ___      ___.
@@ -38,13 +38,3 @@ Host knowhere
 Host github.com
   ControlMaster auto
   ControlPersist 120
-
-#   _________ __          __
-#  /   _____//  |______ _/  |_ __ __  ______
-#  \_____  \\   __\__  \\   __\  |  \/  ___/
-#  /        \|  |  / __ \|  | |  |  /\___ \
-# /_______  /|__| (____  /__| |____//____  >
-#         \/           \/                \/
-
-Host *.statusim.net
-  IdentityAgent ~/.gnupg/S.gpg-agent.ssh

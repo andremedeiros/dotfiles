@@ -29,3 +29,6 @@ export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl@1.1"
 
 # docker
 export DOCKER_HOST="tcp://groot.local:2375"
+
+# ruby temporary fix
+export DISABLE_SPRING=true
