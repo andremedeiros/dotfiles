@@ -1,9 +1,10 @@
-elixir 1.11.4
+elixir 1.13
 elm 0.19.1
-gohugo 0.83.1
-golang 1.17.3
+erlang 24.2
+gohugo 0.92.0
+golang 1.17.6
 nodejs 16.1.0
-python 3.9.5
-ruby 3.0.1
-rust 1.55.0
-yarn 1.22.10
+python 3.10.1
+ruby 3.0.3
+rust 1.57.0
+yarn 1.22.17

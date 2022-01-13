@@ -12,6 +12,14 @@ function __evalenv {
   set +o allexport
 }
 
+function __be {
+  if [ -f "bin/$1" ]; then
+    "bin/$@"
+  else
+    bundle exec "$@"
+  fi
+}
+
 
 # zsh
 alias zshfixperms='compaudit | xargs chmod g-w'
@@ -52,6 +60,6 @@ alias ts=" date '+%Y%m%d%H%M%S'"
 alias weather="curl wttr.in"
 
 # ruby
-alias be="bundle exec"
+alias be="__be"
 
 

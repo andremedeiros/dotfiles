@@ -8,6 +8,8 @@ export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include"
 
 plugins=()
+plugins=("${plugins[@]}" "erlang")
+plugins=("${plugins[@]}" "elixir")
 plugins=("${plugins[@]}" "elm")
 plugins=("${plugins[@]}" "gohugo")
 plugins=("${plugins[@]}" "golang")
@@ -24,6 +26,4 @@ done
 # some plugin requirements
 ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
-for plugin in "${plugins[@]}"; do
-  asdf install "$plugin" $(cat ~/.tool-versions | grep "$plugin" | awk '{print $2}')
-done
+asdf install
