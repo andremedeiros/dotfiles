@@ -5,13 +5,8 @@ set -e
 # in the right place
 export GOPATH=$HOME/.go
 
-nvim_root=${HOME}/.config/nvim
-minpac_root=${nvim_root}/pack/minpac/opt/minpac
-
-if [ ! -d "${minpac_root}" ]; then
-  # ensure directories exist
-  mkdir -p "$minpac_root"
-
-  # ensure minpac is installed
-  git clone https://github.com/k-takata/minpac.git ${minpac_root}
+if [ ! -d ~/.local/share/nvim/site/pack/packer ]; then
+  # ensure packer is installed
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 fi

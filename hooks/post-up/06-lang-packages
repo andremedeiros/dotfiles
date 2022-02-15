@@ -8,7 +8,6 @@ export GOPATH=$HOME/.go
 # golang
 packages=()
 packages=("${packages[@]}" "github.com/go-delve/delve/cmd/dlv")
-packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
 packages=("${packages[@]}" "github.com/google/pprof")
 packages=("${packages[@]}" "github.com/jstemmer/gotags")
 packages=("${packages[@]}" "github.com/kisielk/errcheck")
@@ -18,7 +17,7 @@ packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/gopls")
 
 for package in "${packages[@]}"; do
-  go get -u "$package"
+  go install "$package"@latest
 done
 
 # nodejs
@@ -29,7 +28,7 @@ packages=("${packages[@]}" "elm-oracle")
 packages=("${packages[@]}" "elm-test")
 packages=("${packages[@]}" "typescript")
 packages=("${packages[@]}" "typescript-language-server")
-
+packages=("${packages[@]}" "vscode-langservers-extracted")
 for package in "${packages[@]}"; do
   npm install -g "$package"
 done
