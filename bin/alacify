@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+set -e
+
+export IFS=$'\n'
+for x in `ls $1/**/*.flac`; do
+  echo -n "."
+  if [ -n "`ffprobe -show_streams -v quiet $x | grep '^index=1$'`" ] ; then
+    ffmpeg -i "$x" \
+      -y           \
+      -acodec alac \
+      -vn          \
+      -ac 2        \
+      -ar 44100    \
+      "${x%.flac}.m4a" \
+      cover.jpg
+
+    AtomicParsley "${x%.flac}.m4a" --artwork cover.jpg --overWrite
+  else
+    ffmpeg -i "$x" \
+      -y           \
+      -acodec alac \
+      -vn          \
+      -ac 2        \
+      -ar 44100    \
+      "${x%.flac}.m4a"
+  fi
+done
+
+echo " done"

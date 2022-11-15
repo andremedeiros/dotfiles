@@ -1,12 +1,6 @@
 Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   IgnoreUnknown UseKeychain
-
-  # Use my keyfile
-  AddKeysToAgent yes
-  IdentityFile ~/.ssh/id_ecdsa
-  IdentityFile ~/.ssh/id_rsa
-  UseKeychain yes
-  UseRoaming no
 
   # Always use SSH2.
   Protocol 2
@@ -27,6 +21,9 @@ Host *
 Host knowhere
   HostName 10.0.0.3
   Port 2222
+
+Host fry
+  HostName fry
 
 #   ________.__  __     ___ ___      ___.
 #  /  _____/|__|/  |_  /   |   \ __ _\_ |__

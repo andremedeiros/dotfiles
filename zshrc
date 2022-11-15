@@ -19,7 +19,7 @@ if [ -f ~/.env ]; then
 fi
 
 # asdf
-source $HOMEBREW_PREFIX/opt/asdf/asdf.sh
+source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
 source $HOMEBREW_PREFIX/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # dir hopping

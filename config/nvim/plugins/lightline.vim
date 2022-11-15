@@ -2,7 +2,7 @@
 let g:lightline = {
     \ 'colorscheme': 'jellybeans',
     \ 'component_function': {
-      \ 'gitbranch': 'fugitive#head',
+      \ 'gitbranch': 'FugitiveHead',
       \ 'method': 'NearestMethodOrFunction',
     \ },
     \ 'component': {
