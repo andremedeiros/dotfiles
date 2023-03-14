@@ -1,29 +1,22 @@
-#!/usr/bin/env zsh
-set -e
 
-export IFS=$'\n'
-for x in `ls $1/**/*.flac`; do
-  echo -n "."
-  if [ -n "`ffprobe -show_streams -v quiet $x | grep '^index=1$'`" ] ; then
-    ffmpeg -i "$x" \
-      -y           \
-      -acodec alac \
-      -vn          \
-      -ac 2        \
-      -ar 44100    \
-      "${x%.flac}.m4a" \
-      cover.jpg
+#!/usr/bin/env ruby
 
-    AtomicParsley "${x%.flac}.m4a" --artwork cover.jpg --overWrite
-  else
-    ffmpeg -i "$x" \
-      -y           \
-      -acodec alac \
-      -vn          \
-      -ac 2        \
-      -ar 44100    \
-      "${x%.flac}.m4a"
-  fi
-done
+require 'pathname'
 
-echo " done"
+def convert(from)
+  to = from.sub_ext('.m4a')
+  return if File.exist?(to)
+  `ffmpeg -threads 8 -i "#{ from }" -c:a alac -c:v copy -q:a 0 -ar 44100 "#{ to }"`
+end
+
+albums = ARGV.any? ? ARGV : ["*"]
+
+paths = albums.map do |album|
+  hits = Pathname(Dir.pwd).glob(album)
+  hits.map { |hit| hit.glob('**/*.flac') }
+end.flatten
+
+paths.each do |path|
+  convert(path)
+end
+

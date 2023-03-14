@@ -4,8 +4,6 @@ tap 'yt-dlp/taps'
 cask_args appdir: '/Applications'
 
 brew 'asciinema'
-brew 'asdf'
-brew 'bitwarden-cli'
 brew 'ccls'
 brew 'coreutils'
 brew 'cowsay'
@@ -15,7 +13,6 @@ brew 'figlet'
 brew 'fzf'
 brew 'git'
 brew 'gnupg'
-brew 'grc'
 brew 'highlight'
 brew 'htop'
 brew 'hub'
@@ -30,6 +27,7 @@ brew 'pinentry-mac'
 brew 'proselint'
 brew 'ragel'
 brew 'reattach-to-user-namespace'
+brew 'rtx'
 brew 'shellcheck'
 brew 'starship'
 brew 'the_silver_searcher'
@@ -43,10 +41,10 @@ brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-syntax-highlighting'
 
+cask '1password'
 cask 'aerial'
 cask 'alfred'
 cask 'appcleaner'
-cask 'blender'
 cask 'caffeine'
 cask 'canon-eos-webcam-utility'
 cask 'dash'
@@ -66,7 +64,6 @@ cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
 
-mas '1Password', id: 1333542190
 mas 'Bear', id: 1091189122
 mas 'Fantastical - Calendar & Tasks', id: 975937182
 mas 'Goodnotes 5', id: 1444383602
@@ -81,7 +78,6 @@ mas 'Patterns', id: 429449079
 mas 'Pixelmator', id: 407963104
 mas 'Redacted', id: 984968384
 mas 'Slack', id: 803453959
-mas 'Studies', id: 1071676469
 mas 'The Unarchiver', id: 425424353
 mas 'Things3', id: 904280696
 mas 'Unsplash Wallpapers', id: 1284863847

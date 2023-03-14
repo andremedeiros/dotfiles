@@ -1,24 +1,22 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 set -e
 
 # make sure we have our path set on a run previous to having a full environment
-export PATH=$HOME/.asdf/shims:$PATH
+eval "$(rtx activate)"
 export GOPATH=$HOME/.go
 
 # golang
 packages=()
 packages=("${packages[@]}" "github.com/go-delve/delve/cmd/dlv")
-packages=("${packages[@]}" "github.com/golang/dep/cmd/dep")
 packages=("${packages[@]}" "github.com/google/pprof")
 packages=("${packages[@]}" "github.com/jstemmer/gotags")
 packages=("${packages[@]}" "github.com/kisielk/errcheck")
 packages=("${packages[@]}" "github.com/mdempsky/gocode")
-packages=("${packages[@]}" "github.com/sourcegraph/go-langserver")
 packages=("${packages[@]}" "golang.org/x/lint/golint")
 packages=("${packages[@]}" "golang.org/x/tools/gopls")
 
 for package in "${packages[@]}"; do
-  go get -u "$package"
+  go install "$package"@latest
 done
 
 # nodejs

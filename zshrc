@@ -18,9 +18,8 @@ if [ -f ~/.env ]; then
   __evalenv ~/.env
 fi
 
-# asdf
-source $HOMEBREW_PREFIX/opt/asdf/libexec/asdf.sh
-source $HOMEBREW_PREFIX/opt/asdf/etc/bash_completion.d/asdf.bash
+# languages
+eval "$(rtx activate)"
 
 # dir hopping
 source $HOMEBREW_PREFIX/etc/profile.d/z.sh
@@ -30,9 +29,6 @@ source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # completions
 fpath=($HOMEBREW_PREFIX/share/zsh-completions $fpath)
-
-# colorize all the things
-source $HOMEBREW_PREFIX/etc/grc.zsh
 
 # make history useful
 setopt inc_append_history

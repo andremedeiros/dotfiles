@@ -7,23 +7,4 @@ export GOPATH=$HOME/.go
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include"
 
-plugins=()
-plugins=("${plugins[@]}" "erlang")
-plugins=("${plugins[@]}" "elixir")
-plugins=("${plugins[@]}" "elm")
-plugins=("${plugins[@]}" "gohugo")
-plugins=("${plugins[@]}" "golang")
-plugins=("${plugins[@]}" "nodejs")
-plugins=("${plugins[@]}" "python")
-plugins=("${plugins[@]}" "ruby")
-plugins=("${plugins[@]}" "rust")
-plugins=("${plugins[@]}" "yarn")
-
-for plugin in "${plugins[@]}"; do
-  (asdf plugin-list | grep "$plugin") || asdf plugin-add "$plugin"
-done
-
-# some plugin requirements
-~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-
-asdf install
+rtx install
