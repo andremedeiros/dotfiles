@@ -1,7 +1,7 @@
 [user]
   name = Andre Medeiros
   email = hello@andre.cool
-  signingkey = 38F11905BF87C320
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAVg9SA4aL/UIAshxNKCvn5DaOGSfTHrsjqwRe9VnZw/
 [alias]
   up = pull --rebase --autostash
   co = checkout
@@ -39,7 +39,7 @@
 [pull]
   rebase = true
 [gpg]
-  program = gpg
+  format = ssh
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
@@ -50,4 +50,6 @@
 [core]
   attributesfile = /Users/andremedeiros/.gitattributes
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
