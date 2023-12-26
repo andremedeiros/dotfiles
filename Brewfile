@@ -1,5 +1,3 @@
-tap 'homebrew/cask'
-tap 'homebrew/cask-drivers'
 tap 'yt-dlp/taps'
 cask_args appdir: '/Applications'
 
