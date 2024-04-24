@@ -1,4 +1,3 @@
-
 #!/usr/bin/env ruby
 
 require 'pathname'
@@ -19,4 +18,3 @@ end.flatten
 paths.each do |path|
   convert(path)
 end
-

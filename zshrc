@@ -19,7 +19,7 @@ if [ -f ~/.env ]; then
 fi
 
 # languages
-eval "$(rtx activate)"
+eval "$(mise activate)"
 
 # dir hopping
 source $HOMEBREW_PREFIX/etc/profile.d/z.sh

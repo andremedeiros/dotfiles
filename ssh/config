@@ -1,3 +1,11 @@
+Host knowhere
+  HostName 10.0.0.3
+  Port 2222
+  User andremedeiros
+
+Host fry
+  HostName fry
+
 Host *
   IdentityAgent ~/Library/GroupContainersAlias/2BUA8C4S2C.com.1password/t/agent.sock
   IgnoreUnknown UseKeychain
@@ -17,13 +25,6 @@ Host *
   TCPKeepAlive yes
   ServerAliveInterval 20
   ServerAliveCountMax 10
-
-Host knowhere
-  HostName 10.0.0.3
-  Port 2222
-
-Host fry
-  HostName fry
 
 #   ________.__  __     ___ ___      ___.
 #  /  _____/|__|/  |_  /   |   \ __ _\_ |__
