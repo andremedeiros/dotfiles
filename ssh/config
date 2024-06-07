@@ -7,7 +7,7 @@ Host fry
   HostName fry
 
 Host *
-  IdentityAgent ~/Library/GroupContainersAlias/2BUA8C4S2C.com.1password/t/agent.sock
+  IdentityAgent ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
   IgnoreUnknown UseKeychain
 
   # Use a shared channel for all sessions to the same host,
