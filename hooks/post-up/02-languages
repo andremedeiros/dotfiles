@@ -7,4 +7,4 @@ export GOPATH=$HOME/.go
 export LDFLAGS="-L$HOMEBREW_PREFIX/opt/zlib/lib"
 export CPPFLAGS="-I$HOMEBREW_PREFIX/opt/zlib/include"
 
-rtx install
+mise install

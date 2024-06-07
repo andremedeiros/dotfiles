@@ -2,7 +2,7 @@
 set -e
 
 # make sure we have our path set on a run previous to having a full environment
-eval "$(rtx activate)"
+eval "$(mise activate)"
 export GOPATH=$HOME/.go
 
 # golang

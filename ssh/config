@@ -10,9 +10,6 @@ Host *
   IdentityAgent ~/Library/GroupContainersAlias/2BUA8C4S2C.com.1password/t/agent.sock
   IgnoreUnknown UseKeychain
 
-  # Always use SSH2.
-  Protocol 2
-
   # Use a shared channel for all sessions to the same host,
   # instead of always opening a new one. This leads to much
   # quicker connection times.
