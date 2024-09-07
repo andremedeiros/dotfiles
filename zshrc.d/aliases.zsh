@@ -37,7 +37,6 @@ alias lu="l up"
 alias ll="l down"
 
 # serious
-alias code="code --user-data-dir=\$HOME/.config/code"
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias git="hub"
 alias hl="highlight -O ansi -n"

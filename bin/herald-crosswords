@@ -1,0 +1,121 @@
+#!/usr/bin/env ruby
+
+require 'date'
+require 'optparse'
+require 'open-uri'
+require 'tmpdir'
+require 'net/http'
+
+CROSSWORD_TYPES = {
+  cryptic: :daily,
+  quick: :daily,
+  general_knowledge: :weekly,
+  wee_stinker: :weekly,
+}
+
+# jobs: A queue (See: https://rubyapi.org/3.0/o/queue)
+def thread_pool(pool_size: 4, jobs:, &block)
+  threads = []
+  results = []
+  mutex = Mutex.new
+
+  pool_size.times do
+    threads << Thread.new do
+      while !jobs.empty? do
+        job = jobs.pop(true)
+        result = block.call(job)
+        mutex.synchronize { results << result }
+      end
+    end
+  end
+  threads.map(&:join)
+  results
+end
+
+options = {}
+OptionParser.new do |parser|
+  parser.on("-d DURATION", "Duration and unit (e.g., 5d, 2m)") do |duration|
+    options[:duration] = duration
+  end
+
+  parser.on("-t TYPE", "Type of crosswords") do |type|
+    options[:type] = type
+  end
+end.parse!
+
+
+
+# Error handling if duration is missing
+options[:duration] ||= "-7d"
+options[:type] ||= "quick"
+
+# Split duration into amount and unit
+amount, unit = options[:duration].split("")
+amount = amount.to_i
+
+# Calculate dates
+today = Date.today
+case unit
+when "d"
+  start_date = today - amount  # Subtract days
+when "m"
+  start_date = today >> -amount  # Subtract months
+else
+  puts "Error: Invalid unit. Supported units are 'd' (days) and 'm' (months)."
+  exit 1
+end
+
+urls = Queue.new
+
+(start_date+1..today).each do |date|
+  if date.saturday? || date.sunday?
+    next
+  end
+
+  urls << "/resources/puzzler/%s-%s.pdf" % [options[:type], date.strftime("%y%m%d")]
+end
+
+files = []
+
+Dir.mktmpdir do |dir|
+  thread_pool(pool_size: 4, jobs: urls) do |url|
+    path = "#{dir}/#{url.split("/").last}"
+    puts "Downloading %s" % url
+
+    begin
+      Net::HTTP.start("www.heraldscotland.com", 443, use_ssl: true) do |http|
+        uri = URI("https://www.heraldscotland.com#{url}")
+        req = Net::HTTP::Get.new(uri)
+        http.request req do |response|
+          if response.code != "200"
+            next
+          end
+
+          open(path, "wb") do |file|
+            response.read_body do |chunk|
+              file.write(chunk)
+            end
+          end
+        end
+      end
+
+      files << path
+      puts path
+    rescue OpenURI::HTTPError => e
+      puts "Error: %s (url: %s)" % [e.message, url]
+      next
+    end
+  end
+
+  puts "Downloaded %d files" % files.size
+  puts "Joining..."
+  puts "gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=joined.pdf #{dir}/*.pdf"
+  begin
+    exec("gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=#{options[:type]}.pdf #{dir}/*.pdf")
+  rescue Exception => e
+    puts "Error: %s" % e.message
+  end
+  sleep 10000000000000000
+end
+
+
