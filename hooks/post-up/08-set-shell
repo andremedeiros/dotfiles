@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -e
 
-if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/zsh" ]; then
-  sudo dscl . -create /Users/"$USER" UserShell $HOMEBREW_PREFIX/bin/zsh
+if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/fish" ]; then
+  sudo dscl . -create /Users/"$USER" UserShell $HOMEBREW_PREFIX/bin/fish
 fi
+
+fisher install jethrokuan/z
