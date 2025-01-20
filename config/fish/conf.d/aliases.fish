@@ -11,6 +11,7 @@ alias ia="__ia"
 alias ifup='curl -s "https://api.ipify.org"'
 alias servedir='__servedir'
 alias ee='__evalenv'
+alias weather="curl wttr.in"
 
 function __ia --argument path
   open $path -a "/Applications/iA Writer.app"

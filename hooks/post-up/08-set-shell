@@ -6,3 +6,6 @@ if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/fish" ]; then
 fi
 
 fisher install jethrokuan/z
+
+fish_config theme choose "ayu Dark"
+fish_config theme save
