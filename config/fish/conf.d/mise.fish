@@ -1,1 +1,1 @@
-mise activate | source
+mise activate fish | source

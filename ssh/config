@@ -23,6 +23,10 @@ Host *
   ServerAliveInterval 20
   ServerAliveCountMax 10
 
+Host localdev
+  HostName 172.16.128.139
+  ForwardAgent yes
+
 #   ________.__  __     ___ ___      ___.
 #  /  _____/|__|/  |_  /   |   \ __ _\_ |__
 # /   \  ___|  \   __\/    ~    \  |  \ __ \
