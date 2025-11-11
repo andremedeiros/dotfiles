@@ -2,7 +2,7 @@ elixir 1.16
 elm 0.19.1
 erlang 26.2.4
 gohugo 0.125.3
-golang 1.24.1
+golang 1.25.1
 nodejs 20.12.2
 python 3.11
 ruby 3.3.3

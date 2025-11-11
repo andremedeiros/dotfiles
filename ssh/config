@@ -1,10 +1,4 @@
-Host knowhere
-  HostName 10.0.0.3
-  Port 2222
-  User andremedeiros
-
-Host fry
-  HostName fry
+Include /Users/andremedeiros/.colima/ssh_config
 
 Host *
   IdentityAgent ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
@@ -23,8 +17,17 @@ Host *
   ServerAliveInterval 20
   ServerAliveCountMax 10
 
+Host knowhere
+  HostName 10.0.0.3
+  Port 2222
+  User andremedeiros
+
 Host localdev
   HostName 172.16.128.139
+  ForwardAgent yes
+
+Host dev
+  HostName 10.0.0.58
   ForwardAgent yes
 
 #   ________.__  __     ___ ___      ___.
