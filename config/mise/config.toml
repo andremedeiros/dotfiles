@@ -1,0 +1,4 @@
+[tools]
+"ubi:golang-migrate/migrate" = "latest"
+"ubi:golangci/golangci-lint" = "latest"
+
