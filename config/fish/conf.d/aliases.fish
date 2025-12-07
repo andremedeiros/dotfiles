@@ -5,7 +5,6 @@ alias thisforthat='curl -s "http://itsthisforthat.com/api.php?text"'
 
 # serious
 alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-alias git="hub"
 alias hl="highlight -O ansi -n"
 alias ia="__ia"
 alias ifup='curl -s "https://api.ipify.org"'
