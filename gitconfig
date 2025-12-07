@@ -32,6 +32,7 @@
   algorithm = patience
   compactionheuristic = true
 [commit]
+  gpgsign = true
   verbose = true
 [remote "origin"]
   fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
@@ -46,6 +47,8 @@
   attributesfile = /Users/andremedeiros/.gitattributes
 [init]
   defaultBranch = main
+[gpg]
+  format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [url "ssh://git@github.com/"]
