@@ -33,23 +33,20 @@
   compactionheuristic = true
 [commit]
   verbose = true
-  gpgsign = true
 [remote "origin"]
   fetch = +refs/pull/*/merge:refs/remotes/origin/pr/*
 [pull]
   rebase = true
-[gpg]
-  format = ssh
 [filter "lfs"]
   process = git-lfs filter-process
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
-[include]
-  path = /Users/andremedeiros/.netlify/helper/git-config
 [core]
   attributesfile = /Users/andremedeiros/.gitattributes
 [init]
   defaultBranch = main
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
