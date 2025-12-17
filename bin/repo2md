@@ -1,0 +1,61 @@
+#!/usr/bin/env ruby
+
+require 'open3'
+
+# Get all tracked and untracked files, respecting .gitignore
+stdout, stderr, status = Open3.capture3('git ls-files')
+
+unless status.success?
+  puts "Error: Not a git repository or git command failed"
+  exit 1
+end
+
+files = stdout.split("\n").sort
+
+# Filter for text files (ignore binary files)
+text_files = files.select do |file|
+  next false unless File.file?(file)
+  
+  # Check if file is binary using git
+  _, _, status = Open3.capture3("git grep -I --name-only '' -- #{file}")
+  status.success?
+end
+
+# Generate markdown with file contents
+markdown = "# Code Repository\n\n"
+markdown += "Total files: #{text_files.length}\n\n"
+markdown += "---\n\n"
+
+text_files.each do |file|
+  markdown += "## #{file}\n\n"
+  
+  # Detect language for syntax highlighting
+  ext = File.extname(file).delete_prefix('.')
+  lang = ext.empty? ? '' : ext
+  
+  markdown += "```#{lang}\n"
+  markdown += File.read(file)
+  markdown += "\n" unless File.read(file).end_with?("\n")
+  markdown += "```\n\n"
+  markdown += "---\n\n"
+end
+
+# Copy to clipboard (works on macOS, Linux, and Windows via WSL)
+copy_command = case RbConfig::CONFIG['host_os']
+when /darwin/
+  'pbcopy'
+when /linux/
+  'xclip -selection clipboard'
+when /mswin|mingw|cygwin/
+  'clip'
+else
+  nil
+end
+
+if copy_command
+  IO.popen(copy_command, 'w') { |io| io.write(markdown) }
+  puts "✓ Markdown with file contents copied to clipboard! (#{text_files.length} files)"
+else
+  puts "Could not detect clipboard command. Here's the output:\n\n"
+  puts markdown
+end
