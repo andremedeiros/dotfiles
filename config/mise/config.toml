@@ -2,3 +2,5 @@
 "ubi:golang-migrate/migrate" = "latest"
 "ubi:golangci/golangci-lint" = "latest"
 "npm:@github/copilot" = "latest"
+"npm:@openai/codex" = "latest"
+"npm:opencode-ai" = "latest"
