@@ -34,9 +34,9 @@ Requirements for initial migration. Each maps to roadmap phases.
 
 ### Documentation
 
-- [ ] **DOCS-01**: README updated with LazyVim setup instructions
-- [ ] **DOCS-02**: Old vimscript config archived or removed
-- [ ] **DOCS-03**: Custom keybindings documented
+- [x] **DOCS-01**: README updated with LazyVim setup instructions
+- [x] **DOCS-02**: Old vimscript config archived or removed
+- [x] **DOCS-03**: Custom keybindings documented
 
 ## v2 Requirements
 
@@ -88,9 +88,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | KEYS-05 | Phase 2 | Complete |
 | KEYS-06 | Phase 2 | Complete |
 | KEYS-07 | Phase 2 | Complete |
-| DOCS-01 | Phase 3 | Pending |
-| DOCS-02 | Phase 3 | Pending |
-| DOCS-03 | Phase 3 | Pending |
+| DOCS-01 | Phase 3 | Complete |
+| DOCS-02 | Phase 3 | Complete |
+| DOCS-03 | Phase 3 | Complete |
 
 **Coverage:**
 - v1 requirements: 19 total
