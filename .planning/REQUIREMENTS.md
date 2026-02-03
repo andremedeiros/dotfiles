@@ -24,13 +24,13 @@ Requirements for initial migration. Each maps to roadmap phases.
 
 ### Keybindings
 
-- [ ] **KEYS-01**: H/L mapped to line start/end (^ and $)
-- [ ] **KEYS-02**: // mapped to clear search highlight (:noh)
-- [ ] **KEYS-03**: Visual mode < and > indent without losing selection
-- [ ] **KEYS-04**: <leader>p mapped to file finder
-- [ ] **KEYS-05**: <leader><Tab> mapped to alternate buffer
-- [ ] **KEYS-06**: <leader>z mapped to zoom window toggle
-- [ ] **KEYS-07**: Custom keybindings show in which-key popup with labels
+- [x] **KEYS-01**: H/L mapped to line start/end (^ and $)
+- [x] **KEYS-02**: // mapped to clear search highlight (:noh)
+- [x] **KEYS-03**: Visual mode < and > indent without losing selection
+- [x] **KEYS-04**: <leader>p mapped to file finder
+- [x] **KEYS-05**: <leader><Tab> mapped to alternate buffer
+- [x] **KEYS-06**: <leader>z mapped to zoom window toggle
+- [x] **KEYS-07**: Custom keybindings show in which-key popup with labels
 
 ### Documentation
 
@@ -81,13 +81,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INTG-02 | Phase 1 | Complete |
 | INTG-03 | Phase 1 | Complete |
 | INTG-04 | Phase 1 | Complete |
-| KEYS-01 | Phase 2 | Pending |
-| KEYS-02 | Phase 2 | Pending |
-| KEYS-03 | Phase 2 | Pending |
-| KEYS-04 | Phase 2 | Pending |
-| KEYS-05 | Phase 2 | Pending |
-| KEYS-06 | Phase 2 | Pending |
-| KEYS-07 | Phase 2 | Pending |
+| KEYS-01 | Phase 2 | Complete |
+| KEYS-02 | Phase 2 | Complete |
+| KEYS-03 | Phase 2 | Complete |
+| KEYS-04 | Phase 2 | Complete |
+| KEYS-05 | Phase 2 | Complete |
+| KEYS-06 | Phase 2 | Complete |
+| KEYS-07 | Phase 2 | Complete |
 | DOCS-01 | Phase 3 | Pending |
 | DOCS-02 | Phase 3 | Pending |
 | DOCS-03 | Phase 3 | Pending |
