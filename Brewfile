@@ -21,7 +21,7 @@ brew 'neovim'
 # LazyVim dependencies
 brew 'ripgrep'       # Fast grep (Telescope)
 brew 'fd'            # Fast find (Telescope)
-brew 'tree-sitter'   # Parser generator CLI (nvim-treesitter)
+brew 'tree-sitter-cli'   # Parser generator CLI (nvim-treesitter)
 
 brew 'ragel'
 brew 'starship'
