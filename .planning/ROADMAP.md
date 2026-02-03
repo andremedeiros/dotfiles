@@ -60,10 +60,10 @@ Plans:
   1. README contains LazyVim setup instructions including rcm integration
   2. Old vimscript configuration moved to archive or removed
   3. Custom keybindings documented with rationale
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] TBD (will be created during planning)
+- [ ] 03-01-PLAN.md — Update README.md with LazyVim documentation and keybindings
 
 ## Progress
 
@@ -74,4 +74,4 @@ Phases execute in numeric order: 1 → 2 → 3
 |-------|----------------|--------|-----------|
 | 1. Foundation and Integration | 3/3 | Complete | 2026-02-03 |
 | 2. Keybinding Migration | 1/1 | Complete | 2026-02-03 |
-| 3. Documentation | 0/TBD | Not started | - |
+| 3. Documentation | 0/1 | Not started | - |
