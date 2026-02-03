@@ -9,18 +9,18 @@ Requirements for initial migration. Each maps to roadmap phases.
 
 ### Foundation
 
-- [ ] **FOUND-01**: LazyVim installed using starter template
-- [ ] **FOUND-02**: File structure created (init.lua, lua/config/, lua/plugins/)
-- [ ] **FOUND-03**: Neovim >= 0.11.2 verified
-- [ ] **FOUND-04**: tree-sitter-cli >= 0.25.0 installed
-- [ ] **FOUND-05**: Dependencies verified (ripgrep, fd)
+- [x] **FOUND-01**: LazyVim installed using starter template
+- [x] **FOUND-02**: File structure created (init.lua, lua/config/, lua/plugins/)
+- [x] **FOUND-03**: Neovim >= 0.11.2 verified
+- [x] **FOUND-04**: tree-sitter-cli >= 0.25.0 installed
+- [x] **FOUND-05**: Dependencies verified (ripgrep, fd)
 
 ### Integration
 
-- [ ] **INTG-01**: rcm post-hook script created for LazyVim installation
-- [ ] **INTG-02**: Config symlinked from dotfiles repo to ~/.config/nvim
-- [ ] **INTG-03**: Post-hook installs lazy.nvim bootstrap automatically
-- [ ] **INTG-04**: Post-hook installs tree-sitter-cli via Homebrew
+- [x] **INTG-01**: rcm post-hook script created for LazyVim installation
+- [x] **INTG-02**: Config symlinked from dotfiles repo to ~/.config/nvim
+- [x] **INTG-03**: Post-hook installs lazy.nvim bootstrap automatically
+- [x] **INTG-04**: Post-hook installs tree-sitter-cli via Homebrew
 
 ### Keybindings
 
@@ -72,15 +72,15 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 | Pending |
-| FOUND-02 | Phase 1 | Pending |
-| FOUND-03 | Phase 1 | Pending |
-| FOUND-04 | Phase 1 | Pending |
-| FOUND-05 | Phase 1 | Pending |
-| INTG-01 | Phase 1 | Pending |
-| INTG-02 | Phase 1 | Pending |
-| INTG-03 | Phase 1 | Pending |
-| INTG-04 | Phase 1 | Pending |
+| FOUND-01 | Phase 1 | Complete |
+| FOUND-02 | Phase 1 | Complete |
+| FOUND-03 | Phase 1 | Complete |
+| FOUND-04 | Phase 1 | Complete |
+| FOUND-05 | Phase 1 | Complete |
+| INTG-01 | Phase 1 | Complete |
+| INTG-02 | Phase 1 | Complete |
+| INTG-03 | Phase 1 | Complete |
+| INTG-04 | Phase 1 | Complete |
 | KEYS-01 | Phase 2 | Pending |
 | KEYS-02 | Phase 2 | Pending |
 | KEYS-03 | Phase 2 | Pending |
