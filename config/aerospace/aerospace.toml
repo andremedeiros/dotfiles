@@ -1,5 +1,6 @@
 # Place a copy of this config to ~/.aerospace.toml
 # After that, you can edit ~/.aerospace.toml to your liking
+config-version = 2
 
 # You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
@@ -9,7 +10,11 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+#
+# 'layout --root tiles' cancels AeroSpace's startup "smart" behavior that
+# switches the focused workspace to accordion when >3 windows are scheduled
+# on it. See: https://github.com/nikitabobko/AeroSpace/issues/775
+after-startup-command = ['layout --root tiles']
 
 # Start AeroSpace at login
 start-at-login = true
@@ -42,6 +47,33 @@ key-mapping.preset = 'qwerty'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Workspaces that stay alive even when they contain no windows.
+# Requires 'config-version = 2'
+persistent-workspaces = ['Browsing', 'Planning', 'Learning', 'Communication']
+
+# See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
+# Matching is done by bundle ID (aerospace list-apps / mdls -name kMDItemCFBundleIdentifier).
+# SyncTERM ships no CFBundleIdentifier, so it is matched by app name.
+on-window-detected = [
+    {
+        if = 'test %{app-bundle-id} = com.moonlight-stream.Moonlight || test %{app-bundle-id} = net.86Box.86Box || test %{app-bundle-id} = com.vmware.fusion || test %{app-bundle-id} = com.apple.iphonesimulator || test %{app-name} ~= SyncTERM',
+        check-further-callbacks = true,
+        run = 'layout floating',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.openai.chat || test %{app-bundle-id} = com.anthropic.claudefordesktop || test %{app-bundle-id} = md.obsidian',
+        run = 'move-node-to-workspace Learning',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.apple.mail || test %{app-bundle-id} = com.apple.MobileSMS || test %{app-bundle-id} = com.tinyspeck.slackmacgap',
+        run = 'move-node-to-workspace Communication',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.flexibits.fantastical2.mac || test %{app-bundle-id} = com.culturedcode.ThingsMac',
+        run = 'move-node-to-workspace Planning',
+    },
+]
+
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
 # Possible values:
 # - Constant:     gaps.outer.top = 8
@@ -62,7 +94,13 @@ outer.right = 0
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-alt-enter = 'exec-and-forget open -b com.mitchellh.ghostty'
+# Open a NEW Ghostty window (plain 'open -b' only focuses an existing one)
+# See: https://nikitabobko.github.io/AeroSpace/goodies#open-a-new-window-with-applescript
+alt-enter = '''exec-and-forget osascript -e '
+tell application "Ghostty"
+    new window
+end tell'
+'''
 alt-shift-t = 'exec-and-forget open -b com.culturedcode.ThingsMac'
 alt-shift-m = 'exec-and-forget open -b com.apple.MobileSMS'
 alt-shift-s = 'exec-and-forget open -b com.tinyspeck.slackmacgap'
@@ -92,16 +130,27 @@ alt-shift-s = 'exec-and-forget open -b com.tinyspeck.slackmacgap'
 # '''
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-alt-h = 'focus left'
-alt-j = 'focus down'
-alt-k = 'focus up'
-alt-l = 'focus right'
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
+alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
+
+# See: https://nikitabobko.github.io/AeroSpace/commands#fullscreen
+alt-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-shift-h = 'move left'
+# h/l are i3-style "merge then pop out": in the flat row the first press merges
+# the window with its neighbor into a shared column (join-with); once nested
+# (parent is v_*), the next press moves it out as its own window again.
+# Bindings are AeroSpace shell exprs; && binds tighter than ||, so this parses
+# as (test && move) || join-with. See: https://nikitabobko.github.io/AeroSpace/guide#shell
+alt-shift-h = 'test %{window-layout} ~= ^v && move left || join-with left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
-alt-shift-l = 'move right'
+alt-shift-l = 'test %{window-layout} ~= ^v && move right || join-with right'
+# Plain i3-free moves (no merge), for when you just want to shove the window
+ctrl-alt-shift-h = 'move left'
+ctrl-alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
@@ -138,6 +187,9 @@ f = [
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
+# See: https://nikitabobko.github.io/AeroSpace/commands#layout
+slash = 'layout tiles horizontal vertical'
+
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
 
@@ -145,23 +197,3 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Moonlight|86Box|SyncTERM|VMware"
-check-further-callbacks = true
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-name-regex-substring = "ChatGPT|Claude|Obsidian"
-check-further-callbacks = true
-run = "move-node-to-workspace Learning"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Mail|Messages|Slack"
-check-further-callbacks = true
-run = "move-node-to-workspace Communication"
-
-[[on-window-detected]]
-if.app-name-regex-substring = "Fantastical|Things"
-check-further-callbacks = true
-run = "move-node-to-workspace Planning"

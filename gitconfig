@@ -1,5 +1,5 @@
 [user]
-  name = Andre Medeiros
+  name = André Medeiros
   email = hello@andre.cool
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAVg9SA4aL/UIAshxNKCvn5DaOGSfTHrsjqwRe9VnZw/
 [alias]
@@ -51,5 +51,3 @@
   format = ssh
 [gpg "ssh"]
   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-[url "ssh://git@github.com/"]
-  insteadOf = https://github.com/

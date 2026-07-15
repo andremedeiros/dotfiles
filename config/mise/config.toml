@@ -1,6 +1,11 @@
 [tools]
 "ubi:golang-migrate/migrate" = "latest"
 "ubi:golangci/golangci-lint" = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
 "npm:@github/copilot" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:opencode-ai" = "latest"
+"npm:@opengsd/gsd-core" = "latest"
+"npm:@oh-my-pi/pi-coding-agent" = "latest"
+node = "latest"
+bun = "latest"

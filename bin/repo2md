@@ -1,61 +1,76 @@
 #!/usr/bin/env ruby
 
 require 'open3'
+require 'tempfile'
 
-# Get all tracked and untracked files, respecting .gitignore
-stdout, stderr, status = Open3.capture3('git ls-files')
+# Get all tracked, non-binary files in a single process
+# -I = skip binary files, -l = filenames only, '' = match any line
+stdout, _, status = Open3.capture3('git', 'grep', '-I', '-l', '')
 
 unless status.success?
-  puts "Error: Not a git repository or git command failed"
+  $stderr.puts "Error: Not a git repository or git command failed"
   exit 1
 end
 
-files = stdout.split("\n").sort
+text_files = stdout.split("\n").select { |f| File.file?(f) }.sort
 
-# Filter for text files (ignore binary files)
-text_files = files.select do |file|
-  next false unless File.file?(file)
-  
-  # Check if file is binary using git
-  _, _, status = Open3.capture3("git grep -I --name-only '' -- #{file}")
-  status.success?
-end
+# Determine output target based on whether stdout is a TTY
+interactive = $stdout.tty?
 
-# Generate markdown with file contents
-markdown = "# Code Repository\n\n"
-markdown += "Total files: #{text_files.length}\n\n"
-markdown += "---\n\n"
-
-text_files.each do |file|
-  markdown += "## #{file}\n\n"
-  
-  # Detect language for syntax highlighting
-  ext = File.extname(file).delete_prefix('.')
-  lang = ext.empty? ? '' : ext
-  
-  markdown += "```#{lang}\n"
-  markdown += File.read(file)
-  markdown += "\n" unless File.read(file).end_with?("\n")
-  markdown += "```\n\n"
-  markdown += "---\n\n"
-end
-
-# Copy to clipboard (works on macOS, Linux, and Windows via WSL)
-copy_command = case RbConfig::CONFIG['host_os']
-when /darwin/
-  'pbcopy'
-when /linux/
-  'xclip -selection clipboard'
-when /mswin|mingw|cygwin/
-  'clip'
+if interactive
+  tmpfile = Tempfile.new(['repo2md', '.md'])
+  out = tmpfile
 else
-  nil
+  out = $stdout
 end
 
-if copy_command
-  IO.popen(copy_command, 'w') { |io| io.write(markdown) }
-  puts "✓ Markdown with file contents copied to clipboard! (#{text_files.length} files)"
-else
-  puts "Could not detect clipboard command. Here's the output:\n\n"
-  puts markdown
+begin
+  # Generate markdown with file contents
+  out.write "# Code Repository\n\n"
+  out.write "Total files: #{text_files.length}\n\n"
+  out.write "---\n\n"
+
+  text_files.each do |file|
+    out.write "## #{file}\n\n"
+
+    # Detect language for syntax highlighting
+    ext = File.extname(file).delete_prefix('.')
+    lang = ext.empty? ? '' : ext
+
+    content = File.read(file)
+    out.write "```#{lang}\n"
+    out.write content
+    out.write "\n" unless content.end_with?("\n")
+    out.write "```\n\n"
+    out.write "---\n\n"
+  end
+
+  if interactive
+    out.close
+
+    # Copy to clipboard (works on macOS, Linux, and Windows via WSL)
+    copy_command = case RbConfig::CONFIG['host_os']
+    when /darwin/
+      'pbcopy'
+    when /linux/
+      'xclip -selection clipboard'
+    when /mswin|mingw|cygwin/
+      'clip'
+    else
+      nil
+    end
+
+    if copy_command
+      system("#{copy_command} < #{tmpfile.path}")
+      $stderr.puts "✓ Markdown with file contents copied to clipboard! (#{text_files.length} files)"
+    else
+      $stderr.puts "Could not detect clipboard command."
+      IO.copy_stream(tmpfile.path, $stdout)
+    end
+  end
+ensure
+  if tmpfile
+    tmpfile.close unless tmpfile.closed?
+    tmpfile.unlink
+  end
 end
