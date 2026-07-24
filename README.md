@@ -70,6 +70,21 @@ These are custom additions to LazyVim's defaults:
 | <kbd>Leader</kbd> + <kbd>p</kbd> | Normal | Find files |
 | <kbd>Leader</kbd> + <kbd>Tab</kbd> | Normal | Switch to alternate buffer |
 | <kbd>Leader</kbd> + <kbd>z</kbd> | Normal | Toggle window zoom |
+| <kbd>Leader</kbd> + <kbd>u</kbd> <kbd>h</kbd> | Normal | Toggle inlay hints (off by default) |
+
+### Running Tests
+
+Tests run via [neotest](https://github.com/nvim-neotest/neotest) (LazyVim's `test.core` extra), with Go supported through `neotest-golang`:
+
+| Key | Action |
+|-----|--------|
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>r</kbd> | Run nearest test |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>t</kbd> | Run current file |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>T</kbd> | Run all test files |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>l</kbd> | Run last test |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>s</kbd> | Toggle summary panel |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>o</kbd> | Show test output |
+| <kbd>Leader</kbd> + <kbd>t</kbd> <kbd>w</kbd> | Toggle watch mode |
 
 For LazyVim's built-in keybindings, see the [official keymaps documentation](https://www.lazyvim.org/keymaps).
 
