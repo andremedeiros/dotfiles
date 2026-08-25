@@ -23,9 +23,26 @@ end
 
 function __evalenv --argument path
   set -q path[1]; or set path ".env"
-  for line in (cat $path | grep -v '^#' | grep -v '^\s*$')
-    set item (string split -m 1 '=' $line)
-    set -gx $item[1] $item[2]
-    echo "Exported key $item[1]"
+
+  if not test -f $path
+    echo "evalenv: no such file '$path'" >&2
+    return 1
+  end
+
+  for line in (cat $path)
+    set line (string trim $line)
+
+    test -z "$line"; and continue
+    string match -q '#*' -- $line; and continue
+
+    set line (string replace -r '^export\s+' '' -- $line)
+    set item (string split -m 1 '=' -- $line)
+    test (count $item) -eq 2; or continue
+
+    set key (string trim $item[1])
+    set value (string trim -c '\'"' (string trim $item[2]))
+
+    set -gx $key $value
+    echo "Exported key $key"
   end
 end
