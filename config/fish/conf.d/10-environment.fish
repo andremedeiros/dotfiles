@@ -12,8 +12,8 @@ set -gx EDITOR nvim
 fish_add_path -gP $HOME/.bin
 fish_add_path -gP $GOPATH/bin
 
-# ui
-set -gx TERM xterm-256color
+# ui (only when the terminal didn't set one, e.g. bare tty)
+set -q TERM; or set -gx TERM xterm-256color
 
 # nnn
 set -gx NNN_TMPFILE "/tmp/nnn"

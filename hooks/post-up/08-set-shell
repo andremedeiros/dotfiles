@@ -2,6 +2,7 @@
 set -e
 
 if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/fish" ]; then
+  grep -qx "$HOMEBREW_PREFIX/bin/fish" /etc/shells || echo "$HOMEBREW_PREFIX/bin/fish" | sudo tee -a /etc/shells
   sudo dscl . -create /Users/"$USER" UserShell $HOMEBREW_PREFIX/bin/fish
 fi
 

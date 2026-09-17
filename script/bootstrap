@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 # install homebrew if it's missing
 if [ ! -f "/opt/homebrew/bin/brew" ]; then
   echo "Installing homebrew"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # ensure brew environment

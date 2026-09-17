@@ -67,58 +67,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 # don't screw up fonts
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
-#   _________       _____             .__
-#  /   _____/____ _/ ____\____ _______|__|
-#  \_____  \\__  \\   __\\__  \\_  __ \  |
-#  /        \/ __ \|  |   / __ \|  | \/  |
-# /_______  (____  /__|  (____  /__|  |__|
-#         \/     \/           \/
-defaults write com.apple.Safari.SandboxBroker ShowDevelopMenu -bool false
-
-# ._____________                   ________
-# |__\__    ___/__________  _____  \_____  \
-# |  | |    |_/ __ \_  __ \/     \  /  ____/
-# |  | |    |\  ___/|  | \/  Y Y  \/       \
-# |__| |____| \___  >__|  |__|_|  /\_______ \
-#                 \/            \/         \/
-
-# use dark ui
-defaults write com.googlecode.iterm2 TabStyle -int 1
-
-# add jellybeans theme
-defaults read com.googlecode.iterm2 "Custom Color Presets" | (grep -q jellybeans || open ~/Downloads/jellybeans.itermcolors)
-
-# don't confirm whether I want to quit
-defaults write com.googlecode.iterm2 PromptOnQuit -bool false
-defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false
-
-#   ___ ___
-#  /   |   \_____    _____   _____   ___________  ____________   ____   ____   ____
-# /    ~    \__  \  /     \ /     \_/ __ \_  __ \/  ___/\____ \ /  _ \ /  _ \ /    \
-# \    Y    // __ \|  Y Y  \  Y Y  \  ___/|  | \/\___ \ |  |_> >  <_> |  <_> )   |  \
-#  \___|_  /(____  /__|_|  /__|_|  /\___  >__|  /____  >|   __/ \____/ \____/|___|  /
-#        \/      \/      \/      \/     \/           \/ |__|                      \/
-
-defaults write org.hammerspoon.Hammerspoon MJShowDockIconKey -bool false
-defaults write org.hammerspoon.Hammerspoon MJShowMenuIconKey -bool false
-defaults write org.hammerspoon.Hammerspoon MJKeepConsoleOnTopKey -bool true
-
-#    _____                    _________ __
-#   /  _  \ ______ ______    /   _____//  |_  ___________   ____
-#  /  /_\  \\____ \\____ \   \_____  \\   __\/  _ \_  __ \_/ __ \
-# /    |    \  |_> >  |_> >  /        \|  | (  <_> )  | \/\  ___/
-# \____|__  /   __/|   __/  /_______  /|__|  \____/|__|    \___  >
-#         \/|__|   |__|             \/                         \/
-
-# check for updates daily
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
-# download updates on the background
-defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
-
-# turn on auto-update
-defaults write com.apple.commerce AutoUpdate -bool true
-
 #   _________              __  .__  .__       .__     __
 #  /   _____/_____   _____/  |_|  | |__| ____ |  |___/  |_
 #  \_____  \\____ \ /  _ \   __\  | |  |/ ___\|  |  \   __\

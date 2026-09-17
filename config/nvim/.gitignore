@@ -1,5 +1,6 @@
 # Lazy.nvim lockfile (not tracking for personal dotfiles)
 lazy-lock.json
+lazyvim.json
 
 # Data directories (should live in ~/.local/share/nvim/)
 data/

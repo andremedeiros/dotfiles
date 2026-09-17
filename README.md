@@ -88,30 +88,6 @@ Tests run via [neotest](https://github.com/nvim-neotest/neotest) (LazyVim's `tes
 
 For LazyVim's built-in keybindings, see the [official keymaps documentation](https://www.lazyvim.org/keymaps).
 
-## Tmux
-
-Leader is bound to <kbd>Ctrl+Space</kbd>
-
-### Splitting
-
-* <kbd>[leader]-|</kbd> Split vertically
-* <kbd>[leader]--</kbd> Split horizontally
-
-### Navigation
-
-* <kbd>[leader]-h</kbd> Navigate to left pane
-* <kbd>[leader]-l</kbd> Navigate to right pane
-* <kbd>[leader]-k</kbd> Navigate to pane above
-* <kbd>[leader]-j</kbd> Navigate to pane below
-* <kbd>[leader]-w</kbd> Navigate windows
-* <kbd>[leader]-s</kbd> Navigate sessions
-* <kbd>[leader]-[</kbd> Enter scroll mode (<kbd>q</kbd> quits)
-
-### Session
-
-* <kbd>[leader]-c</kbd> New window
-* <kbd>[leader]-z</kbd> Zoom on current pane
-
 ## Guides
 
 - [fd](https://github.com/sharkdp/fd)

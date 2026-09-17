@@ -11,7 +11,6 @@ brew 'fzf'
 brew 'git'
 brew 'highlight'
 brew 'htop'
-brew 'hub'
 brew 'jq'
 brew 'lolcat'
 brew 'mas'
@@ -19,13 +18,12 @@ brew 'mise'
 brew 'neovim'
 
 # LazyVim dependencies
-brew 'ripgrep'       # Fast grep (Telescope)
-brew 'fd'            # Fast find (Telescope)
+brew 'ripgrep'       # Fast grep (snacks picker)
+brew 'fd'            # Fast find (snacks picker)
 brew 'tree-sitter-cli'   # Parser generator CLI (nvim-treesitter)
 
 brew 'ragel'
 brew 'starship'
-brew 'the_silver_searcher'
 brew 'wget'
 brew 'yt-dlp'
 brew 'zellij'
