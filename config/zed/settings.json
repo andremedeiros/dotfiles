@@ -28,10 +28,6 @@
     "edit_prediction_provider": "zed"
   },
   "assistant": {
-    "default_model": {
-      "provider": "ollama",
-      "model": "llama3.1:latest"
-    },
     "version": "2"
   },
   "ui_font_size": 16,
