@@ -1,6 +1,6 @@
 [tools]
-"ubi:golang-migrate/migrate" = "latest"
-"ubi:golangci/golangci-lint" = "latest"
+"github:golang-migrate/migrate" = "latest"
+"github:golangci/golangci-lint" = "latest"
 "go:github.com/go-delve/delve/cmd/dlv" = "latest"
 "go:github.com/kisielk/errcheck" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
@@ -13,6 +13,7 @@
 "npm:dockerfile-language-server-nodejs" = "latest"
 "npm:elm-format" = "latest"
 "npm:elm-test" = "latest"
+"github:elm/compiler[exe=elm]" = "latest"
 "npm:typescript" = "latest"
 "gem:solargraph" = "latest"
 "gem:rufo" = "latest"

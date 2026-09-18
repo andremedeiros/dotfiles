@@ -1,7 +1,5 @@
 elixir 1.20.4-otp-29
-elm    0.19.2
 erlang 29.1
-gohugo 0.166.0
 golang 1.27.1
 nodejs 26.9.0
 python 3.14.7
