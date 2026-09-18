@@ -2,7 +2,7 @@
 
 This is my dotfiles repo. There are many others, but this one is mine.
 
-The dotfiles here are managed with [Thoughtbot's rcm](https://github.com/thoughtbot/rcm).
+The dotfiles here are managed with [chezmoi](https://www.chezmoi.io/).
 
 ## Installation
 
@@ -29,23 +29,28 @@ git remote set-url origin git@github.com:andremedeiros/dotfiles.git
 3. **Neovim** — run `nvim` once to bootstrap plugins, then `:checkhealth`.
 4. **Shell** — log out/in (or `exec fish`) so the new login shell takes effect.
 
-You can also add secret/proprietary dotfiles on your iCloud drive. Anything inside `iCloud Drive/dotfiles` will also be symlinked with the same rules as here.
+You can also add secret/proprietary dotfiles on your iCloud drive. Anything inside `iCloud Drive/dotfiles/blobs/` is rsynced into `~/` on every `chezmoi apply`.
 
-## What is rcm?
+## What is chezmoi?
 
-[rcm](https://github.com/thoughtbot/rcm) is a dotfiles manager from thoughtbot. It creates symlinks from this repository to your home directory, making it easy to keep your configuration under version control.
+[chezmoi](https://www.chezmoi.io/) manages dotfiles by rendering a source directory (this repo) into your home directory. Unlike symlink-based managers, files are copied — edit the repo, then `chezmoi apply`.
 
 **How it works:**
-- Files are symlinked from this repo to your home directory
-- The `config/` directory is symlinked to `~/.config/` (XDG standard)
-- Hooks in `hooks/post-up/` run automatically after each `rcup`
+- `dot_foo` → `~/.foo`, `dot_config/` → `~/.config/`, `private_dot_ssh/` → `~/.ssh/` (with 0700)
+- `run_*.sh` scripts execute during `chezmoi apply`:
+  - `run_once_before_*` — one-time setup (icloud symlink, sudoers)
+  - `run_before_*` — every apply (iCloud blob/font sync)
+  - `run_onchange_*` — re-runs when the script changes; `.tmpl` variants also re-run when their inputs change (Brewfile, tool-versions)
 
 **Key commands:**
-- `rcup` - Install/update symlinks
-- `lsrc` - List what will be symlinked
-- `rcdn` - Remove symlinks
+- `chezmoi apply` — render + install everything
+- `chezmoi diff` — preview changes
+- `chezmoi edit ~/.config/nvim/init.lua` — edit the source for a target
+- `chezmoi update` — pull repo + apply
 
-See the [rcm documentation](https://github.com/thoughtbot/rcm) for more details.
+**Fonts:** Operator Mono lives in iCloud `dotfiles/blobs/Library/Fonts/` (licensed, not committed). `run_before_01-sync-blobs.sh` rsyncs blobs into `~/` on every apply.
+
+See the [chezmoi documentation](https://www.chezmoi.io/) for more details.
 
 ## Neovim
 
