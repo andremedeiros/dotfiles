@@ -28,6 +28,7 @@ brew 'tree-sitter-cli'   # Parser generator CLI (nvim-treesitter)
 
 brew 'ragel'
 brew 'starship'
+brew 'vale'
 brew 'wget'
 brew 'yt-dlp'
 brew 'zellij'
