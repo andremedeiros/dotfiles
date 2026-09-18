@@ -12,7 +12,7 @@
 "npm:@oh-my-pi/pi-coding-agent" = "latest"
 "npm:dockerfile-language-server-nodejs" = "latest"
 "npm:elm-format" = "latest"
-"npm:elm-test" = "latest"
+"npm:elm-test" = "0.19.2-1"
 "github:elm/compiler[exe=elm]" = "latest"
 "npm:typescript" = "latest"
 "gem:solargraph" = "latest"
