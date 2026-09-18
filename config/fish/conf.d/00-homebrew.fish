@@ -1,7 +1,7 @@
 if test -d /opt/homebrew
 	set -gx HOMEBREW_PREFIX "/opt/homebrew"
 	set -gx HOMEBREW_CELLAR "$HOMEBREW_PREFIX/Cellar"
-	set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX/homebrew"
+	set -gx HOMEBREW_REPOSITORY "$HOMEBREW_PREFIX"
 end
 
 fish_add_path -gP "$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin";

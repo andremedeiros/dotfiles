@@ -17,5 +17,4 @@
 "npm:typescript" = "latest"
 "gem:solargraph" = "latest"
 "gem:rufo" = "latest"
-node = "latest"
 bun = "latest"
