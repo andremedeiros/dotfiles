@@ -32,6 +32,3 @@ plugins=(
 for p in "${plugins[@]}"; do
   omp plugin install "$p" 2>/dev/null || true
 done
-
-# npm plugin (lives in ~/.omp/plugins/package.json, not a marketplace)
-omp plugin install "npm:@upstash/context7-pi" 2>/dev/null || true
