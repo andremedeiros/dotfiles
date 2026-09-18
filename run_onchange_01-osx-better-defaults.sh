@@ -22,11 +22,30 @@ sudo -n xcodebuild -license accept 2>/dev/null || echo "WARN: sudo xcodebuild -l
 # disable key hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# make repetitions super fast — macOS 27 reads these from
-# com.apple.Accessibility (seconds), not NSGlobalDomain (ticks)
-defaults write com.apple.Accessibility KeyRepeatDelay -float 0.225
-defaults write com.apple.Accessibility KeyRepeatInterval -float 0.016666
-defaults write com.apple.Accessibility KeyRepeatEnabled -bool true
+# make repetitions super fast — System Settings writes these as
+# ticks in NSGlobalDomain (15 ticks ≈ 250ms delay, 2 ticks ≈ 33ms
+# interval); com.apple.Accessibility keys are ignored
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain KeyRepeat -int 2
+
+# remove stale repeat keys an earlier version of this script wrote
+# to com.apple.Accessibility — not the store System Settings uses
+defaults delete com.apple.Accessibility KeyRepeatDelay 2>/dev/null || true
+defaults delete com.apple.Accessibility KeyRepeatInterval 2>/dev/null || true
+defaults delete com.apple.Accessibility KeyRepeatEnabled 2>/dev/null || true
+
+# map caps lock to escape on every keyboard. same per-device store
+# System Settings writes; applies on next login. keyboards attached
+# later need a script re-run or the System Settings toggle.
+while read -r vid pid; do
+  defaults -currentHost write -g "com.apple.keyboard.modifiermapping.${vid}-${pid}-0" -array \
+    '{"HIDKeyboardModifierMappingSrc" = 30064771129; "HIDKeyboardModifierMappingDst" = 30064771113;}'
+done < <(ioreg -r -c IOHIDEventDriver -d 1 | awk '
+  /^\+-o/ { if (drv && vid != "" && pid != "") print vid, pid; drv = ($0 ~ /Keyboard/); vid = ""; pid = "" }
+  drv && /"VendorID" =/  { vid = $3 }
+  drv && /"ProductID" =/ { pid = $3 }
+  END { if (drv && vid != "" && pid != "") print vid, pid }
+')
 
 # dock goes on the left
 defaults write com.apple.dock orientation -string left
