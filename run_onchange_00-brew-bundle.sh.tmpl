@@ -3,6 +3,8 @@
 # Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
 set -e
 
+# brew/mas operations fail if the Xcode license isn't accepted
+sudo -n xcodebuild -license accept 2>/dev/null || echo "WARN: sudo xcodebuild -license accept needs a password"
 brew update
 
 # cask/mas upgrades can need interactive sudo or App Store auth; warn
