@@ -43,6 +43,14 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # don't open photos.app every time I plug in a device
 defaults write com.apple.ImageCapture disableHotPlug -bool YES
 
+# free up cmd+space for raycast: disable spotlight (64) and
+# finder search window (65) hotkeys. Raycast's own hotkey is set
+# once in its settings (stored internally, not in defaults).
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:64:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null || \
+  /usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:64:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:65:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist 2>/dev/null || \
+  /usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:65:enabled bool false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 # automatically hide and show the dock
 defaults write com.apple.Dock autohide -bool true
 
