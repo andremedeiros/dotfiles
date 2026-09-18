@@ -51,6 +51,7 @@ cask 'steam'
 cask 'transmit'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'zed'
 
 mas 'Fantastical - Calendar & Tasks', id: 975937182
 mas 'Keynote', id: 409183694

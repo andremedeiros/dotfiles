@@ -9,6 +9,7 @@ The dotfiles here are managed with [Thoughtbot's rcm](https://github.com/thought
 **Prerequisites:**
 - Xcode Command Line Tools
 - [Homebrew](https://brew.sh/)
+- Signed into the App Store (required for `mas` entries in the Brewfile)
 
 **Setup:**
 ```bash
@@ -19,6 +20,14 @@ cd ~/src/github.com/andremedeiros/dotfiles
 script/bootstrap
 git remote set-url origin git@github.com:andremedeiros/dotfiles.git
 ```
+
+`script/bootstrap` installs rcm and runs `rcup`, which symlinks everything and runs the hooks in `hooks/post-up/` (brew bundle, mise install, shell setup, vale sync). Some hooks need `sudo`.
+
+**After bootstrap:**
+1. **1Password** — sign in, then enable the SSH agent: Settings → Developer → "Use the SSH agent". Required for SSH commit signing (`op-ssh-sign`) and `ssh/config`'s `IdentityAgent`.
+2. **GitHub auth** — `gh auth login` then `gh auth setup-git`. HTTPS remotes authenticate via gh's credential helper; `git@github.com:` URLs are rewritten to HTTPS by `url.insteadOf` in gitconfig.
+3. **Neovim** — run `nvim` once to bootstrap plugins, then `:checkhealth`.
+4. **Shell** — log out/in (or `exec fish`) so the new login shell takes effect.
 
 You can also add secret/proprietary dotfiles on your iCloud drive. Anything inside `iCloud Drive/dotfiles` will also be symlinked with the same rules as here.
 
