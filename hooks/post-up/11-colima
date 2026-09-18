@@ -8,3 +8,12 @@ if ! command -v colima >/dev/null 2>&1; then
 fi
 
 brew services start colima
+
+# Point /var/run/docker.sock at colima's socket so docker clients and
+# testcontainers autodetect it without DOCKER_HOST or properties files.
+# Ryuk mounts /var/run/docker.sock into the reaper container, which is
+# the real socket inside the colima VM — so this also fixes reaping.
+SOCK="$HOME/.colima/default/docker.sock"
+if [ -S "$SOCK" ] && [ "$(readlink /var/run/docker.sock 2>/dev/null)" != "$SOCK" ]; then
+  sudo ln -sfn "$SOCK" /var/run/docker.sock
+fi
