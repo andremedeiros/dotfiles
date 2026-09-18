@@ -13,14 +13,13 @@ fi
 # ensure brew environment
 eval $(/opt/homebrew/bin/brew shellenv)
 
-if ! brew ls --versions rcm > /dev/null; then
-  echo "Installing rcm"
-  brew install rcm
+if ! command -v chezmoi > /dev/null; then
+  echo "Installing chezmoi"
+  brew install chezmoi
 fi
 
-
-# and liftoff!
-env RCRC="$(pwd)"/rcrc rcup
+# and liftoff! --source points chezmoi at this repo directly
+chezmoi init --apply --source "$(pwd)"
 
 # setup the git origin so that I can actually push stuff
 git remote set-url origin git@github.com:andremedeiros/dotfiles.git

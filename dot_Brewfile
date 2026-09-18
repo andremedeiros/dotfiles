@@ -3,6 +3,7 @@ cask_args appdir: '/Applications'
 
 brew 'asciinema'
 brew 'cowsay'
+brew 'chezmoi'
 brew 'colima'
 brew 'ctags'
 brew 'direnv'

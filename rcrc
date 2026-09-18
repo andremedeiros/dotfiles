@@ -1,2 +1,0 @@
-EXCLUDES="README.md script blobs"
-DOTFILES_DIRS="$HOME/src/github.com/andremedeiros/dotfiles $HOME/.icloud/dotfiles"

@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Re-runs when this script OR tool-versions/mise config change.
+# tool-versions hash: {{ include "dot_tool-versions" | sha256sum }}
+# mise config hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
 
 # make sure we have our path set on a run previous to having a full environment
 export GOPATH=$HOME/.go

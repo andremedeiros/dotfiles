@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Re-runs when this script OR the Brewfile changes.
+# Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -e
+
+brew update
+
+# cask/mas upgrades can need interactive sudo or App Store auth; warn
+# rather than aborting the whole apply
+if ! brew bundle check --global >/dev/null 2>&1; then
+  brew bundle --global || echo "WARN: brew bundle had failures — re-run interactively"
+fi
+
+brew cleanup

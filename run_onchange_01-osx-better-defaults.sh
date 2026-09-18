@@ -8,8 +8,9 @@ set -e
 # /___/\  \___  >____/\____ |\___  >
 #       \_/   \/           \/    \/
 
-# accept license and trigger xcode developer tool download
-sudo xcodebuild -license accept
+# accept license and trigger xcode developer tool download (needs sudo;
+# skipped non-interactively — run once by hand if it warns)
+sudo -n xcodebuild -license accept 2>/dev/null || echo "WARN: sudo xcodebuild -license accept needs a password"
 
 #                       ________    _________
 #   _____ _____    ____ \_____  \  /   _____/
@@ -31,9 +32,6 @@ defaults write com.apple.dock orientation -string left
 # disable automatic capitalization and smart quotes as they're annoying when writing code
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# enable subpixel font rendering on non-Apple LCDs
-defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # use a dark menu bar and dock
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
@@ -63,9 +61,6 @@ defaults write -g AppleShowScrollBars -string "WhenScrolling"
 
 # don't write .DS_Store
 defaults write com.apple.desktopservices DSDontWriteNetworkStores true
-
-# don't screw up fonts
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 #   _________              __  .__  .__       .__     __
 #  /   _____/_____   _____/  |_|  | |__| ____ |  |___/  |_
@@ -105,14 +100,13 @@ defaults write com.apple.spotlight orderedItems -array \
 #  |    `   \  ___/\   /  |  | (  <_> |  <_> )  |__\___ \
 # /_______  /\___  >\_/   |__|  \____/ \____/|____/____  >
 #         \/     \/                                    \/
-sudo /usr/sbin/DevToolsSecurity --enable
+sudo -n /usr/sbin/DevToolsSecurity --enable 2>/dev/null || echo "WARN: DevToolsSecurity needs a password"
 
 # and we're done
 apps=()
-apps=("${apps[@]}" "Dock")
+apps=("${apps[@]}" "corespotlightd")
 apps=("${apps[@]}" "Safari")
-apps=("${apps[@]}" "mds")
 
 for app in "${apps[@]}"; do
-  killall "${app}" &> /dev/null
+  killall "${app}" &> /dev/null || true
 done

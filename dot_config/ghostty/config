@@ -4,7 +4,6 @@ font-style-bold = "Bold"
 font-style-italic = "Book Italic"
 font-style-bold-italic = "Bold Italic"
 font-thicken = true
-theme = "Jellybeans"
 
 # Bind Alt+numbers to Meta+numbers
 
