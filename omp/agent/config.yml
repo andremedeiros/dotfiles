@@ -1,0 +1,15 @@
+setupVersion: 2
+modelRoles:
+  default: anthropic/claude-sonnet-5:high
+  smol: anthropic/claude-haiku-4-5-20251001
+  slow: anthropic/claude-opus-5
+  advisor: anthropic/claude-fable-5-1
+  designer: anthropic/claude-opus-5
+  commit: anthropic/claude-haiku-4-5-20251001
+  tiny: anthropic/claude-haiku-4-5-20251001
+  ARCHITECT: anthropic/claude-fable-5-1:xhigh
+hideThinkingBlock: false
+dev:
+  autoqaConsent: granted
+composer:
+  shape: box
