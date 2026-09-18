@@ -14,14 +14,14 @@ The dotfiles here are managed with [chezmoi](https://www.chezmoi.io/).
 **Setup:**
 ```bash
 xcode-select --install
-mkdir -p ~/src/github.com/andremedeiros
-git -C ~/src/github.com/andremedeiros clone https://github.com/andremedeiros/dotfiles.git
-cd ~/src/github.com/andremedeiros/dotfiles
+mkdir -p ~/Code/github.com/andremedeiros
+git -C ~/Code/github.com/andremedeiros clone https://github.com/andremedeiros/dotfiles.git
+cd ~/Code/github.com/andremedeiros/dotfiles
 script/bootstrap
 git remote set-url origin git@github.com:andremedeiros/dotfiles.git
 ```
 
-`script/bootstrap` installs rcm and runs `rcup`, which symlinks everything and runs the hooks in `hooks/post-up/` (brew bundle, mise install, shell setup, vale sync). Some hooks need `sudo`.
+`script/bootstrap` installs chezmoi and runs `chezmoi init --apply`, which renders everything into `~/` and runs the `run_*` scripts (brew bundle, mise install, shell setup, vale sync). Some scripts need `sudo`. A `~/src -> ~/Code` symlink is created so existing paths keep working; Finder shows the folder as "Code" with a Developer icon.
 
 **After bootstrap:**
 1. **1Password** — sign in, then enable the SSH agent: Settings → Developer → "Use the SSH agent". Required for SSH commit signing (`op-ssh-sign`) and `ssh/config`'s `IdentityAgent`.
