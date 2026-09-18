@@ -6,7 +6,7 @@
   up = pull --rebase --autostash
   co = checkout
   st = status
-  pr = pull-request
+  pr = "!gh pr create --web"
   rb = rewrite-branch
   vomit = !git commit -m "$(curl -s https://whatthecommit.com/index.txt)"
 [color]
@@ -16,8 +16,6 @@
   default = current
 [branch]
   autosetuprebase = always
-[github]
-  user = andremedeiros
 [web]
   browser = open
 [fetch]
@@ -25,12 +23,8 @@
 [rebase]
   autosquash = true
   autoStash = true
-[instaweb]
-  httpd = webrick
 [diff]
-  tool = opendiff
   algorithm = patience
-  compactionheuristic = true
 [commit]
   gpgsign = true
   verbose = true
@@ -44,7 +38,7 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
 [core]
-  attributesfile = /Users/andremedeiros/.gitattributes
+  attributesfile = ~/.gitattributes
 [init]
   defaultBranch = main
 [gpg]
@@ -57,3 +51,7 @@
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[url "https://gist.github.com/"]
+	insteadOf = git@gist.github.com:
