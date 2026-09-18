@@ -21,7 +21,7 @@ script/bootstrap
 git remote set-url origin git@github.com:andremedeiros/dotfiles.git
 ```
 
-`script/bootstrap` installs chezmoi and runs `chezmoi init --apply`, which renders everything into `~/` and runs the `run_*` scripts (brew bundle, mise install, shell setup, vale sync). Some scripts need `sudo`. A `~/src -> ~/Code` symlink is created so existing paths keep working; Finder shows the folder as "Code" with a Developer icon.
+`script/bootstrap` installs chezmoi and runs `chezmoi init --apply`, which renders everything into `~/` and runs the `run_*` scripts (brew bundle, mise install, shell setup, vale sync). Some scripts need `sudo`. Finder shows `~/Code` with a Developer icon.
 
 **After bootstrap:**
 1. **1Password** — sign in, then enable the SSH agent: Settings → Developer → "Use the SSH agent". Required for SSH commit signing (`op-ssh-sign`) and `ssh/config`'s `IdentityAgent`.
