@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Prune testcontainers leftovers that ryuk can't reap: containers orphaned
+# before the reaper started (e.g. socket-mount failures), plus their
+# volumes and networks.
+set -e
+
+docker ps -aq --filter label=org.testcontainers=true | xargs -r docker rm -f
+docker volume ls -q --filter label=org.testcontainers=true | xargs -r docker volume rm -f
+docker network ls -q --filter label=org.testcontainers=true | xargs -r docker network rm
