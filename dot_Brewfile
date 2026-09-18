@@ -60,8 +60,12 @@ cask 'vlc'
 cask 'zed'
 
 mas 'Fantastical - Calendar & Tasks', id: 975937182
+mas 'Keynote', id: 361285480
+mas 'Kindle', id: 302584613
 mas 'Mindnode', id: 1289197285
 mas 'Monodraw', id: 920404675
+mas 'Numbers', id: 361304891
+mas 'Pages', id: 361309726
 mas 'Patterns', id: 429449079
 mas 'Slack', id: 803453959
 mas 'Keka', id: 470158793
