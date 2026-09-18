@@ -22,9 +22,11 @@ sudo -n xcodebuild -license accept 2>/dev/null || echo "WARN: sudo xcodebuild -l
 # disable key hold popup
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# make repetitions super fast
-defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 1
+# make repetitions super fast — macOS 27 reads these from
+# com.apple.Accessibility (seconds), not NSGlobalDomain (ticks)
+defaults write com.apple.Accessibility KeyRepeatDelay -float 0.225
+defaults write com.apple.Accessibility KeyRepeatInterval -float 0.016666
+defaults write com.apple.Accessibility KeyRepeatEnabled -bool true
 
 # dock goes on the left
 defaults write com.apple.dock orientation -string left

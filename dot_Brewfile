@@ -40,6 +40,7 @@ brew 'yt-dlp'
 brew 'zellij'
 
 cask '1password'
+cask '1password-cli'
 cask 'nikitabobko/tap/aerospace'
 cask 'appcleaner'
 cask 'caffeine'
