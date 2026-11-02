@@ -1,3 +1,6 @@
+[settings]
+minimum_release_age = "4h"
+
 [tools]
 "github:golang-migrate/migrate" = "latest"
 "github:golangci/golangci-lint" = "latest"
@@ -6,6 +9,7 @@
 "go:golang.org/x/tools/gopls" = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
 "npm:@github/copilot" = "latest"
+"npm:@google/gemini-cli" = "latest"
 "npm:@openai/codex" = "latest"
 "npm:opencode-ai" = "latest"
 "npm:@opengsd/gsd-core" = "latest"
