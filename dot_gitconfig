@@ -25,6 +25,7 @@
   autoStash = true
 [diff]
   algorithm = patience
+  colorMoved = default
 [commit]
   gpgsign = true
   verbose = true
@@ -39,6 +40,7 @@
   smudge = git-lfs smudge -- %f
 [core]
   attributesfile = ~/.gitattributes
+  pager = delta
 [init]
   defaultBranch = main
 [gpg]
@@ -56,3 +58,12 @@
 	insteadOf = git@github.com:
 [url "https://gist.github.com/"]
 	insteadOf = git@gist.github.com:
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  line-numbers = true
+[merge]
+  conflictStyle = zdiff3
+[rerere]
+  enabled = true

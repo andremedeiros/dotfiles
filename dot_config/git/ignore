@@ -1,0 +1,11 @@
+# Global excludes (git reads ~/.config/git/ignore by default).
+# macOS
+.DS_Store
+
+# direnv
+.direnv/
+
+# editor swap/backup files
+*.swp
+*.swo
+*~
