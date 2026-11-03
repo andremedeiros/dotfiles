@@ -8,9 +8,11 @@ alias dnsflush="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias hl="highlight -O ansi -n"
 alias ia="__ia"
 alias ifup='curl -s "https://api.ipify.org"'
+alias ls='eza'
 alias servedir='__servedir'
 alias ee='__evalenv'
 alias weather="curl wttr.in"
+alias ssh='ghostty +ssh --'
 
 function __ia --argument path
   open $path -a "/Applications/iA Writer.app"
@@ -41,6 +43,19 @@ function __evalenv --argument path
 
     set key (string trim $item[1])
     set value (string trim -c '\'"' (string trim $item[2]))
+
+    if string match -q 'op://*' -- $value
+      if not type -q op
+        echo "evalenv: $key references $value but op is not installed" >&2
+        continue
+      end
+      set -l resolved (op read --no-newline $value 2>/dev/null)
+      if test $status -ne 0
+        echo "evalenv: could not resolve $key via op ($value)" >&2
+        continue
+      end
+      set value (string join \n -- $resolved | string collect)
+    end
 
     set -gx $key $value
     echo "Exported key $key"

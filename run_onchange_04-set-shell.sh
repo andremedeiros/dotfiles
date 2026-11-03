@@ -6,6 +6,5 @@ if [ "$SHELL" != "$HOMEBREW_PREFIX/bin/fish" ]; then
   sudo dscl . -create /Users/"$USER" UserShell $HOMEBREW_PREFIX/bin/fish
 fi
 
-# fisher and fish_config are fish builtins — invoke via fish -c
-fish -c 'fisher install jethrokuan/z' || true
+# fish_config is a fish builtin — invoke via fish -c
 fish -c 'fish_config theme choose "ayu Dark"; fish_config theme save' || true
