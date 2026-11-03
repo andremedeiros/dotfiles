@@ -17,6 +17,7 @@ marketplaces=(
   "obra/superpowers-marketplace"
   "typesafe-ai/skills"
   "mksglu/context-mode"
+  "blader/humanizer"
 )
 
 for m in "${marketplaces[@]}"; do
@@ -35,6 +36,7 @@ plugins=(
   "double-shot-latte@superpowers-marketplace"
   "typesafe@typesafe-ai"
   "context-mode@context-mode"
+  "humanizer@humanizer"
 )
 
 for p in "${plugins[@]}"; do
