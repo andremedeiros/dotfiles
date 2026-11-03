@@ -19,9 +19,13 @@ Host *
   ServerAliveCountMax 10
 
 Host knowhere
-  HostName 10.0.0.3
+  HostName 100.73.61.27
   Port 2222
   User andremedeiros
+
+Host rocket
+  HostName 100.65.160.36
+  User root
 
 Host localdev
   HostName 172.16.128.139
