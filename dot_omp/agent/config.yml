@@ -1,6 +1,6 @@
 setupVersion: 2
 modelRoles:
-  default: anthropic/claude-sonnet-5:high
+  default: fuelix/claude-opus-5-5:high
   smol: anthropic/claude-haiku-4-5-20251001
   slow: anthropic/claude-opus-5
   advisor: anthropic/claude-fable-5-1
